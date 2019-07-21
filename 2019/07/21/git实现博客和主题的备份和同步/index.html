@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>404 网页未找到! | 博客</title>
-  <meta name="keywords" content>
-  <meta name="description" content="404 网页未找到! | 博客">
+  <title>git实现博客和主题的备份和同步 | 博客</title>
+  <meta name="keywords" content=" 教程 , hexo , 博客 , 备份 ">
+  <meta name="description" content="git实现博客和主题的备份和同步 | 博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="抱歉。。。您访问的网页找不到了。">
 <meta name="keywords" content="技术">
@@ -275,24 +275,42 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-git实现博客和主题的备份和同步" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">404 网页未找到!</h1>
+        <h1 class="article-title">git实现博客和主题的备份和同步</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="hexo">hexo</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">教程</a>
+            
+            <a href="javascript:" class="color5">hexo</a>
+            
+            <a href="javascript:" class="color3">博客</a>
+            
+            <a href="javascript:" class="color3">备份</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-07-20 12:22:58">2019-07-19 16:13</time>
+        创建时间:<time class="date" title="更新时间: 2019-07-21 18:40:09">2019-07-21 12:32</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:12</span>
+        <span>字数:467</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -322,7 +340,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#备份博客"><span class="toc-text">备份博客</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -337,9 +355,39 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<hr>
-<p>抱歉。。。您访问的网页找不到了。</p>
+        <p>当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，肯定心中有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。</p>
+<h5 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h5><blockquote>
+<p>GitHub账号一个</p>
+<p>git 2.18.0 windows </p>
+<p>hexo博客</p>
+</blockquote>
+<h5 id="备份博客"><a href="#备份博客" class="headerlink" title="备份博客"></a>备份博客</h5><ol>
+<li><p>找到喜欢的主题，并在作者的github主页fork出代码仓库，配置合适的主题，并同步上传。</p>
+<p>  在代码主页使用fork功能同步作者的代码。</p>
+<p> <img src="/.io//img1.jpg" alt="img1"></p>
+<p> 使用<code>git clone fork仓库地址</code>获取代码,修改作者的主题代码以满足个人博客的需要，使用<code>git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push</code>命令同步修改到github。</p>
+<p> 至此，完成主题代码的备份。以后可以使用git的merge功能将作者更新的代码合并，<em>而不需要重新配置主题</em>。</p>
+</li>
+<li><p>新建一个代码仓库，用于同步博客开发内容。</p>
+</li>
+<li><p>将博客与远程仓库建立联系。</p>
+<p> 使用<code>git init</code>命令将hexo博客文件夹初始化为本地代码仓库。</p>
+</li>
+</ol>
+<p><img src="/.io//img2.jpg" alt="img2"></p>
+<p>使用<code>git remote add origin 远程代码仓库地址</code>等命令将本地代码仓库与远程代码仓库建立联系，并且同步博客内容到github。</p>
+<p><img src="/.io//img3.jpg" alt="img3"></p>
+<ol start="4">
+<li><p>将主题作为博客的子模块添加到hexo</p>
+<p> 使用<code>git submodule add 主题远程代码仓库地址 themes/3-hexo</code>命令使用git的子模块将博客和主题建立联系。</p>
+</li>
+</ol>
+<p><img src="/.io//img4.jpg" alt="img4"><br>最后将博客的修改内容同步到github，完成博客的备份和同步的功能。</p>
+<p><em>参考资料</em></p>
+<blockquote>
+<p>hexo使用子模块来管理theme:<a href="https://xiongyingqi.com/2019/02/01/use-git-submodules" target="_blank" rel="noopener">https://xiongyingqi.com/2019/02/01/use-git-submodules</a></p>
+<p> 将本地仓库与远程仓库建立联系:<a href="https://blog.csdn.net/wet5649/article/details/82869831" target="_blank" rel="noopener">https://blog.csdn.net/wet5649/article/details/82869831</a></p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 qinzhtao@163.com </span>
@@ -351,6 +399,18 @@
     <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
 </p>
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>git实现博客和主题的备份和同步</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">467</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title></a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-21, 12:32:49</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-21, 18:40:09</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/21/git实现博客和主题的备份和同步/" title="git实现博客和主题的备份和同步">http://qzt8315.github.io/2019/07/21/git实现博客和主题的备份和同步/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
