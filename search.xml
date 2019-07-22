@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo+Github Pages开启你的个人博客]]></title>
+    <url>%2F2019%2F07%2F21%2Fhexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有成本低（免费）、免维护和使用方便等优点，深受大家的追捧和喜欢。 下面就让我们开启个人博客的大门吧。 提前做好的工作 Github账号; Git工具; NodeJS安装包（NodeJS官网下载对应版本的安装包）; Markdown编辑软件（非必须，作者使用Typora进行Markdown文档编辑）。 安装NodeJS 访问NodeJS官网，下载对应版本的安装包。 作者在电脑上安装了Windows平台的NodeJS，版本为v10.15.3。 安装Hexo 执行node -v和npm -v命令，正常运行则NodeJS环境正常。 打开Git Bash工具。 执行命令npm install hexo-cli -g，等待执行完成，Hexo成功安装。 开启GIthub Pages在Github上新建一个名为Git账号用户名.github.io的代码仓库，一般情况下等待10至30分钟就可以通过访问https://用户名.github.io访问到你新建的Github Pages网页。若超过30分钟检查代码仓库的名称是否正确，中间步骤是否操作正确。 本地新建博客 打开Git Bash（本文之后未提到打开的路径则默认在博客文件夹处打开并执行相关的命令）； 执行命令hexo init 博客文件夹名称； 执行命令cd 博客文件夹； 运行hexo server或者hexo s； 浏览器访问”http://127.0.0.1:4000&quot; 或者 “http://localhost:4000&quot;可以看到新建的博客。 编辑文章 新建博客：通过hexo new &quot;文章标题&quot;命令新建文章，文章路径为博客文件夹/source/_post/文章标题.md; 编辑博客： 使用MarkDown工具编辑保存，作者使用Typora进行编辑。 本地博客同步到Github Pages 打开Git Bash； 安装部署工具，运行npm install hexo-deployer-git --save,完成即已安装部署工具； 编辑博客根目录下的配置文件–”_config.yml”,修改同步配置地址; 运行hexo deploy或者hexo d即可将博客同步到Github Pages(Ps:若修改了博客内容，需要通过hexo generate或者hexo g命令重新构建博客之后运行同步命令)。 参考资料 使用hexo+github搭建免费个人博客详细教程：https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客；]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>新手</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git实现博客和主题的备份和同步]]></title>
+    <url>%2F2019%2F07%2F21%2Fgit%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E5%90%8C%E6%AD%A5%2F</url>
+    <content type="text"><![CDATA[当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，心中肯定有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。 前提条件 GitHub账号一个 Git 2.18.0 windows Hexo博客 备份与同步博客和主题 找到喜欢的主题，并在作者的Github主页fork出代码仓库，配置合适的主题，并同步上传。 在代码主页使用fork功能同步作者的代码。 使用git clone fork仓库地址获取代码,修改作者的主题代码以满足个人博客的需要，使用git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push命令同步修改到Github。 至此，完成主题代码的备份。以后可以使用git的merge功能将作者更新的代码合并，而不需要重新配置主题。 新建一个代码仓库，用于同步博客开发内容。 将博客与远程仓库建立联系。 使用git init命令将Hexo博客文件夹初始化为本地代码仓库。 使用git remote add origin 远程代码仓库地址等命令将本地代码仓库与远程代码仓库建立联系，并且同步博客内容到Github。 将主题作为博客的子模块添加到Hexo 使用git submodule add 主题远程代码仓库地址 themes/3-hexo命令使用git的子模块将博客和主题建立联系。 最后将博客的修改内容同步到Github，完成博客的备份和同步的功能。 参考资料 Hexo使用子模块来管理theme:https://xiongyingqi.com/2019/02/01/use-git-submodules 将本地仓库与远程仓库建立联系:https://blog.csdn.net/wet5649/article/details/82869831]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>备份</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[西瓜书_第一章]]></title>
+    <url>%2F2019%2F07%2F19%2F%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[西瓜书是人工智能的入门书籍。]]></content>
+      <categories>
+        <category>读书</category>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>西瓜书</tag>
+        <tag>第一章</tag>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown入门]]></title>
+    <url>%2F2019%2F07%2F18%2Fmarkdown%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[Markdown源码如下: 展示的是一级标题 ============== 展示的是二级标题 ------------------------- # 这也是一级标题 ## 这是二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题 七级标题是不可能七级的 展示的是一级标题 ============== 展示的是二级标题 ------------ # 这也是一级标题 ## 这是二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题 RUN flow me *斜体文本* _斜体文本_ **粗体文本** ***斜粗体文本*** ___斜粗体文本___ 分割线 --- *** ___ - - - * * * _ _ _ ~~这个是删除线~~ &lt;u&gt;这个是下划线&lt;/u&gt; 菜鸟教程[^RUNOOB]真的好用 * 第一项 + 第二项 - 第三项 1. 第一项 2. 第二项 3. 第三项 ###### 以下是列表嵌套 1. 第一项 - 第一小点 - 第二小点 2. 第二项 - 第一小点 区块 &gt; 区块引用 &gt; 菜鸟教程 &gt; 学的不仅是技术更是梦想 &gt; 最外层 &gt; &gt; 第一层 &gt; &gt; &gt; &gt; &gt; 第二层 区块中使用列表 &gt; 1. 1 &gt; 2. 2 &gt; * 第一 &gt; * 第二 * 列表中使用区块 &gt; 菜鸟教程 &gt; 学的不仅是技术更是梦想 `print()`函数 ```php &lt;?php echo &#39;RUNOOB&#39;; function test() { echo &#39;test&#39;; } ``` ```python ​import numpy as np ​from keras.models import load_model ​ ​if __name__ == &quot;__main__&quot;: ​print(123) ``` 这是一个链接[百度一下，你就知道](https://www.baidu.com) &lt;https://www.baidu.com&gt; 高级链接 **链接可以用变量代替，文档末附带变量地址** 这个链接使用1作为网址变量 [Baidu][1] 使用百度代替网址变量[百度][百度] __图片语法__ ![百度][2] ![图片 百度](https://www.baidu.com/favicon.ico&quot;百度logo&quot;) **可使用img标签指定图片宽度** &lt;img src=&quot;https://www.baidu.com/favicon.ico&quot; width=&quot;50%&quot;&gt; | 表头 | 表头| | :---: | :---:| | 单元格 | 单元格 | | 单元格 | 单元格 | [^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！ [1]: https://www.baidu.com [百度]: https://www.baidu.com [2]: https://www.baidu.com/favicon.ico Markdown展现效果如下: 展示的是一级标题展示的是二级标题这也是一级标题这是二级标题三级标题四级标题五级标题六级标题七级标题是不可能七级的 RUN flow me 斜体文本 斜体文本 粗体文本 斜粗体文本 斜粗体文本 分割线 这个是删除线 这个是下划线 菜鸟教程[^RUNOOB]真的好用 第一项 第二项 第三项 第一项 第二项 第三项 以下是列表嵌套 第一项 第一小点 第二小点 第二项 第一小点 区块 区块引用菜鸟教程学的不仅是技术更是梦想 最外层 第一层 第二层 区块中使用列表 1 2 第一 第二 列表中使用区块 菜鸟教程学的不仅是技术更是梦想 print()函数 &lt;?php echo &#39;RUNOOB&#39;; function test() { echo &#39;test&#39;; } import numpy as np from keras.models import load_model if __name__ == &quot;__main__&quot;: print(123) print(&#39;this is python language.&#39;) 这是一个链接百度一下，你就知道 https://www.baidu.com 高级链接链接可以用变量代替，文档末附带变量地址这个链接使用1作为网址变量 [Baidu][1]使用百度代替网址变量[百度][百度] 图片语法![百度][2] 可使用img标签指定图片宽度 表头 表头 单元格 单元格 单元格 单元格 [^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！[1]: https://www.baidu.com[百度]: https://www.baidu.com[2]: https://www.baidu.com/favicon.ico Ps:本文参考菜鸟教程]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+        <tag>标签</tag>
+        <tag>语法</tag>
+        <tag>入门</tag>
+      </tags>
+  </entry>
+</search>
