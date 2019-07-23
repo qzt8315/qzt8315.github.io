@@ -1,88 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Hexo结合MathJax编辑公式]]></title>
-    <url>%2F2019%2F07%2F22%2FHexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F%2F</url>
-    <content type="text"><![CDATA[Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将_内容_首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号 MathJax Markdown _ \_ \\ \\\\ 示例代码： $$ f(n) = \\begin{cases} n\_2, &amp; \text{if $n$ is even} \\\\ n\_1, &amp; \text{if $n$ is odd} \\end{cases} $$$$f(n) =\begin{cases}n_2, &amp; \text{if $n$ is even} \\n_1, &amp; \text{if $n$ is odd}\end{cases}$$ 如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo结合MathJax编辑公式</title>
+      <link href="/2019/07/22/Hexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F/"/>
+      <url>/2019/07/22/Hexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将<code>_内容_</code>首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号</p><table><thead><tr><th align="center">MathJax</th><th align="center">Markdown</th></tr></thead><tbody><tr><td align="center"><code>_</code></td><td align="center"><code>\_</code></td></tr><tr><td align="center"><code>\\</code></td><td align="center"><code>\\\\</code></td></tr></tbody></table><p>示例代码：</p><pre><code>$$f(n) = \\begin{cases}n\_2,  &amp; \text{if $n$ is even} \\\\n\_1, &amp; \text{if $n$ is odd}\\end{cases}$$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is even} \\<br>n_1, &amp; \text{if $n$ is odd}<br>\end{cases}<br>$$</p><p>如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。</p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>博客</tag>
-        <tag>hexo</tag>
-        <tag>新手</tag>
-        <tag>公式编辑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[西瓜书_符号表]]></title>
-    <url>%2F2019%2F07%2F22%2F%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%A6%E5%8F%B7%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[主要符号表 符号 意义 $x$ 标量 $\boldsymbol x$ 向量 x 变量集 $A$ 矩阵 $I$ 单位阵 $\chi$ 样本空间或状态空间 $D$ 概率分布 D 数据样本（数据集） $H$ 假设空间 H 假设集 $\xi$ 学习算法 $(·,·,·)$ 行向量 $(·;·;·)$ 列向量 $(·)^T$ 向量或矩阵的转置 $\{···\}$ 集合 $P(·),P(·|·)$ 概率质量函数，条件概率质量函数 $p(·),p(·|·)$ 概率密度函数，条件概率密度函数 $\mathbb{E}_{·\sim D}[f(·)]$ 函数$f(·)$对·在分布$D$下的数学期望;意义明确时将省略$D$和(或)$.$ $sup(·)$ 上确界 $\Bbb{Ⅱ}(·)$ 指示函数，在$·$为真和假时分别取值为1,0 $sign(·)$ 符号函数，在$·\lt{0},\ = 0, \gt 0$时分别取值为-1,0,1 参考资料 《机器学习》作者：周志华；]]></content>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 新手 </tag>
+            
+            <tag> 公式编辑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>西瓜书_符号表</title>
+      <link href="/2019/07/22/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%A6%E5%8F%B7%E8%A1%A8/"/>
+      <url>/2019/07/22/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%A6%E5%8F%B7%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h5 id="主要符号表"><a href="#主要符号表" class="headerlink" title="主要符号表"></a>主要符号表</h5><table><thead><tr><th align="center">符号</th><th align="center">意义</th></tr></thead><tbody><tr><td align="center">$x$</td><td align="center"><em>标量</em></td></tr><tr><td align="center">$\boldsymbol x$</td><td align="center"><em>向量</em></td></tr><tr><td align="center">x</td><td align="center"><em>变量集</em></td></tr><tr><td align="center">$A$</td><td align="center"><em>矩阵</em></td></tr><tr><td align="center">$I$</td><td align="center"><em>单位阵</em></td></tr><tr><td align="center">$\chi$</td><td align="center"><em>样本空间或状态空间</em></td></tr><tr><td align="center">$D$</td><td align="center"><em>概率分布</em></td></tr><tr><td align="center">D</td><td align="center"><em>数据样本（数据集）</em></td></tr><tr><td align="center">$H$</td><td align="center"><em>假设空间</em></td></tr><tr><td align="center">H</td><td align="center"><em>假设集</em></td></tr><tr><td align="center">$\xi$</td><td align="center"><em>学习算法</em></td></tr><tr><td align="center">$(·,·,·)$</td><td align="center"><em>行向量</em></td></tr><tr><td align="center">$(·;·;·)$</td><td align="center"><em>列向量</em></td></tr><tr><td align="center">$(·)^T$</td><td align="center"><em>向量或矩阵的转置</em></td></tr><tr><td align="center">$\{···\}$</td><td align="center"><em>集合</em></td></tr><tr><td align="center">$P(·),P(·|·)$</td><td align="center"><em>概率质量函数，条件概率质量函数</em></td></tr><tr><td align="center">$p(·),p(·|·)$</td><td align="center"><em>概率密度函数，条件概率密度函数</em></td></tr><tr><td align="center">$\mathbb{E}_{·\sim D}[f(·)]$</td><td align="center"><em>函数$f(·)$对·在分布$D$下的数学期望;意义明确时将省略$D$和(或)$.$</em></td></tr><tr><td align="center">$sup(·)$</td><td align="center"><em>上确界</em></td></tr><tr><td align="center">$\Bbb{Ⅱ}(·)$</td><td align="center"><em>指示函数，在$·$为真和假时分别取值为1,0</em></td></tr><tr><td align="center">$sign(·)$</td><td align="center"><em>符号函数，在$·\lt{0},\ = 0, \gt 0$时分别取值为-1,0,1</em></td></tr></tbody></table><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>读书</category>
-        <category>西瓜书</category>
+          
+          <category> 读书 </category>
+          
+          <category> 西瓜书 </category>
+          
       </categories>
-      <tags>
-        <tag>西瓜书</tag>
-        <tag>符号表</tag>
-        <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo+Github Pages开启你的个人博客]]></title>
-    <url>%2F2019%2F07%2F21%2Fhexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有成本低（免费）、免维护和使用方便等优点，深受大家的追捧和喜欢。 下面就让我们开启个人博客的大门吧。 提前做好的工作 Github账号; Git工具; NodeJS安装包（NodeJS官网下载对应版本的安装包）; Markdown编辑软件（非必须，作者使用Typora进行Markdown文档编辑）。 安装NodeJS 访问NodeJS官网，下载对应版本的安装包。 作者在电脑上安装了Windows平台的NodeJS，版本为v10.15.3。 安装Hexo 执行node -v和npm -v命令，正常运行则NodeJS环境正常。 打开Git Bash工具。 执行命令npm install hexo-cli -g，等待执行完成，Hexo成功安装。 开启GIthub Pages在Github上新建一个名为Git账号用户名.github.io的代码仓库，一般情况下等待10至30分钟就可以通过访问https://用户名.github.io访问到你新建的Github Pages网页。若超过30分钟检查代码仓库的名称是否正确，中间步骤是否操作正确。 本地新建博客 打开Git Bash（本文之后未提到打开的路径则默认在博客文件夹处打开并执行相关的命令）； 执行命令hexo init 博客文件夹名称； 执行命令cd 博客文件夹； 运行hexo server或者hexo s； 浏览器访问”http://127.0.0.1:4000&quot; 或者 “http://localhost:4000&quot;可以看到新建的博客。 编辑文章 新建博客：通过hexo new &quot;文章标题&quot;命令新建文章，文章路径为博客文件夹/source/_post/文章标题.md; 编辑博客： 使用MarkDown工具编辑保存，作者使用Typora进行编辑。 本地博客同步到Github Pages 打开Git Bash； 安装部署工具，运行npm install hexo-deployer-git --save,完成即已安装部署工具； 编辑博客根目录下的配置文件–”_config.yml”,修改同步配置地址; 运行hexo deploy或者hexo d即可将博客同步到Github Pages(Ps:若修改了博客内容，需要通过hexo generate或者hexo g命令重新构建博客之后运行同步命令)。 参考资料 使用hexo+github搭建免费个人博客详细教程：https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客；]]></content>
+      
+      
+        <tags>
+            
+            <tag> 西瓜书 </tag>
+            
+            <tag> 符号表 </tag>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo+Github Pages开启你的个人博客</title>
+      <link href="/2019/07/21/hexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2019/07/21/hexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有<em>成本低（免费）、免维护和使用方便</em>等优点，深受大家的追捧和喜欢。</p><p>下面就让我们开启个人博客的大门吧。</p><h5 id="提前做好的工作"><a href="#提前做好的工作" class="headerlink" title="提前做好的工作"></a>提前做好的工作</h5><ul><li>Github账号;</li><li>Git工具;</li><li>NodeJS安装包（<a href="https://nodejs.org" target="_blank" rel="noopener">NodeJS官网</a>下载对应版本的安装包）;</li><li>Markdown编辑软件（<strong><em>非必须</em></strong>，作者使用<a href="https://www.typora.io" target="_blank" rel="noopener">Typora</a>进行Markdown文档编辑）。</li></ul><h5 id="安装NodeJS"><a href="#安装NodeJS" class="headerlink" title="安装NodeJS"></a>安装NodeJS</h5><ol><li>访问NodeJS官网，下载对应版本的安装包。</li></ol><p>作者在电脑上安装了Windows平台的NodeJS，版本为<code>v10.15.3</code>。</p><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><ol><li>执行<code>node -v</code>和<code>npm -v</code>命令，正常运行则NodeJS环境正常。</li><li>打开Git Bash工具。</li><li>执行命令<code>npm install hexo-cli -g</code>，等待执行完成，Hexo成功安装。</li></ol><h5 id="开启GIthub-Pages"><a href="#开启GIthub-Pages" class="headerlink" title="开启GIthub Pages"></a>开启GIthub Pages</h5><p>在Github上新建一个名为<code>Git账号用户名.github.io</code>的代码仓库，一般情况下等待10至30分钟就可以通过访问<a href="https://用户名.github.io" target="_blank" rel="noopener">https://用户名.github.io</a>访问到你新建的Github Pages网页。若超过30分钟检查代码仓库的名称是否正确，中间步骤是否操作正确。</p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img1.jpg" alt="使用Github账户创建新的代码仓库，确保名称为&#39;用户名.github.io&#39;"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img2.jpg" alt="打开新建代码仓库的设置页面"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img3.jpg" alt="找到Github Pages设置项，选择&#39;Choose a theme&#39;"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img4.jpg" alt="选择一个主题，确认"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img5.jpg" alt="确认index.md内容，提交修改，完成Github Pages的初始化"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img6.jpg" alt="查看设置页面的Github Pages项，发现可以通过&#39;https://用户名.github.io&#39;地址访问，Github Pages成功开启"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img7.jpg" alt="访问链接后，可以看到Github Pages的效果"></p><h5 id="本地新建博客"><a href="#本地新建博客" class="headerlink" title="本地新建博客"></a>本地新建博客</h5><ol><li><p>打开Git Bash（本文之后未提到打开的路径则默认在博客文件夹处打开并执行相关的命令）；</p></li><li><p>执行命令<code>hexo init 博客文件夹名称</code>；</p></li><li><p>执行命令<code>cd 博客文件夹</code>；</p></li><li><p>运行<code>hexo server</code>或者<code>hexo s</code>；</p></li><li><p>浏览器访问”<a href="http://127.0.0.1:4000&quot;" target="_blank" rel="noopener">http://127.0.0.1:4000&quot;</a> 或者 “<a href="http://localhost:4000&quot;可以看到新建的博客。" target="_blank" rel="noopener">http://localhost:4000&quot;可以看到新建的博客。</a></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img8.jpg" alt="新建博客页面"></p></li></ol><h5 id="编辑文章"><a href="#编辑文章" class="headerlink" title="编辑文章"></a>编辑文章</h5><ol><li>新建博客：通过<code>hexo new &quot;文章标题&quot;</code>命令新建文章，文章路径为<code>博客文件夹/source/_post/文章标题.md</code>;</li><li>编辑博客： 使用MarkDown工具编辑保存，作者使用<a href="https://www.typora.io" target="_blank" rel="noopener">Typora</a>进行编辑。</li></ol><h5 id="本地博客同步到Github-Pages"><a href="#本地博客同步到Github-Pages" class="headerlink" title="本地博客同步到Github Pages"></a>本地博客同步到Github Pages</h5><ol><li><p>打开Git Bash；</p></li><li><p>安装部署工具，运行<code>npm install hexo-deployer-git --save</code>,完成即已安装部署工具；</p></li><li><p>编辑博客根目录下的配置文件–”_config.yml”,修改同步配置地址;</p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img9.jpg" alt="填入部署信息，保存配置文件"></p></li><li><p>运行<code>hexo deploy</code>或者<code>hexo d</code>即可将博客同步到Github Pages(Ps:<em>若修改了博客内容，需要通过<code>hexo generate</code>或者<code>hexo g</code>命令重新构建博客之后运行同步命令</em>)。</p></li></ol><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p>使用hexo+github搭建免费个人博客详细教程：<a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客</a>；</p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>博客</tag>
-        <tag>hexo</tag>
-        <tag>新手</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Git实现博客和主题的备份和同步]]></title>
-    <url>%2F2019%2F07%2F21%2Fgit%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E5%90%8C%E6%AD%A5%2F</url>
-    <content type="text"><![CDATA[当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，心中肯定有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。 前提条件 GitHub账号一个 Git 2.18.0 windows Hexo博客 备份与同步博客和主题 找到喜欢的主题，并在作者的Github主页fork出代码仓库，配置合适的主题，并同步上传。 在代码主页使用fork功能同步作者的代码。 使用git clone fork仓库地址获取代码,修改作者的主题代码以满足个人博客的需要，使用git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push命令同步修改到Github。 至此，完成主题代码的备份。以后可以使用git的merge功能将作者更新的代码合并，而不需要重新配置主题。 新建一个代码仓库，用于同步博客开发内容。 将博客与远程仓库建立联系。 使用git init命令将Hexo博客文件夹初始化为本地代码仓库。 使用git remote add origin 远程代码仓库地址等命令将本地代码仓库与远程代码仓库建立联系，并且同步博客内容到Github。 将主题作为博客的子模块添加到Hexo 使用git submodule add 主题远程代码仓库地址 themes/3-hexo命令使用git的子模块将博客和主题建立联系。 最后将博客的修改内容同步到Github，完成博客的备份和同步的功能。 参考资料 Hexo使用子模块来管理theme:https://xiongyingqi.com/2019/02/01/use-git-submodules 将本地仓库与远程仓库建立联系:https://blog.csdn.net/wet5649/article/details/82869831]]></content>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 新手 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git实现博客和主题的备份和同步</title>
+      <link href="/2019/07/21/git%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E5%90%8C%E6%AD%A5/"/>
+      <url>/2019/07/21/git%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E5%90%8C%E6%AD%A5/</url>
+      
+        <content type="html"><![CDATA[<p>当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，心中肯定有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。</p><h5 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h5><blockquote><p>GitHub账号一个</p><p>Git 2.18.0 windows </p><p>Hexo博客</p></blockquote><h5 id="备份与同步博客和主题"><a href="#备份与同步博客和主题" class="headerlink" title="备份与同步博客和主题"></a>备份与同步博客和主题</h5><ol><li><p>找到喜欢的主题，并在作者的Github主页fork出代码仓库，配置合适的主题，并同步上传。</p><p>  在代码主页使用fork功能同步作者的代码。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img1.jpg" alt="fork主题代码仓库"></p><p> 使用<code>git clone fork仓库地址</code>获取代码,修改作者的主题代码以满足个人博客的需要，使用<code>git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push</code>命令同步修改到Github。</p><p> 至此，完成主题代码的备份。以后可以使用git的merge功能将作者更新的代码合并，<em>而不需要重新配置主题</em>。</p></li><li><p>新建一个代码仓库，用于同步博客开发内容。</p></li><li><p>将博客与远程仓库建立联系。</p><p> 使用<code>git init</code>命令将Hexo博客文件夹初始化为本地代码仓库。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img2.jpg" alt="初始化本地代码仓库"></p><p> 使用<code>git remote add origin 远程代码仓库地址</code>等命令将本地代码仓库与远程代码仓库建立联系，并且同步博客内容到Github。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img3.jpg" alt="本地代码仓库与远程代码仓库建立联系"></p></li><li><p>将主题作为博客的子模块添加到Hexo</p><p> 使用<code>git submodule add 主题远程代码仓库地址 themes/3-hexo</code>命令使用git的子模块将博客和主题建立联系。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img4.jpg" alt="博客添加主题子模块"></p><p> 最后将博客的修改内容同步到Github，完成博客的备份和同步的功能。</p></li></ol><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p> Hexo使用子模块来管理theme:<a href="https://xiongyingqi.com/2019/02/01/use-git-submodules" target="_blank" rel="noopener">https://xiongyingqi.com/2019/02/01/use-git-submodules</a></p><p>将本地仓库与远程仓库建立联系:<a href="https://blog.csdn.net/wet5649/article/details/82869831" target="_blank" rel="noopener">https://blog.csdn.net/wet5649/article/details/82869831</a></p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>博客</tag>
-        <tag>hexo</tag>
-        <tag>备份</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[西瓜书_第一章]]></title>
-    <url>%2F2019%2F07%2F19%2F%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。 第一章 绪论主要讲解一些基础的概念性的东西。 机器学习的分类 按照学习任务划分： 分类 多分类 二分类 正类 反类 多分类 回归 按照训练数据是否有标记信息划分： 监督学习（有导师学习） 无监督学习（无导师学习） 归纳与演绎科学推理的两大基本手段：归纳、演绎 归纳:从具体事实归结出一般性规律。 演绎:从基础原理推演出具体状况。 奥卡姆剃刀奥卡姆剃刀:若有多个假设与观察的一致，则选用最简单的那个。 NFL定理”没有免费的午餐“定理：（No Free Lunch Theorem, 简称NFL定理）:无论学习算法ξα聪明或者笨拙，他们的期望性都是相同的。 因此NFL定理说明，脱离具体问题，空泛的谈论哪种学习算法更好是没有意义的。 流动推销员问题已知一个由n个城市(节点)组成的网络，任意两个城市Vi到Vj的距离为Dij(一般Dij≠Dji)，一个推销员从V1开始访问每一个城市一次且仅一次，最后返回V1。这个推销员应该如何选择线路使得行程最短？(Ps:该问题中涉及到NP问题) NP问题NP问题：指存在多项式算法能够验证的非决定性问题。 数据挖掘数据挖掘就是从海量的数据中发掘知识。数据库领域的研究为数据挖掘提供数据管理技术。而机器学习和统计学的研究为数据挖掘提供数据分析技术。 数据挖掘使得搜索引擎成为人们心有灵犀的工具，美国《新闻周刊》曾对谷歌有一句话的评论：”它使任何人离任何问题的答案间的就变得只有点击以下鼠标这么远“。 参考资料 《机器学习》作者：周志华； 参考部分网络文献资料。]]></content>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> hexo </tag>
+            
+            <tag> 备份 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>西瓜书_第一章</title>
+      <link href="/2019/07/19/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+      <url>/2019/07/19/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。</p><p>第一章 绪论主要讲解一些基础的概念性的东西。</p><h5 id="机器学习的分类"><a href="#机器学习的分类" class="headerlink" title="机器学习的分类"></a>机器学习的分类</h5><ol><li><p>按照学习任务划分：</p><ul><li>分类<ul><li>多分类<ul><li>二分类<ul><li>正类</li><li>反类</li></ul></li><li>多分类</li></ul></li></ul></li><li>回归</li></ul></li><li><p>按照训练数据是否有标记信息划分：</p><ul><li>监督学习（有导师学习）</li><li>无监督学习（无导师学习）</li></ul></li></ol><h5 id="归纳与演绎"><a href="#归纳与演绎" class="headerlink" title="归纳与演绎"></a>归纳与演绎</h5><p>科学推理的两大基本手段：归纳、演绎</p><p><em>归纳</em>:从具体事实归结出一般性规律。</p><p><em>演绎</em>:从基础原理推演出具体状况。</p><h5 id="奥卡姆剃刀"><a href="#奥卡姆剃刀" class="headerlink" title="奥卡姆剃刀"></a>奥卡姆剃刀</h5><p>奥卡姆剃刀:若有多个假设与观察的一致，则选用最简单的那个。</p><h5 id="NFL定理"><a href="#NFL定理" class="headerlink" title="NFL定理"></a>NFL定理</h5><p>”没有免费的午餐“定理：（<em>No Free Lunch Theorem, 简称NFL定理</em>）:无论学习算法ξ<sub>α</sub>聪明或者笨拙，他们的期望性都是相同的。</p><p>因此NFL定理说明，脱离具体问题，空泛的谈论哪种学习算法更好是没有意义的。</p><h5 id="流动推销员问题"><a href="#流动推销员问题" class="headerlink" title="流动推销员问题"></a>流动推销员问题</h5><p>已知一个由n个城市(节点)组成的网络，任意两个城市V<sub>i</sub>到V<sub>j</sub>的距离为D<sub>ij</sub>(<em>一般D<sub>ij</sub>≠D<sub>ji</sub></em>)，一个推销员从V<sub>1</sub>开始访问每一个城市一次且仅一次，最后返回V<sub>1</sub>。这个推销员应该如何选择线路使得行程最短？<em>(Ps:该问题中涉及到NP问题)</em></p><h5 id="NP问题"><a href="#NP问题" class="headerlink" title="NP问题"></a>NP问题</h5><p>NP问题：指存在多项式算法能够验证的非决定性问题。</p><h5 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h5><p>数据挖掘就是从海量的数据中发掘知识。数据库领域的研究为数据挖掘提供数据管理技术。而机器学习和统计学的研究为数据挖掘提供数据分析技术。</p><p>数据挖掘使得搜索引擎成为人们心有灵犀的工具，美国《新闻周刊》曾对谷歌有一句话的评论：”它使任何人离任何问题的答案间的就变得只有点击以下鼠标这么远“。</p><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p><p>参考部分网络文献资料。</p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>读书</category>
-        <category>西瓜书</category>
+          
+          <category> 读书 </category>
+          
+          <category> 西瓜书 </category>
+          
       </categories>
-      <tags>
-        <tag>西瓜书</tag>
-        <tag>读书</tag>
-        <tag>第一章</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Markdown入门]]></title>
-    <url>%2F2019%2F07%2F18%2Fmarkdown%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[Markdown源码如下: 展示的是一级标题 ============== 展示的是二级标题 ------------------------- # 这也是一级标题 ## 这是二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题 七级标题是不可能七级的 展示的是一级标题 ============== 展示的是二级标题 ------------ # 这也是一级标题 ## 这是二级标题 ### 三级标题 #### 四级标题 ##### 五级标题 ###### 六级标题 RUN flow me *斜体文本* _斜体文本_ **粗体文本** ***斜粗体文本*** ___斜粗体文本___ 分割线 --- *** ___ - - - * * * _ _ _ ~~这个是删除线~~ &lt;u&gt;这个是下划线&lt;/u&gt; 菜鸟教程[^RUNOOB]真的好用 * 第一项 + 第二项 - 第三项 1. 第一项 2. 第二项 3. 第三项 ###### 以下是列表嵌套 1. 第一项 - 第一小点 - 第二小点 2. 第二项 - 第一小点 区块 &gt; 区块引用 &gt; 菜鸟教程 &gt; 学的不仅是技术更是梦想 &gt; 最外层 &gt; &gt; 第一层 &gt; &gt; &gt; &gt; &gt; 第二层 区块中使用列表 &gt; 1. 1 &gt; 2. 2 &gt; * 第一 &gt; * 第二 * 列表中使用区块 &gt; 菜鸟教程 &gt; 学的不仅是技术更是梦想 `print()`函数 ```php &lt;?php echo &#39;RUNOOB&#39;; function test() { echo &#39;test&#39;; } ``` ```python ​import numpy as np ​from keras.models import load_model ​ ​if __name__ == &quot;__main__&quot;: ​print(123) ``` 这是一个链接[百度一下，你就知道](https://www.baidu.com) &lt;https://www.baidu.com&gt; 高级链接 **链接可以用变量代替，文档末附带变量地址** 这个链接使用1作为网址变量 [Baidu][1] 使用百度代替网址变量[百度][百度] __图片语法__ ![百度][2] ![图片 百度](https://www.baidu.com/favicon.ico&quot;百度logo&quot;) **可使用img标签指定图片宽度** &lt;img src=&quot;https://www.baidu.com/favicon.ico&quot; width=&quot;50%&quot;&gt; | 表头 | 表头| | :---: | :---:| | 单元格 | 单元格 | | 单元格 | 单元格 | [^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！ [1]: https://www.baidu.com [百度]: https://www.baidu.com [2]: https://www.baidu.com/favicon.ico Markdown展现效果如下: 展示的是一级标题展示的是二级标题这也是一级标题这是二级标题三级标题四级标题五级标题六级标题七级标题是不可能七级的 RUN flow me 斜体文本 斜体文本 粗体文本 斜粗体文本 斜粗体文本 分割线 这个是删除线 这个是下划线 菜鸟教程[^RUNOOB]真的好用 第一项 第二项 第三项 第一项 第二项 第三项 以下是列表嵌套 第一项 第一小点 第二小点 第二项 第一小点 区块 区块引用菜鸟教程学的不仅是技术更是梦想 最外层 第一层 第二层 区块中使用列表 1 2 第一 第二 列表中使用区块 菜鸟教程学的不仅是技术更是梦想 print()函数 &lt;?php echo &#39;RUNOOB&#39;; function test() { echo &#39;test&#39;; } import numpy as np from keras.models import load_model if __name__ == &quot;__main__&quot;: print(123) print(&#39;this is python language.&#39;) 这是一个链接百度一下，你就知道 https://www.baidu.com 高级链接链接可以用变量代替，文档末附带变量地址这个链接使用1作为网址变量 [Baidu][1]使用百度代替网址变量[百度][百度] 图片语法![百度][2] 可使用img标签指定图片宽度 表头 表头 单元格 单元格 单元格 单元格 [^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！[1]: https://www.baidu.com[百度]: https://www.baidu.com[2]: https://www.baidu.com/favicon.ico Ps:本文参考菜鸟教程]]></content>
+      
+      
+        <tags>
+            
+            <tag> 西瓜书 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 第一章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown入门</title>
+      <link href="/2019/07/18/markdown%E5%85%A5%E9%97%A8/"/>
+      <url>/2019/07/18/markdown%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<hr><p><strong>Markdown源码如下:</strong></p><pre><code class="markdown">展示的是一级标题==============展示的是二级标题-------------------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题七级标题是不可能七级的展示的是一级标题==============展示的是二级标题------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题RUN flow me  *斜体文本*_斜体文本_**粗体文本*****斜粗体文本***___斜粗体文本___分割线---***___- - -* * *_ _ _~~这个是删除线~~&lt;u&gt;这个是下划线&lt;/u&gt;菜鸟教程[^RUNOOB]真的好用* 第一项  + 第二项- 第三项1. 第一项2. 第二项3. 第三项###### 以下是列表嵌套1. 第一项    - 第一小点    - 第二小点2. 第二项    - 第一小点区块&gt; 区块引用&gt; 菜鸟教程&gt; 学的不仅是技术更是梦想&gt; 最外层&gt; &gt; 第一层&gt; &gt;&gt; &gt; &gt; 第二层区块中使用列表&gt; 1. 1&gt; 2. 2&gt; * 第一&gt; * 第二* 列表中使用区块    &gt; 菜鸟教程    &gt; 学的不仅是技术更是梦想`print()`函数```php    &lt;?php    echo &#39;RUNOOB&#39;;    function test() {        echo &#39;test&#39;;    }``````python​import numpy as np​from keras.models import load_model​​if __name__ == &quot;__main__&quot;:​print(123)```这是一个链接[百度一下，你就知道](https://www.baidu.com)&lt;https://www.baidu.com&gt;高级链接**链接可以用变量代替，文档末附带变量地址**这个链接使用1作为网址变量 [Baidu][1]使用百度代替网址变量[百度][百度]__图片语法__![百度][2]![图片 百度](https://www.baidu.com/favicon.ico&quot;百度logo&quot;)**可使用img标签指定图片宽度**&lt;img src=&quot;https://www.baidu.com/favicon.ico&quot; width=&quot;50%&quot;&gt;| 表头 | 表头|| :---: | :---:|| 单元格 | 单元格 || 单元格 | 单元格 |[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！[1]: https://www.baidu.com[百度]: https://www.baidu.com[2]: https://www.baidu.com/favicon.ico</code></pre><p><strong>Markdown展现效果如下:</strong></p><h1 id="展示的是一级标题"><a href="#展示的是一级标题" class="headerlink" title="展示的是一级标题"></a>展示的是一级标题</h1><h2 id="展示的是二级标题"><a href="#展示的是二级标题" class="headerlink" title="展示的是二级标题"></a>展示的是二级标题</h2><h1 id="这也是一级标题"><a href="#这也是一级标题" class="headerlink" title="这也是一级标题"></a>这也是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>七级标题是不可能七级的</p><p>RUN flow me  </p><p><em>斜体文本</em></p><p><em>斜体文本</em></p><p><strong>粗体文本</strong></p><p><strong><em>斜粗体文本</em></strong></p><p><strong><em>斜粗体文本</em></strong></p><p>分割线</p><hr><hr><hr><hr><hr><hr><p><del>这个是删除线</del></p><p><u>这个是下划线</u></p><p>菜鸟教程[^RUNOOB]真的好用</p><ul><li>第一项  </li></ul><ul><li>第二项</li></ul><ul><li>第三项</li></ul><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h6 id="以下是列表嵌套"><a href="#以下是列表嵌套" class="headerlink" title="以下是列表嵌套"></a>以下是列表嵌套</h6><ol><li>第一项<ul><li>第一小点</li><li>第二小点</li></ul></li><li>第二项<ul><li>第一小点</li></ul></li></ol><p>区块</p><blockquote><p>区块引用<br>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote><blockquote><p>最外层</p><blockquote><p>第一层</p><blockquote><p>第二层</p></blockquote></blockquote></blockquote><p>区块中使用列表</p><blockquote><ol><li>1</li><li>2</li></ol><ul><li>第一</li><li>第二</li></ul></blockquote><ul><li>列表中使用区块<blockquote><p>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote></li></ul><p><code>print()</code>函数</p><pre><code class="php+HTML">&lt;?phpecho &#39;RUNOOB&#39;;function test() {    echo &#39;test&#39;;}</code></pre><pre><code class="python">import numpy as npfrom keras.models import load_modelif __name__ == &quot;__main__&quot;:    print(123)print(&#39;this is python language.&#39;)</code></pre><p>这是一个链接<a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下，你就知道</a></p><p><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p><p>高级链接<br><strong>链接可以用变量代替，文档末附带变量地址</strong><br>这个链接使用1作为网址变量 [Baidu][1]<br>使用百度代替网址变量[百度][百度]</p><p><strong>图片语法</strong><br>![百度][2]<br><img src="https://www.baidu.com/favicon.ico" alt="图片 百度" title="log"></p><p><strong>可使用img标签指定图片宽度</strong><br><img src="https://www.baidu.com/favicon.ico" width="50%"></p><table><thead><tr><th align="center">表头</th><th align="center">表头</th></tr></thead><tbody><tr><td align="center">单元格</td><td align="center">单元格</td></tr><tr><td align="center">单元格</td><td align="center">单元格</td></tr></tbody></table><p>[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！<br>[1]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[百度]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[2]: <a href="https://www.baidu.com/favicon.ico" target="_blank" rel="noopener">https://www.baidu.com/favicon.ico</a></p><p><em>Ps:本文参考<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></em></p>]]></content>
+      
+      
       <categories>
-        <category>markdown</category>
+          
+          <category> markdown </category>
+          
       </categories>
-      <tags>
-        <tag>markdown</tag>
-        <tag>标签</tag>
-        <tag>语法</tag>
-        <tag>入门</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
+            
+            <tag> 标签 </tag>
+            
+            <tag> 语法 </tag>
+            
+            <tag> 入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
