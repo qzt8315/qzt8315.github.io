@@ -124,14 +124,6 @@
     
         
             
-            <li><div data-rel="markdown">markdown<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(2)</small></div>
                 
                     <ul class="sub hide">
@@ -141,6 +133,14 @@
                         </li>
                             
                     </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="markdown">markdown<small>(1)</small></div>
                 
             </li>
             
@@ -219,6 +219,18 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">西瓜书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">符号表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">markdown</a>
     </li>
     
@@ -232,18 +244,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">入门</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">西瓜书</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">符号表</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">读书</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -275,14 +275,14 @@
             <span class="post-date" title="2019-07-21 21:53:03">2019/07/21</span>
         </a>
         
-        <a class="markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
-            <span class="post-title" title="Markdown入门">Markdown入门</span>
-            <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
-        </a>
-        
         <a class="读书 西瓜书 " href="/2019/07/22/西瓜书-符号表/" data-tag="西瓜书,符号表,读书" data-author>
             <span class="post-title" title="西瓜书_符号表">西瓜书_符号表</span>
             <span class="post-date" title="2019-07-22 16:10:25">2019/07/22</span>
+        </a>
+        
+        <a class="markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
+            <span class="post-title" title="Markdown入门">Markdown入门</span>
+            <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
         </a>
         
         <a class="读书 西瓜书 " href="/2019/07/19/西瓜书-第一章/" data-tag="西瓜书,读书,第一章" data-author>
@@ -557,7 +557,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#markdown','#标签','#语法','#入门','#西瓜书','#符号表','#读书','#第一章',],
+            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#西瓜书','#符号表','#读书','#markdown','#标签','#语法','#入门','#第一章',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
