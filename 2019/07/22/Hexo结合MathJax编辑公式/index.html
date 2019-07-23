@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>西瓜书_第一章 | 8315的博客</title>
-  <meta name="keywords" content=" 西瓜书 , 读书 , 第一章 ">
-  <meta name="description" content="西瓜书_第一章 | 8315的博客">
+  <title>Hexo结合MathJax编辑公式 | 8315的博客</title>
+  <meta name="keywords" content=" 教程 , 博客 , hexo , 新手 , 公式编辑 ">
+  <meta name="description" content="Hexo结合MathJax编辑公式 | 8315的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="抱歉。。。您访问的网页找不到了。">
 <meta name="keywords" content="学习|技术|快乐|每一天">
@@ -302,9 +302,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-西瓜书-第一章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Hexo结合MathJax编辑公式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">西瓜书_第一章</h1>
+        <h1 class="article-title">Hexo结合MathJax编辑公式</h1>
     
     <div class="article-meta">
         
@@ -312,32 +312,34 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="读书">读书</a>/
-            
-                <a href="javascript:" data-rel="西瓜书">西瓜书</a>
+                <a href="javascript:" data-rel="hexo">hexo</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">西瓜书</a>
+            <a href="javascript:" class="color3">教程</a>
             
-            <a href="javascript:" class="color3">读书</a>
+            <a href="javascript:" class="color3">博客</a>
             
-            <a href="javascript:" class="color4">第一章</a>
+            <a href="javascript:" class="color5">hexo</a>
+            
+            <a href="javascript:" class="color3">新手</a>
+            
+            <a href="javascript:" class="color5">公式编辑</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-07-22 16:47:26">2019-07-19 21:19</time>
+        创建时间:<time class="date" title="更新时间: 2019-07-22 20:09:33">2019-07-22 17:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:52</span>
+        <span>字数:143</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -382,8 +384,32 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。</p>
-<p>第一章 绪论主要讲解一些基础的概念性的东西。</p>
+        <p>Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将<code>_内容_</code>首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号</p>
+<table>
+<thead>
+<tr>
+<th align="center">MathJax</th>
+<th align="center">Markdown</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>_</code></td>
+<td align="center"><code>\_</code></td>
+</tr>
+<tr>
+<td align="center"><code>\\</code></td>
+<td align="center"><code>\\\\</code></td>
+</tr>
+</tbody></table>
+<p>示例代码：</p>
+<pre><code>$$
+f(n) = 
+\\begin{cases}
+n\_2,  &amp; \text{if $n$ is even} \\\\
+n\_1, &amp; \text{if $n$ is odd}
+\\end{cases}
+$$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is even} \\<br>n_1, &amp; \text{if $n$ is odd}<br>\end{cases}<br>$$</p>
+<p>如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 qinzhtao@163.com </span>
@@ -397,12 +423,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>西瓜书_第一章</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">52</span></p>
+    <p><span class="copy-title">文章标题:</span>Hexo结合MathJax编辑公式</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">143</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="捌叁壹伍">捌叁壹伍</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-19, 21:19:43</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-22, 16:47:26</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/19/西瓜书-第一章/" title="西瓜书_第一章">http://qzt8315.github.io/2019/07/19/西瓜书-第一章/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-22, 17:28:42</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-22, 20:09:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/22/Hexo结合MathJax编辑公式/" title="Hexo结合MathJax编辑公式">http://qzt8315.github.io/2019/07/22/Hexo结合MathJax编辑公式/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -434,6 +460,44 @@
 
 
 
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js" value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 
     
 

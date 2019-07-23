@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo结合MathJax编辑公式]]></title>
+    <url>%2F2019%2F07%2F22%2FHexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将_内容_首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号 MathJax Markdown _ \_ \\ \\\\ 示例代码： $$ f(n) = \\begin{cases} n\_2, &amp; \text{if $n$ is even} \\\\ n\_1, &amp; \text{if $n$ is odd} \\end{cases} $$$$f(n) =\begin{cases}n_2, &amp; \text{if $n$ is even} \\n_1, &amp; \text{if $n$ is odd}\end{cases}$$ 如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>博客</tag>
+        <tag>hexo</tag>
+        <tag>新手</tag>
+        <tag>公式编辑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[西瓜书_符号表]]></title>
+    <url>%2F2019%2F07%2F22%2F%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%A6%E5%8F%B7%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[主要符号表 符号 意义 $x$ 标量 $\boldsymbol x$ 向量 x 变量集 $A$ 矩阵 $I$ 单位阵 $\chi$ 样本空间或状态空间 $D$ 概率分布 D 数据样本（数据集） $H$ 假设空间 H 假设集 $\xi$ 学习算法 $(·,·,·)$ 行向量 $(·;·;·)$ 列向量 $(·)^T$ 向量或矩阵的转置 $\{···\}$ 集合 $P(·),P(·|·)$ 概率质量函数，条件概率质量函数 $p(·),p(·|·)$ 概率密度函数，条件概率密度函数 $\mathbb{E}_{·\sim D}[f(·)]$ 函数$f(·)$对·在分布$D$下的数学期望;意义明确时将省略$D$和(或)$.$ $sup(·)$ 上确界 $\Bbb{Ⅱ}(·)$ 指示函数，在$·$为真和假时分别取值为1,0 $sign(·)$ 符号函数，在$·\lt{0},\ = 0, \gt 0$时分别取值为-1,0,1]]></content>
+      <categories>
+        <category>读书</category>
+        <category>西瓜书</category>
+      </categories>
+      <tags>
+        <tag>西瓜书</tag>
+        <tag>符号表</tag>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo+Github Pages开启你的个人博客]]></title>
     <url>%2F2019%2F07%2F21%2Fhexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有成本低（免费）、免维护和使用方便等优点，深受大家的追捧和喜欢。 下面就让我们开启个人博客的大门吧。 提前做好的工作 Github账号; Git工具; NodeJS安装包（NodeJS官网下载对应版本的安装包）; Markdown编辑软件（非必须，作者使用Typora进行Markdown文档编辑）。 安装NodeJS 访问NodeJS官网，下载对应版本的安装包。 作者在电脑上安装了Windows平台的NodeJS，版本为v10.15.3。 安装Hexo 执行node -v和npm -v命令，正常运行则NodeJS环境正常。 打开Git Bash工具。 执行命令npm install hexo-cli -g，等待执行完成，Hexo成功安装。 开启GIthub Pages在Github上新建一个名为Git账号用户名.github.io的代码仓库，一般情况下等待10至30分钟就可以通过访问https://用户名.github.io访问到你新建的Github Pages网页。若超过30分钟检查代码仓库的名称是否正确，中间步骤是否操作正确。 本地新建博客 打开Git Bash（本文之后未提到打开的路径则默认在博客文件夹处打开并执行相关的命令）； 执行命令hexo init 博客文件夹名称； 执行命令cd 博客文件夹； 运行hexo server或者hexo s； 浏览器访问”http://127.0.0.1:4000&quot; 或者 “http://localhost:4000&quot;可以看到新建的博客。 编辑文章 新建博客：通过hexo new &quot;文章标题&quot;命令新建文章，文章路径为博客文件夹/source/_post/文章标题.md; 编辑博客： 使用MarkDown工具编辑保存，作者使用Typora进行编辑。 本地博客同步到Github Pages 打开Git Bash； 安装部署工具，运行npm install hexo-deployer-git --save,完成即已安装部署工具； 编辑博客根目录下的配置文件–”_config.yml”,修改同步配置地址; 运行hexo deploy或者hexo d即可将博客同步到Github Pages(Ps:若修改了博客内容，需要通过hexo generate或者hexo g命令重新构建博客之后运行同步命令)。 参考资料 使用hexo+github搭建免费个人博客详细教程：https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客；]]></content>
@@ -31,15 +60,15 @@
   <entry>
     <title><![CDATA[西瓜书_第一章]]></title>
     <url>%2F2019%2F07%2F19%2F%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0%2F</url>
-    <content type="text"><![CDATA[西瓜书是人工智能的入门书籍。]]></content>
+    <content type="text"><![CDATA[西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。 第一章 绪论主要讲解一些基础的概念性的东西。]]></content>
       <categories>
         <category>读书</category>
         <category>西瓜书</category>
       </categories>
       <tags>
         <tag>西瓜书</tag>
-        <tag>第一章</tag>
         <tag>读书</tag>
+        <tag>第一章</tag>
       </tags>
   </entry>
   <entry>
