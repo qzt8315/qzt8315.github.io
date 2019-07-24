@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>西瓜书_第二章</title>
+      <link href="/2019/07/23/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
+      <url>/2019/07/23/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%BA%8C%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>西瓜书(<em>《机器学习》作者：周志华</em>)第二章为<em>模型评估与选择</em>，主要是讲解模型评价的指标及其概念。</p><h5 id="经验误差"><a href="#经验误差" class="headerlink" title="经验误差"></a>经验误差</h5><p><em>错误率</em>：分类错误的样本数占样本总数的比例。</p><p><em>精度</em>：1-错误率。</p><p><em>误差</em>：学习器的实际预测输出与样本真实输出之间的差异</p><p><em>训练误差</em>：学习器在训练集上的误差。</p><p><em>泛化误差</em>：学习器在新样本上的误差。</p><h5 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h5><p><em>过拟合</em>：学习器将训练样本本身的一些特点当作了所有潜在样本都会具有的一般性质，也称为过配。过拟合的原因主要是学习器学习能力过于强大。</p><p>欠拟合：学习器未将训练样本的一般性质学好，也称为欠配。欠拟合的主要原因是学习器学习能力低下。</p><h5 id="评估模型的方法"><a href="#评估模型的方法" class="headerlink" title="评估模型的方法"></a>评估模型的方法</h5><p>一般评估模型的指标包括泛化能力、时间开销、存储开销和可解释性等方面。在西瓜书中主要考虑模型的泛化能力这个指标。</p><p><em>测试集</em>：用于测试学习器对新样本的判别能力，近似于泛化误差。（我们的假设：<em>测试样本是从样本的真实分布中独立同分布的——在采样的时候也要保证独立同分布</em>）。</p><h5 id="划分测试集和训练集的方法"><a href="#划分测试集和训练集的方法" class="headerlink" title="划分测试集和训练集的方法"></a>划分测试集和训练集的方法</h5><ol><li>留出法:将数据集D划分为两个互斥的集合，分别作为训练集、测试集。注意在划分过程中尽量保持数据一致性，通常使用“分层采样”的方式划分。单次划分的结果不准确，一般采用若干次随机划分，重复实验之后取平均值作为评估结果，同时也可以得到估计结果的标准差。</li><li>交叉验证法：将数据集划分为k个大小相似的互斥子集，子集通过分层采样的方式产生，然后k-1个子集作为训练集，剩下的1个子集作为测试集，可以产生k组测试集/训练集，进行k次训练测试，最终结果为k组的平均值。交叉验证法的稳定性和保真性受k值影响较大。通常将这种方法称为k折交叉验证。同时，子集存在不同的划分方式，一般需要采取多次k折交叉验证随机划分子集，常见的为”10次10折交叉验证“。当k为样本数量时为交叉验证的特例，留一法（<em>Leave-One-Out，简称LOO</em>）。留一法往往实际被评估的模型与期望评估的用D训练出来的模型接近，但是当数据量较大时，计算的开销可能是无法接受的。</li><li>自助法(bootstrapping)：采用自助采样(bootstrapping)为基础，在数据集D基础上，使用自助采样（<em>从数据集中有放回的采样</em>），重复m次，产生m个样本的D’数据集。在数据集中某一样本是可能不被采样的，不被采样的概率为(1-1/m)<sup>m</sup>,取极限可得：  </li></ol><p>$$<br>\lim_\limits{m \to +{\infty}}(1- \frac{1}{m}) = \frac{1}{e} \approx 0.368<br>$$</p><p>自助法主要用在数据集较小，难以划分训练/测试集时有用，产生的多个数据集也对集成学习有好处，但是由于自助法改变了初始数据的分布，可能会引入估计偏差。</p><h5 id="机器学习参数"><a href="#机器学习参数" class="headerlink" title="机器学习参数"></a>机器学习参数</h5><p>机器学习涉及两类参数:算法的参数(<em>也称作超参数,,数量较少</em>)和模型的参数(<em>数量可能较多</em>)。</p><p>需要注意,通常将学得模型在实际应用中可能遇到的数据称为测试数据，而训练过程中评估测试模型的数据称为验证集。</p><h5 id="模型训练度量"><a href="#模型训练度量" class="headerlink" title="模型训练度量"></a>模型训练度量</h5><ol><li>均方误差(<em>mean squared error</em>)：</li></ol><p>$$<br>E(f;D)=\frac{1}{m}\sum_{i=1}^{m}(f(x_i)-y_i)^2<br>$$</p><p>对于更一般的数据分布$\mit D$和概率密度函数$p(·)$，均方误差可表示为：</p><p>$$<br>E(f;\mit D)=\int_{x \sim \mit D}(f(x)-y)^2p(x)dx<br>$$</p><ol start="2"><li>错误率：</li></ol><p>$$<br>E(f;D) = \frac{1}{m}\sum_{i=1}^m Ⅱ(f(x_i)\neq y_i)<br>$$</p><p>对于一般情况，数据分布$D$和概率密度函数$p(·)$，错误率为：<br>$$<br>E(f;D)=\int_{x\sim D}Ⅱ(x \neq y)p(x)dx<br>$$</p><ol start="3"><li>精度：</li></ol><p>$$<br>acc(f;D)=\frac{1}{m}\sum_{i=1}^m Ⅱ(f(x_i)= y_i)\\<br>=1-E(f;D)<br>$$</p><p>对于一般情况，数据分布$D$和概率密度函数$p(·)$，精度为：<br>$$<br>acc(f;D)=\int_{x\sim D}Ⅱ(f(x)=y)p(x)dx\\<br>=1-E(f;D)<br>$$</p><h5 id="查准率、查全率和F1"><a href="#查准率、查全率和F1" class="headerlink" title="查准率、查全率和F1"></a>查准率、查全率和F1</h5><p>对于二分类问题，样本根据真实类别和学习器预测类别分为真正例(true positive,TP)、假正例(false positive,FP)、真反例(true negative,TN)和假反例(false negative,FN)。以下为分类结果混淆矩阵：</p><style type="text/css">.tg  {border-collapse:collapse;border-spacing:0;}.tg td{padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}.tg th{font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}.tg .tg-s268{text-align:left}</style><table class="tg">  <tr>    <th class="tg-s268" rowspan="2">真实情况</th>    <th class="tg-s268" colspan="2">预测结果</th>  </tr>  <tr>    <td class="tg-s268">正例</td>    <td class="tg-s268">反例</td>  </tr>  <tr>    <td class="tg-s268">正例</td>    <td class="tg-s268">TP</td>    <td class="tg-s268">FN</td>  </tr>  <tr>    <td class="tg-s268">反例</td>    <td class="tg-s268">FP</td>    <td class="tg-s268">TN</td>  </tr></table><p>查准率P:<br>$$<br>P=\frac{TP}{TP+FP}<br>$$<br>查全率R:<br>$$<br>R=\frac{TP}{TP+FN}<br>$$<br>P-R曲线:查准率-查全率曲线</p><p><img src="/2019/07/23/西瓜书-第二章/img1.jpg" alt="查全率-查全率曲线示意图"></p><p>当一条P-R曲线B包住另外一条曲线C时，说明B曲线的模型性能较另外一个C模型好，当如A，B两条曲线时，比较其平衡点(BEP,查准率=查全率)，A的平衡点值较大，说明A的性能较好。除了BEP之外，还常用F1度量：<br>$$<br>F1=\frac{2×P×R}{P+R}=\frac{2×TP}{样例总数+TP-TN}<br>$$<br>实际上F1是查全率和查准率的调和平均:<br>$$<br>\frac{1}{F1}=\frac{1}{2}·(\frac{1}{P}+\frac{1}{R})<br>$$<br>F1度量更一般的F<sub>β</sub>度量:<br>$$<br>F_\beta=\frac{(1+\beta^2)×P×R}{(\beta^2×P)+R}<br>$$<br>实际上F<sub>β</sub>是查全率和查准率的加权调和平均:<br>$$<br>\frac{1}{F_\beta} = \frac{1}{1+β^2}·(\frac{1}{P}+\frac{β^2}{R})<br>$$<br>F<sub>β</sub>中当β&gt;0时度量查全率对查准率的相对重要性，β=1时为F1。β&gt;1时，查全率有更大影响；β&lt;1时，查准率有更大影响。</p><p>当有多个结果混淆矩阵时，可以先计算各自的查准率和查全率，再计算平均值得到”宏查全率”(macro-R)、”宏查准率”(macro-P)以及”宏F1”(macro-F1):<br>$$<br>macro\text{-}R = \frac{1}{n}\sum_{i=1}^{n}R_i\\<br>macro\text{-}P = \frac{1}{n}\sum_{i=1}^{n}P_i\\<br>macro\text{-}F1 = \frac{2×macro\text{-}P×macro\text{-}R}{macro\text{-}P+macro\text{-}R}<br>$$</p><p>也可以将混淆矩阵先平均再计算平均值，$\overline{TP}$、$\overline{FP}$、$\overline{TN}$、$\overline{FN}$，计算出”微查全率”(micro-R)、”微查准率”(micro-P)以及”微F1”(micro-F1):<br>$$<br>micro\text-R=\frac{\overline{TP}}{\overline{TP}+\overline{FN}}\\<br>micro\text-P=\frac{\overline{TP}}{\overline{TP}+\overline{FP}}\\<br>micro\text-F1=\frac{2×micro\text{-}P×micro\text{-}R}{micro\text{-}P+micro\text{-}R}<br>$$</p><h5 id="ROC和AUC"><a href="#ROC和AUC" class="headerlink" title="ROC和AUC"></a>ROC和AUC</h5>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+          <category> 西瓜书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 西瓜书 </tag>
+            
+            <tag> 读书 </tag>
+            
+            <tag> 第二章 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo结合MathJax编辑公式</title>
       <link href="/2019/07/22/Hexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F/"/>
       <url>/2019/07/22/Hexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F/</url>
