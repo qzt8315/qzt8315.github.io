@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>8315的博客</title>
+  
+  <subtitle>每天就是发现困难，克服困难</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://qzt8315.github.io/"/>
+  <updated>2019-07-24T12:35:31.147Z</updated>
+  <id>http://qzt8315.github.io/</id>
+  
+  <author>
+    <name>捌叁壹伍</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>西瓜书_第二章</title>
+    <link href="http://qzt8315.github.io/2019/07/23/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
+    <id>http://qzt8315.github.io/2019/07/23/西瓜书-第二章/</id>
+    <published>2019-07-23T08:26:23.000Z</published>
+    <updated>2019-07-24T12:35:31.147Z</updated>
+    
+    <content type="html"><![CDATA[<p>西瓜书(<em>《机器学习》作者：周志华</em>)第二章为<em>模型评估与选择</em>，主要是讲解模型评价的指标及其概念。</p><h5 id="经验误差"><a href="#经验误差" class="headerlink" title="经验误差"></a>经验误差</h5><p><em>错误率</em>：分类错误的样本数占样本总数的比例。</p><p><em>精度</em>：1-错误率。</p><p><em>误差</em>：学习器的实际预测输出与样本真实输出之间的差异</p><p><em>训练误差</em>：学习器在训练集上的误差。</p><p><em>泛化误差</em>：学习器在新样本上的误差。</p><h5 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h5><p><em>过拟合</em>：学习器将训练样本本身的一些特点当作了所有潜在样本都会具有的一般性质，也称为过配。过拟合的原因主要是学习器学习能力过于强大。</p><p>欠拟合：学习器未将训练样本的一般性质学好，也称为欠配。欠拟合的主要原因是学习器学习能力低下。</p><h5 id="评估模型的方法"><a href="#评估模型的方法" class="headerlink" title="评估模型的方法"></a>评估模型的方法</h5><p>一般评估模型的指标包括泛化能力、时间开销、存储开销和可解释性等方面。在西瓜书中主要考虑模型的泛化能力这个指标。</p><p><em>测试集</em>：用于测试学习器对新样本的判别能力，近似于泛化误差。（我们的假设：<em>测试样本是从样本的真实分布中独立同分布的——在采样的时候也要保证独立同分布</em>）。</p><h5 id="划分测试集和训练集的方法"><a href="#划分测试集和训练集的方法" class="headerlink" title="划分测试集和训练集的方法"></a>划分测试集和训练集的方法</h5><ol><li>留出法:将数据集D划分为两个互斥的集合，分别作为训练集、测试集。注意在划分过程中尽量保持数据一致性，通常使用“分层采样”的方式划分。单次划分的结果不准确，一般采用若干次随机划分，重复实验之后取平均值作为评估结果，同时也可以得到估计结果的标准差。</li><li>交叉验证法：将数据集划分为k个大小相似的互斥子集，子集通过分层采样的方式产生，然后k-1个子集作为训练集，剩下的1个子集作为测试集，可以产生k组测试集/训练集，进行k次训练测试，最终结果为k组的平均值。交叉验证法的稳定性和保真性受k值影响较大。通常将这种方法称为k折交叉验证。同时，子集存在不同的划分方式，一般需要采取多次k折交叉验证随机划分子集，常见的为”10次10折交叉验证“。当k为样本数量时为交叉验证的特例，留一法（<em>Leave-One-Out，简称LOO</em>）。留一法往往实际被评估的模型与期望评估的用D训练出来的模型接近，但是当数据量较大时，计算的开销可能是无法接受的。</li><li>自助法(bootstrapping)：采用自助采样(bootstrapping)为基础，在数据集D基础上，使用自助采样（<em>从数据集中有放回的采样</em>），重复m次，产生m个样本的D’数据集。在数据集中某一样本是可能不被采样的，不被采样的概率为(1-1/m)<sup>m</sup>,取极限可得：<br>$$<br>\lim_\limits{m \to +{\infty}}(1- \frac{1}{m}) = \frac{1}{e} \approx 0.368<br>$$<br>自助法主要用在数据集较小，难以划分训练/测试集时有用，产生的多个数据集也对集成学习有好处，但是由于自助法改变了初始数据的分布，可能会引入估计偏差。</li></ol><h5 id="机器学习参数"><a href="#机器学习参数" class="headerlink" title="机器学习参数"></a>机器学习参数</h5><p>机器学习涉及两类参数:算法的参数(<em>也称作超参数,,数量较少</em>)和模型的参数(<em>数量可能较多</em>)。</p><p>需要注意,通常将学得模型在实际应用中可能遇到的数据称为测试数据，而训练过程中评估测试模型的数据称为验证集。</p><h5 id="模型训练度量"><a href="#模型训练度量" class="headerlink" title="模型训练度量"></a>模型训练度量</h5><ol><li><p>均方误差(<em>mean squared error</em>)：<br>$$<br>E(f;D)=\frac{1}{m}\sum_{i=1}^{m}(f(x_i)-y_i)^2<br>$$<br>对于更一般的数据分布$\mit D$和概率密度函数$p(·)$，均方误差可表示为：<br>$$<br>E(f;\mit D)=\int_{x \sim \mit D}(f(x)-y)^2p(x)dx<br>$$</p></li><li><p>错误率：<br>$$<br>E(f;D) = \frac{1}{m}\sum_{i=1}^m Ⅱ(f(x_i)\neq y_i)<br>$$<br>对于一般情况，数据分布$D$和概率密度函数$p(·)$，错误率为：<br>$$<br>E(f;D)=\int_{x\sim D}Ⅱ(x \neq y)p(x)dx<br>$$</p></li><li><p>精度：<br>$$<br>acc(f;D)=\frac{1}{m}\sum_{i=1}^m Ⅱ(f(x_i)= y_i)\\<br>=1-E(f;D)<br>$$<br>对于一般情况，数据分布$D$和概率密度函数$p(·)$，精度为：<br>$$<br>acc(f;D)=\int_{x\sim D}Ⅱ(f(x)=y)p(x)dx\\<br>=1-E(f;D)<br>$$</p></li></ol><h5 id="查准率、查全率和F1"><a href="#查准率、查全率和F1" class="headerlink" title="查准率、查全率和F1"></a>查准率、查全率和F1</h5><p>对于二分类问题，样本根据真实类别和学习器预测类别分为真正例(true positive,TP)、假正例(false positive,FP)、真反例(true negative,TN)和假反例(false negative,FN)。以下为分类结果混淆矩阵：</p><table>  <tr>    <th rowspan="2">真实情况</th>    <th colspan="2">预测结果</th>  </tr>  <tr>    <td>正例</td>    <td>反例</td>  </tr>  <tr>    <td>正例</td>    <td>TP</td>    <td>FN</td>  </tr>  <tr>    <td>反例</td>    <td>FP</td>    <td>TN</td>  </tr></table><p>查准率P:<br>$$<br>P=\frac{TP}{TP+FP}<br>$$<br>查全率R:<br>$$<br>R=\frac{TP}{TP+FN}<br>$$<br>P-R曲线:查准率-查全率曲线</p><p><img src="/2019/07/23/西瓜书-第二章/img1.jpg" alt="查全率-查全率曲线示意图"></p><p>当一条P-R曲线B包住另外一条曲线C时，说明B曲线的模型性能较另外一个C模型好，当如A，B两条曲线时，比较其平衡点(BEP,查准率=查全率)，A的平衡点值较大，说明A的性能较好。除了BEP之外，还常用F1度量：<br>$$<br>F1=\frac{2×P×R}{P+R}=\frac{2×TP}{样例总数+TP-TN}<br>$$<br>实际上F1是查全率和查准率的调和平均:<br>$$<br>\frac{1}{F1}=\frac{1}{2}·(\frac{1}{P}+\frac{1}{R})<br>$$<br>F1度量更一般的F<sub>β</sub>度量:<br>$$<br>F_\beta=\frac{(1+\beta^2)×P×R}{(\beta^2×P)+R}<br>$$<br>实际上F<sub>β</sub>是查全率和查准率的加权调和平均:<br>$$<br>\frac{1}{F_\beta} = \frac{1}{1+β^2}·(\frac{1}{P}+\frac{β^2}{R})<br>$$<br>F<sub>β</sub>中当β&gt;0时度量查全率对查准率的相对重要性，β=1时为F1。β&gt;1时，查全率有更大影响；β&lt;1时，查准率有更大影响。</p><p>当有多个结果混淆矩阵时，可以先计算各自的查准率和查全率，再计算平均值得到”宏查全率”(macro-R)、”宏查准率”(macro-P)以及”宏F1”(macro-F1):<br>$$<br>macro\text{-}R = \frac{1}{n}\sum_{i=1}^{n}R_i\\<br>macro\text{-}P = \frac{1}{n}\sum_{i=1}^{n}P_i\\<br>macro\text{-}F1 = \frac{2×macro\text{-}P×macro\text{-}R}{macro\text{-}P+macro\text{-}R}<br>$$</p><p>也可以将混淆矩阵先平均再计算平均值，$\overline{TP}$、$\overline{FP}$、$\overline{TN}$、$\overline{FN}$，计算出”微查全率”(micro-R)、”微查准率”(micro-P)以及”微F1”(micro-F1):<br>$$<br>micro\text-R=\frac{\overline{TP}}{\overline{TP}+\overline{FN}}\\<br>micro\text-P=\frac{\overline{TP}}{\overline{TP}+\overline{FP}}\\<br>micro\text-F1=\frac{2×micro\text{-}P×micro\text{-}R}{micro\text{-}P+micro\text{-}R}<br>$$</p><h5 id="ROC和AUC"><a href="#ROC和AUC" class="headerlink" title="ROC和AUC"></a>ROC和AUC</h5><p>ROC(Receiver Operating Characteristic)：“受试者工作特征”曲线。ROC曲线图的纵轴为”真正例率”(True Positive Rate,TPR),横轴为”假正例率”(False Positive Rate,FPR),定义如下:<br>$$<br>TPR=\frac{TP}{TP+FN}\\<br>FPR=\frac{FP}{TN+FP}<br>$$<br>当ROC的曲线被包住时，说明后者的性能较好。当交叉时，由AUC(Area Under ROC Curve，ROC曲线下面积)决定。当ROC曲线由点{(x<sub>1</sub>,y<sub>1</sub>),(x<sub>2</sub>,y<sub>2</sub>),…,(x<sub>m</sub>,y<sub>m</sub>)}形成时，AUC为:<br>$$<br>AUC=\frac{1}{2}\sum_{i=1}^{m-1}(x_{i+1}-x_i)·(y_i+y_{i+1})<br>$$</p><h5 id="代价敏感错误与代价曲线"><a href="#代价敏感错误与代价曲线" class="headerlink" title="代价敏感错误与代价曲线"></a>代价敏感错误与代价曲线</h5><p>非均等代价（unequal cost）:为权衡不同类型错误所造成的不同损失。<br>在二分类任务中，可以设定”代价矩阵”(cost matrix)</p><table>  <tr>    <th rowspan="2">真实类别</th>    <th colspan="2">预测类别</th>  </tr>  <tr>    <td>第0类</td>    <td>第1类</td>  </tr>  <tr>    <td>第0类</td>    <td>0</td>    <td>cost<sub>01</sub></td>  </tr>  <tr>    <td>第1类</td>    <td>cost<sub>10</sub></td>    <td>0</td>  </tr></table><p><em>Ps:</em>一般情况下，重要的是代价的比值而不是绝对值，cost<sub>01</sub>=100,cost<sub>10</sub>=50与cost<sub>01</sub>=2,cost<sub>10</sub>=1效果是等价的。</p><p>“代价敏感”(cost-sensitive)错误率为：<br>$$<br>E(f;D;cost)=\frac{1}{m}(\sum_{x_i\in D^+}Ⅱ(f(x_i)\neq y_i)×cost_{01}+\sum_{x_i\in D^-}Ⅱ(f(x_i)\neq y_i)×cost_{10})<br>$$<br>在非均等代价之下，ROC不能准确表示总体代价，需要以”代价曲线”(cost curve)衡量总体代价。代价曲线的横轴是取值为[0,1]的正概率代价：<br>$$<br>P(+)cost=\frac{p×cost_{01}}{p×cost_{01}+(1-p)×cost_{10}}<br>$$<br>其中p是样例为正类的概率；纵轴为取值[0,1]的归一化代价<br>$$<br>cost_{norm}=\frac{FNR×p×cost_{01}+FPR×(1-p)×cost_{10}}{p×cost_{01}+(1-p)×cost_{10}}<br>$$<br>总体代价为围成的面积，代价曲线如下:</p><p><img src="/2019/07/23/西瓜书-第二章/img2.jpg" alt="代价曲线与期望总体代价"></p><p>规范化(normalization):将不同变化范围的值映射到相同的固定范围中，常见的为[0,1]，此时称为”归一化”。</p><h5 id="比较检验"><a href="#比较检验" class="headerlink" title="比较检验"></a>比较检验</h5><p>在现实中，我们使用测试误差$\hat{\epsilon}$假设为模型的泛化误差$\epsilon$。因此，泛化误差为$\epsilon$的模型测得测试误差为$\hat\epsilon$的概率为:<br>$$<br>P(\hat\epsilon;\epsilon)={m \choose \hat\epsilon×m}\epsilon^{\hat\epsilon×m}(1-\epsilon)^{m-\hat\epsilon×m}<br>$$<br><em>以下内容为略读</em></p><p>交叉验证t检验：</p><p>McNemar检验:</p><p>Friedman检验和Nemenyi后续检验:</p><h5 id="偏置和方差-略"><a href="#偏置和方差-略" class="headerlink" title="偏置和方差(略)"></a>偏置和方差(略)</h5><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;西瓜书(&lt;em&gt;《机器学习》作者：周志华&lt;/em&gt;)第二章为&lt;em&gt;模型评估与选择&lt;/em&gt;，主要是讲解模型评价的指标及其概念。&lt;/p&gt;
+&lt;h5 id=&quot;经验误差&quot;&gt;&lt;a href=&quot;#经验误差&quot; class=&quot;headerlink&quot; title=&quot;经验误差&quot;&gt;&lt;/a&gt;经验
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="第二章" scheme="http://qzt8315.github.io/tags/%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo结合MathJax编辑公式</title>
+    <link href="http://qzt8315.github.io/2019/07/22/Hexo%E7%BB%93%E5%90%88MathJax%E7%BC%96%E8%BE%91%E5%85%AC%E5%BC%8F/"/>
+    <id>http://qzt8315.github.io/2019/07/22/Hexo结合MathJax编辑公式/</id>
+    <published>2019-07-22T09:28:42.000Z</published>
+    <updated>2019-07-25T08:45:29.865Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将<code>_内容_</code>首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号</p><table><thead><tr><th align="center">MathJax</th><th align="center">Markdown</th></tr></thead><tbody><tr><td align="center"><code>_</code></td><td align="center"><code>\_</code></td></tr><tr><td align="center"><code>\\</code></td><td align="center"><code>\\\\</code></td></tr></tbody></table><p>示例代码：</p><pre><code>$$f(n) = \\begin{cases}n\_2,  &amp; \text{if $n$ is even} \\\\n\_1, &amp; \text{if $n$ is odd}\\end{cases}$$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is even} \\<br>n_1, &amp; \text{if $n$ is odd}<br>\end{cases}<br>$$</p><p>如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将&lt;code&gt;_内容_&lt;/code&gt;首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/hexo/"/>
+    
+    
+      <category term="教程" scheme="http://qzt8315.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="博客" scheme="http://qzt8315.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/tags/hexo/"/>
+    
+      <category term="新手" scheme="http://qzt8315.github.io/tags/%E6%96%B0%E6%89%8B/"/>
+    
+      <category term="公式编辑" scheme="http://qzt8315.github.io/tags/%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>西瓜书_符号表</title>
+    <link href="http://qzt8315.github.io/2019/07/22/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%A6%E5%8F%B7%E8%A1%A8/"/>
+    <id>http://qzt8315.github.io/2019/07/22/西瓜书-符号表/</id>
+    <published>2019-07-22T08:10:25.000Z</published>
+    <updated>2019-07-24T06:21:31.221Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="主要符号表"><a href="#主要符号表" class="headerlink" title="主要符号表"></a>主要符号表</h5><table><thead><tr><th align="center">符号</th><th align="center">意义</th></tr></thead><tbody><tr><td align="center">$x$</td><td align="center"><em>标量</em></td></tr><tr><td align="center">$\boldsymbol x$</td><td align="center"><em>向量</em></td></tr><tr><td align="center">x</td><td align="center"><em>变量集</em></td></tr><tr><td align="center">$A$</td><td align="center"><em>矩阵</em></td></tr><tr><td align="center">$I$</td><td align="center"><em>单位阵</em></td></tr><tr><td align="center">$\chi$</td><td align="center"><em>样本空间或状态空间</em></td></tr><tr><td align="center">$D$</td><td align="center"><em>概率分布</em></td></tr><tr><td align="center">D</td><td align="center"><em>数据样本（数据集）</em></td></tr><tr><td align="center">$H$</td><td align="center"><em>假设空间</em></td></tr><tr><td align="center">H</td><td align="center"><em>假设集</em></td></tr><tr><td align="center">$\xi$</td><td align="center"><em>学习算法</em></td></tr><tr><td align="center">$(·,·,·)$</td><td align="center"><em>行向量</em></td></tr><tr><td align="center">$(·;·;·)$</td><td align="center"><em>列向量</em></td></tr><tr><td align="center">$(·)^T$</td><td align="center"><em>向量或矩阵的转置</em></td></tr><tr><td align="center">$\{···\}$</td><td align="center"><em>集合</em></td></tr><tr><td align="center">$P(·),P(·|·)$</td><td align="center"><em>概率质量函数，条件概率质量函数</em></td></tr><tr><td align="center">$p(·),p(·|·)$</td><td align="center"><em>概率密度函数，条件概率密度函数</em></td></tr><tr><td align="center">$\mathbb{E}_{·\sim D}[f(·)]$</td><td align="center"><em>函数$f(·)$对·在分布$D$下的数学期望;意义明确时将省略$D$和(或)$.$</em></td></tr><tr><td align="center">$sup(·)$</td><td align="center"><em>上确界</em></td></tr><tr><td align="center">$\Bbb{Ⅱ}(·)$</td><td align="center"><em>指示函数，在$·$为真和假时分别取值为1,0</em></td></tr><tr><td align="center">$sign(·)$</td><td align="center"><em>符号函数，在$·\lt{0},\ = 0, \gt 0$时分别取值为-1,0,1</em></td></tr></tbody></table><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;主要符号表&quot;&gt;&lt;a href=&quot;#主要符号表&quot; class=&quot;headerlink&quot; title=&quot;主要符号表&quot;&gt;&lt;/a&gt;主要符号表&lt;/h5&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;符号&lt;/th&gt;
+&lt;th align=&quot;ce
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+      <category term="符号表" scheme="http://qzt8315.github.io/tags/%E7%AC%A6%E5%8F%B7%E8%A1%A8/"/>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo+Github Pages开启你的个人博客</title>
+    <link href="http://qzt8315.github.io/2019/07/21/hexo-github-pages%E5%BC%80%E5%90%AF%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://qzt8315.github.io/2019/07/21/hexo-github-pages开启你的个人博客/</id>
+    <published>2019-07-21T13:53:03.000Z</published>
+    <updated>2019-07-25T08:45:21.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有<em>成本低（免费）、免维护和使用方便</em>等优点，深受大家的追捧和喜欢。</p><p>下面就让我们开启个人博客的大门吧。</p><h5 id="提前做好的工作"><a href="#提前做好的工作" class="headerlink" title="提前做好的工作"></a>提前做好的工作</h5><ul><li>Github账号;</li><li>Git工具;</li><li>NodeJS安装包（<a href="https://nodejs.org" target="_blank" rel="noopener">NodeJS官网</a>下载对应版本的安装包）;</li><li>Markdown编辑软件（<strong><em>非必须</em></strong>，作者使用<a href="https://www.typora.io" target="_blank" rel="noopener">Typora</a>进行Markdown文档编辑）。</li></ul><h5 id="安装NodeJS"><a href="#安装NodeJS" class="headerlink" title="安装NodeJS"></a>安装NodeJS</h5><ol><li>访问NodeJS官网，下载对应版本的安装包。</li></ol><p>作者在电脑上安装了Windows平台的NodeJS，版本为<code>v10.15.3</code>。</p><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><ol><li>执行<code>node -v</code>和<code>npm -v</code>命令，正常运行则NodeJS环境正常。</li><li>打开Git Bash工具。</li><li>执行命令<code>npm install hexo-cli -g</code>，等待执行完成，Hexo成功安装。</li></ol><h5 id="开启GIthub-Pages"><a href="#开启GIthub-Pages" class="headerlink" title="开启GIthub Pages"></a>开启GIthub Pages</h5><p>在Github上新建一个名为<code>Git账号用户名.github.io</code>的代码仓库，一般情况下等待10至30分钟就可以通过访问<a href="https://用户名.github.io" target="_blank" rel="noopener">https://用户名.github.io</a>访问到你新建的Github Pages网页。若超过30分钟检查代码仓库的名称是否正确，中间步骤是否操作正确。</p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img1.jpg" alt="使用Github账户创建新的代码仓库，确保名称为&#39;用户名.github.io&#39;"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img2.jpg" alt="打开新建代码仓库的设置页面"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img3.jpg" alt="找到Github Pages设置项，选择&#39;Choose a theme&#39;"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img4.jpg" alt="选择一个主题，确认"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img5.jpg" alt="确认index.md内容，提交修改，完成Github Pages的初始化"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img6.jpg" alt="查看设置页面的Github Pages项，发现可以通过&#39;https://用户名.github.io&#39;地址访问，Github Pages成功开启"></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img7.jpg" alt="访问链接后，可以看到Github Pages的效果"></p><h5 id="本地新建博客"><a href="#本地新建博客" class="headerlink" title="本地新建博客"></a>本地新建博客</h5><ol><li><p>打开Git Bash（本文之后未提到打开的路径则默认在博客文件夹处打开并执行相关的命令）；</p></li><li><p>执行命令<code>hexo init 博客文件夹名称</code>；</p></li><li><p>执行命令<code>cd 博客文件夹</code>；</p></li><li><p>运行<code>hexo server</code>或者<code>hexo s</code>；</p></li><li><p>浏览器访问”<a href="http://127.0.0.1:4000&quot;" target="_blank" rel="noopener">http://127.0.0.1:4000&quot;</a> 或者 “<a href="http://localhost:4000&quot;可以看到新建的博客。" target="_blank" rel="noopener">http://localhost:4000&quot;可以看到新建的博客。</a></p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img8.jpg" alt="新建博客页面"></p></li></ol><h5 id="编辑文章"><a href="#编辑文章" class="headerlink" title="编辑文章"></a>编辑文章</h5><ol><li>新建博客：通过<code>hexo new &quot;文章标题&quot;</code>命令新建文章，文章路径为<code>博客文件夹/source/_post/文章标题.md</code>;</li><li>编辑博客： 使用MarkDown工具编辑保存，作者使用<a href="https://www.typora.io" target="_blank" rel="noopener">Typora</a>进行编辑。</li></ol><h5 id="本地博客同步到Github-Pages"><a href="#本地博客同步到Github-Pages" class="headerlink" title="本地博客同步到Github Pages"></a>本地博客同步到Github Pages</h5><ol><li><p>打开Git Bash；</p></li><li><p>安装部署工具，运行<code>npm install hexo-deployer-git --save</code>,完成即已安装部署工具；</p></li><li><p>编辑博客根目录下的配置文件–”_config.yml”,修改同步配置地址;</p><p><img src="/2019/07/21/hexo-github-pages开启你的个人博客/img9.jpg" alt="填入部署信息，保存配置文件"></p></li><li><p>运行<code>hexo deploy</code>或者<code>hexo d</code>即可将博客同步到Github Pages(Ps:<em>若修改了博客内容，需要通过<code>hexo generate</code>或者<code>hexo g</code>命令重新构建博客之后运行同步命令</em>)。</p></li></ol><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p>使用hexo+github搭建免费个人博客详细教程：<a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客" target="_blank" rel="noopener">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#搭建github博客</a>；</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;作为一名技术肥宅，记录下辛辛苦苦捣鼓一天的成果，具有重要的意义。博客，就是这样一个记录下肥宅们修炼过程的工具。根据初级肥宅们的实际情况，提出Hexo+Github Pages的博客方案，具有&lt;em&gt;成本低（免费）、免维护和使用方便&lt;/em&gt;等优点，深受大家的追捧和喜欢。&lt;/
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/hexo/"/>
+    
+    
+      <category term="教程" scheme="http://qzt8315.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="博客" scheme="http://qzt8315.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/tags/hexo/"/>
+    
+      <category term="新手" scheme="http://qzt8315.github.io/tags/%E6%96%B0%E6%89%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git实现博客和主题的备份和同步</title>
+    <link href="http://qzt8315.github.io/2019/07/21/git%E5%AE%9E%E7%8E%B0%E5%8D%9A%E5%AE%A2%E5%92%8C%E4%B8%BB%E9%A2%98%E7%9A%84%E5%A4%87%E4%BB%BD%E5%92%8C%E5%90%8C%E6%AD%A5/"/>
+    <id>http://qzt8315.github.io/2019/07/21/git实现博客和主题的备份和同步/</id>
+    <published>2019-07-21T04:32:49.000Z</published>
+    <updated>2019-07-25T08:45:12.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，心中肯定有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。</p><h5 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h5><blockquote><p>GitHub账号一个</p><p>Git 2.18.0 windows </p><p>Hexo博客</p></blockquote><h5 id="备份与同步博客和主题"><a href="#备份与同步博客和主题" class="headerlink" title="备份与同步博客和主题"></a>备份与同步博客和主题</h5><ol><li><p>找到喜欢的主题，并在作者的Github主页fork出代码仓库，配置合适的主题，并同步上传。</p><p>  在代码主页使用fork功能同步作者的代码。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img1.jpg" alt="fork主题代码仓库"></p><p> 使用<code>git clone fork仓库地址</code>获取代码,修改作者的主题代码以满足个人博客的需要，使用<code>git add . &amp;&amp; git commit -m &quot;update&quot; &amp;&amp; git push</code>命令同步修改到Github。</p><p> 至此，完成主题代码的备份。以后可以使用git的merge功能将作者更新的代码合并，<em>而不需要重新配置主题</em>。</p></li><li><p>新建一个代码仓库，用于同步博客开发内容。</p></li><li><p>将博客与远程仓库建立联系。</p><p> 使用<code>git init</code>命令将Hexo博客文件夹初始化为本地代码仓库。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img2.jpg" alt="初始化本地代码仓库"></p><p> 使用<code>git remote add origin 远程代码仓库地址</code>等命令将本地代码仓库与远程代码仓库建立联系，并且同步博客内容到Github。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img3.jpg" alt="本地代码仓库与远程代码仓库建立联系"></p></li><li><p>将主题作为博客的子模块添加到Hexo</p><p> 使用<code>git submodule add 主题远程代码仓库地址 themes/3-hexo</code>命令使用git的子模块将博客和主题建立联系。</p><p> <img src="/2019/07/21/git实现博客和主题的备份和同步/img4.jpg" alt="博客添加主题子模块"></p><p> 最后将博客的修改内容同步到Github，完成博客的备份和同步的功能。</p></li></ol><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p> Hexo使用子模块来管理theme:<a href="https://xiongyingqi.com/2019/02/01/use-git-submodules" target="_blank" rel="noopener">https://xiongyingqi.com/2019/02/01/use-git-submodules</a></p><p>将本地仓库与远程仓库建立联系:<a href="https://blog.csdn.net/wet5649/article/details/82869831" target="_blank" rel="noopener">https://blog.csdn.net/wet5649/article/details/82869831</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;当各位小伙伴们通过Github 或者其他方式开通了个人的博客的时候，心中肯定有个问题：如何保证我们辛辛苦苦写的博客的安全以及不同设备上的同步。本文通过使用GitHub实现博客和主题的备份和同步。&lt;/p&gt;
+&lt;h5 id=&quot;前提条件&quot;&gt;&lt;a href=&quot;#前提条件&quot; class
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/hexo/"/>
+    
+    
+      <category term="教程" scheme="http://qzt8315.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="博客" scheme="http://qzt8315.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="hexo" scheme="http://qzt8315.github.io/tags/hexo/"/>
+    
+      <category term="备份" scheme="http://qzt8315.github.io/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>西瓜书_第一章</title>
+    <link href="http://qzt8315.github.io/2019/07/19/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+    <id>http://qzt8315.github.io/2019/07/19/西瓜书-第一章/</id>
+    <published>2019-07-19T13:19:43.000Z</published>
+    <updated>2019-07-23T05:45:10.340Z</updated>
+    
+    <content type="html"><![CDATA[<p>西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。</p><p>第一章 绪论主要讲解一些基础的概念性的东西。</p><h5 id="机器学习的分类"><a href="#机器学习的分类" class="headerlink" title="机器学习的分类"></a>机器学习的分类</h5><ol><li><p>按照学习任务划分：</p><ul><li>分类<ul><li>多分类<ul><li>二分类<ul><li>正类</li><li>反类</li></ul></li><li>多分类</li></ul></li></ul></li><li>回归</li></ul></li><li><p>按照训练数据是否有标记信息划分：</p><ul><li>监督学习（有导师学习）</li><li>无监督学习（无导师学习）</li></ul></li></ol><h5 id="归纳与演绎"><a href="#归纳与演绎" class="headerlink" title="归纳与演绎"></a>归纳与演绎</h5><p>科学推理的两大基本手段：归纳、演绎</p><p><em>归纳</em>:从具体事实归结出一般性规律。</p><p><em>演绎</em>:从基础原理推演出具体状况。</p><h5 id="奥卡姆剃刀"><a href="#奥卡姆剃刀" class="headerlink" title="奥卡姆剃刀"></a>奥卡姆剃刀</h5><p>奥卡姆剃刀:若有多个假设与观察的一致，则选用最简单的那个。</p><h5 id="NFL定理"><a href="#NFL定理" class="headerlink" title="NFL定理"></a>NFL定理</h5><p>”没有免费的午餐“定理：（<em>No Free Lunch Theorem, 简称NFL定理</em>）:无论学习算法ξ<sub>α</sub>聪明或者笨拙，他们的期望性都是相同的。</p><p>因此NFL定理说明，脱离具体问题，空泛的谈论哪种学习算法更好是没有意义的。</p><h5 id="流动推销员问题"><a href="#流动推销员问题" class="headerlink" title="流动推销员问题"></a>流动推销员问题</h5><p>已知一个由n个城市(节点)组成的网络，任意两个城市V<sub>i</sub>到V<sub>j</sub>的距离为D<sub>ij</sub>(<em>一般D<sub>ij</sub>≠D<sub>ji</sub></em>)，一个推销员从V<sub>1</sub>开始访问每一个城市一次且仅一次，最后返回V<sub>1</sub>。这个推销员应该如何选择线路使得行程最短？<em>(Ps:该问题中涉及到NP问题)</em></p><h5 id="NP问题"><a href="#NP问题" class="headerlink" title="NP问题"></a>NP问题</h5><p>NP问题：指存在多项式算法能够验证的非决定性问题。</p><h5 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h5><p>数据挖掘就是从海量的数据中发掘知识。数据库领域的研究为数据挖掘提供数据管理技术。而机器学习和统计学的研究为数据挖掘提供数据分析技术。</p><p>数据挖掘使得搜索引擎成为人们心有灵犀的工具，美国《新闻周刊》曾对谷歌有一句话的评论：”它使任何人离任何问题的答案间的就变得只有点击以下鼠标这么远“。</p><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p><p>参考部分网络文献资料。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。&lt;/p&gt;
+&lt;p&gt;第一章 绪论主要讲解一些基础的概念性的东西。&lt;/p&gt;
+&lt;h5 id=&quot;机器学习的分类&quot;&gt;&lt;a href=&quot;#机器学习的分类&quot; class=&quot;headerlink&quot; title=&quot;机器学习的分
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="第一章" scheme="http://qzt8315.github.io/tags/%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown入门</title>
+    <link href="http://qzt8315.github.io/2019/07/18/markdown%E5%85%A5%E9%97%A8/"/>
+    <id>http://qzt8315.github.io/2019/07/18/markdown入门/</id>
+    <published>2019-07-18T08:45:51.000Z</published>
+    <updated>2019-07-25T08:45:45.702Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p><strong>Markdown源码如下:</strong></p><pre><code class="markdown">展示的是一级标题==============展示的是二级标题-------------------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题七级标题是不可能七级的展示的是一级标题==============展示的是二级标题------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题RUN flow me  *斜体文本*_斜体文本_**粗体文本*****斜粗体文本***___斜粗体文本___分割线---***___- - -* * *_ _ _~~这个是删除线~~&lt;u&gt;这个是下划线&lt;/u&gt;菜鸟教程[^RUNOOB]真的好用* 第一项  + 第二项- 第三项1. 第一项2. 第二项3. 第三项###### 以下是列表嵌套1. 第一项    - 第一小点    - 第二小点2. 第二项    - 第一小点区块&gt; 区块引用&gt; 菜鸟教程&gt; 学的不仅是技术更是梦想&gt; 最外层&gt; &gt; 第一层&gt; &gt;&gt; &gt; &gt; 第二层区块中使用列表&gt; 1. 1&gt; 2. 2&gt; * 第一&gt; * 第二* 列表中使用区块    &gt; 菜鸟教程    &gt; 学的不仅是技术更是梦想`print()`函数```php    &lt;?php    echo &#39;RUNOOB&#39;;    function test() {        echo &#39;test&#39;;    }``````python​import numpy as np​from keras.models import load_model​​if __name__ == &quot;__main__&quot;:​print(123)```这是一个链接[百度一下，你就知道](https://www.baidu.com)&lt;https://www.baidu.com&gt;高级链接**链接可以用变量代替，文档末附带变量地址**这个链接使用1作为网址变量 [Baidu][1]使用百度代替网址变量[百度][百度]__图片语法__![百度][2]![图片 百度](https://www.baidu.com/favicon.ico&quot;百度logo&quot;)**可使用img标签指定图片宽度**&lt;img src=&quot;https://www.baidu.com/favicon.ico&quot; width=&quot;50%&quot;&gt;| 表头 | 表头|| :---: | :---:|| 单元格 | 单元格 || 单元格 | 单元格 |[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！[1]: https://www.baidu.com[百度]: https://www.baidu.com[2]: https://www.baidu.com/favicon.ico</code></pre><p><strong>Markdown展现效果如下:</strong></p><h1 id="展示的是一级标题"><a href="#展示的是一级标题" class="headerlink" title="展示的是一级标题"></a>展示的是一级标题</h1><h2 id="展示的是二级标题"><a href="#展示的是二级标题" class="headerlink" title="展示的是二级标题"></a>展示的是二级标题</h2><h1 id="这也是一级标题"><a href="#这也是一级标题" class="headerlink" title="这也是一级标题"></a>这也是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>七级标题是不可能七级的</p><p>RUN flow me  </p><p><em>斜体文本</em></p><p><em>斜体文本</em></p><p><strong>粗体文本</strong></p><p><strong><em>斜粗体文本</em></strong></p><p><strong><em>斜粗体文本</em></strong></p><p>分割线</p><hr><hr><hr><hr><hr><hr><p><del>这个是删除线</del></p><p><u>这个是下划线</u></p><p>菜鸟教程[^RUNOOB]真的好用</p><ul><li>第一项  </li></ul><ul><li>第二项</li></ul><ul><li>第三项</li></ul><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h6 id="以下是列表嵌套"><a href="#以下是列表嵌套" class="headerlink" title="以下是列表嵌套"></a>以下是列表嵌套</h6><ol><li>第一项<ul><li>第一小点</li><li>第二小点</li></ul></li><li>第二项<ul><li>第一小点</li></ul></li></ol><p>区块</p><blockquote><p>区块引用<br>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote><blockquote><p>最外层</p><blockquote><p>第一层</p><blockquote><p>第二层</p></blockquote></blockquote></blockquote><p>区块中使用列表</p><blockquote><ol><li>1</li><li>2</li></ol><ul><li>第一</li><li>第二</li></ul></blockquote><ul><li>列表中使用区块<blockquote><p>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote></li></ul><p><code>print()</code>函数</p><pre><code class="php+HTML">&lt;?phpecho &#39;RUNOOB&#39;;function test() {    echo &#39;test&#39;;}</code></pre><pre><code class="python">import numpy as npfrom keras.models import load_modelif __name__ == &quot;__main__&quot;:    print(123)print(&#39;this is python language.&#39;)</code></pre><p>这是一个链接<a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下，你就知道</a></p><p><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p><p>高级链接<br><strong>链接可以用变量代替，文档末附带变量地址</strong><br>这个链接使用1作为网址变量 [Baidu][1]<br>使用百度代替网址变量[百度][百度]</p><p><strong>图片语法</strong><br>![百度][2]<br><img src="https://www.baidu.com/favicon.ico" alt="图片 百度" title="log"></p><p><strong>可使用img标签指定图片宽度</strong><br><img src="https://www.baidu.com/favicon.ico" width="50%"></p><table><thead><tr><th align="center">表头</th><th align="center">表头</th></tr></thead><tbody><tr><td align="center">单元格</td><td align="center">单元格</td></tr><tr><td align="center">单元格</td><td align="center">单元格</td></tr></tbody></table><p>[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！<br>[1]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[百度]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[2]: <a href="https://www.baidu.com/favicon.ico" target="_blank" rel="noopener">https://www.baidu.com/favicon.ico</a></p><p><em>Ps:本文参考<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Markdown源码如下:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;markdown&quot;&gt;展示的是一级标题
+==============
+展示的是二级标题
+-------------------------
+# 这也是一级标题
+
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="markdown" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/markdown/"/>
+    
+    
+      <category term="markdown" scheme="http://qzt8315.github.io/tags/markdown/"/>
+    
+      <category term="标签" scheme="http://qzt8315.github.io/tags/%E6%A0%87%E7%AD%BE/"/>
+    
+      <category term="语法" scheme="http://qzt8315.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+      <category term="入门" scheme="http://qzt8315.github.io/tags/%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
+  
+</feed>
