@@ -120,7 +120,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(8)</small></div></li>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
     
         
             
@@ -152,6 +152,22 @@
     
         
             
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(1)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="观影">观影<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(3)</small></div>
                 
                     <ul class="sub hide">
@@ -170,6 +186,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -180,8 +200,8 @@
     </div>
     <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="8">
-<input type="hidden" id="yelog_site_word_count" value="5.5k">
+<input type="hidden" id="yelog_site_posts_number" value="9">
+<input type="hidden" id="yelog_site_word_count" value="6.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -255,6 +275,14 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">观影</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">动漫</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">西瓜书</a>
     </li>
     
@@ -307,6 +335,11 @@
         <a class="学习 markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
             <span class="post-title" title="Markdown入门">Markdown入门</span>
             <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
+        </a>
+        
+        <a class="生活 观影 " href="/2019/07/29/成年人看的动漫-《哪吒之魔童降世》/" data-tag="观影,动漫" data-author>
+            <span class="post-title" title="成年人看的动漫-《哪吒之魔童降世》">成年人看的动漫-《哪吒之魔童降世》</span>
+            <span class="post-date" title="2019-07-29 11:27:23">2019/07/29</span>
         </a>
         
         <a class="读书 西瓜书 " href="/2019/07/22/西瓜书-符号表/" data-tag="西瓜书,符号表,读书" data-author>
@@ -576,7 +609,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#markdown','#标签','#语法','#入门','#西瓜书','#符号表','#读书','#第一章','#第二章',],
+            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#markdown','#标签','#语法','#入门','#观影','#动漫','#西瓜书','#符号表','#读书','#第一章','#第二章',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
