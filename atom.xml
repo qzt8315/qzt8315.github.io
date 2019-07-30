@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qzt8315.github.io/"/>
-  <updated>2019-07-30T04:22:45.296Z</updated>
+  <updated>2019-07-30T07:30:23.415Z</updated>
   <id>http://qzt8315.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>西瓜书_第三章</title>
+    <link href="http://qzt8315.github.io/2019/07/29/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
+    <id>http://qzt8315.github.io/2019/07/29/西瓜书-第三章/</id>
+    <published>2019-07-29T06:43:42.000Z</published>
+    <updated>2019-07-30T07:30:23.415Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本章中详细讲解了线性模型，包括线性回归、对数几率回归等等。线性模型形式简单、易于建模，但是蕴含着机器学习中的一些重要的基本思想，并且许多重要的非线性模型也可以在线性模型的基础上引入层级结构或者高维映射得到。此外，线性模型还具有可解释性(comprehensibility,也称为可理解性understandability)。</p><p>基本形式：给定示例x=(x<sub>1</sub>;x<sub>2</sub>;…;x<sub>d</sub>)，x<sub>i</sub>表示x的第i个属性，线性模型即通过各个属性的线性组合进行预测函数：<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_dx_d+b<br>$$</p><p>向量形式：<br>$$<br>f(x)=\boldsymbol{w}^T\boldsymbol{x}+b\\<br>\boldsymbol{w}=(w_1;w_2;..;w_d)<br>$$</p><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在本章中详细讲解了线性模型，包括线性回归、对数几率回归等等。线性模型形式简单、易于建模，但是蕴含着机器学习中的一些重要的基本思想，并且许多重
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+    
+      <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="第三章" scheme="http://qzt8315.github.io/tags/%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>成年人看的动漫-《哪吒之魔童降世》</title>
