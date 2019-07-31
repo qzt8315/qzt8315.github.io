@@ -164,10 +164,6 @@
     
         
             
-        
-    
-        
-            
             <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(4)</small></div>
                 
                     <ul class="sub hide">
@@ -190,6 +186,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -201,7 +201,7 @@
     <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="10">
-<input type="hidden" id="yelog_site_word_count" value="6.5k">
+<input type="hidden" id="yelog_site_word_count" value="6.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -267,6 +267,18 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">西瓜书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">符号表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">markdown</a>
     </li>
     
@@ -280,18 +292,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color3">入门</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">西瓜书</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color4">符号表</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color3">读书</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -341,14 +341,14 @@
             <span class="post-date" title="2019-07-29 11:27:23">2019/07/29</span>
         </a>
         
-        <a class="学习 markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
-            <span class="post-title" title="Markdown入门">Markdown入门</span>
-            <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
-        </a>
-        
         <a class="读书 西瓜书 " href="/2019/07/22/西瓜书-符号表/" data-tag="西瓜书,符号表,读书" data-author>
             <span class="post-title" title="西瓜书_符号表">西瓜书_符号表</span>
             <span class="post-date" title="2019-07-22 16:10:25">2019/07/22</span>
+        </a>
+        
+        <a class="学习 markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
+            <span class="post-title" title="Markdown入门">Markdown入门</span>
+            <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
         </a>
         
         <a class="读书 西瓜书 " href="/2019/07/19/西瓜书-第一章/" data-tag="西瓜书,读书,第一章" data-author>
@@ -408,12 +408,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-07-30 15:30:23">2019-07-29 14:43</time>
+        创建时间:<time class="date" title="更新时间: 2019-07-31 17:07:51">2019-07-29 14:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:195</span>
+        <span>字数:532</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -461,7 +461,14 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本章中详细讲解了线性模型，包括线性回归、对数几率回归等等。线性模型形式简单、易于建模，但是蕴含着机器学习中的一些重要的基本思想，并且许多重要的非线性模型也可以在线性模型的基础上引入层级结构或者高维映射得到。此外，线性模型还具有可解释性(comprehensibility,也称为可理解性understandability)。</p>
 <p>基本形式：给定示例x=(x<sub>1</sub>;x<sub>2</sub>;…;x<sub>d</sub>)，x<sub>i</sub>表示x的第i个属性，线性模型即通过各个属性的线性组合进行预测函数：<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_dx_d+b<br>$$</p>
 <p>向量形式：<br>$$<br>f(x)=\boldsymbol{w}^T\boldsymbol{x}+b\\<br>\boldsymbol{w}=(w_1;w_2;..;w_d)<br>$$</p>
-<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集$D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$，其中$x_i=(x_{i1};x_{i2};….;x_{id}),y_i\in{\mathbb{R}}$，线性代数试图学得:<br>$$<br>f(x_i)=wx_i+b\quad 使得f(x_i)\simeq y_i<br>$$</p>
+<p>求解该模型需要解得$w$和$b$，需要衡量$y_i$和$f(x_i)$之间的差距，一般采用均方误差（又称为平方损失(square loss)）：<br>$$<br>(w^*,b^*)=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(f(x_i)-y_i)^2\\<br>=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(y_i-wx_i-b)^2<br>$$</p>
+<p>均方误差具有较好的几何意义，对应常用的欧几里得距离（欧氏距离）。基于均方误差最小化进行模型求解的方法称为最小二乘法（least square method）。求解$w$和$b$使得$E_{(w,b)}=\sum_{i=1}^{m}(y_i-wx_i+b)^2$最小化的过程称为线性回归模型的最小二乘“参数估计”。线性回归模型求解过程如下：</p>
+<ol>
+<li>对$E_{(w,b)}$分别对$w$和$b$求偏导<br>$$<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2-\sum_{i=1}^m(y_i-b)x_i),\\<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(mb-\sum_{i=1}^m(y_i-wx_i)),<br>$$</li>
+<li>令偏导值为零可求解出$w$和$b$最优解的闭式解:<br>$$<br>w = \frac{\sum\limits_{i=1}^my_i(x_i-\overline{x})}{\sum\limits_{i=1}^mx_i^2-\frac{1}{m}(\sum\limits_{i=1}^mx_i)^2}\\<br>b = \frac{1}{m}\sum\limits_{i=1}^m(y_i-wx_i),\\<br>其中\overline x=\frac{1}{m}\sum\limits_{i=1}^mx_i
+$$</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 qinzhtao@163.com </span>
@@ -476,10 +483,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>西瓜书_第三章</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">195</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">532</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="捌叁壹伍">捌叁壹伍</a></p>
     <p><span class="copy-title">发布时间:</span>2019-07-29, 14:43:42</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-30, 15:30:23</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-31, 17:07:51</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/29/西瓜书-第三章/" title="西瓜书_第三章">http://qzt8315.github.io/2019/07/29/西瓜书-第三章/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -602,7 +609,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#观影','#动漫','#markdown','#标签','#语法','#入门','#西瓜书','#符号表','#读书','#第一章','#第三章','#第二章',],
+            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#观影','#动漫','#西瓜书','#符号表','#读书','#markdown','#标签','#语法','#入门','#第一章','#第三章','#第二章',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
