@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qzt8315.github.io/"/>
-  <updated>2019-08-18T03:52:15.340Z</updated>
+  <updated>2019-08-18T09:56:54.905Z</updated>
   <id>http://qzt8315.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>秀米使用学习教程</title>
+    <link href="http://qzt8315.github.io/2019/08/18/%E7%A7%80%E7%B1%B3%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    <id>http://qzt8315.github.io/2019/08/18/秀米使用学习教程/</id>
+    <published>2019-08-18T05:36:50.000Z</published>
+    <updated>2019-08-18T09:56:54.905Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客文章中主要介绍图文排版工具<strong>秀米</strong>&trade;的使用，将分别从基本工具说明和示例两个部分进行叙述。</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>进入<a href="https://xiumi.us" target="_blank" rel="noopener">秀米官网</a>，登录账号(第一次使用需要注册)，选择<em>我的秀米</em>，单击<em>添加新的图文</em>进入图文排版编辑器。Ps：<em>以下的操作都是在编辑器下完成。</em></p><h2 id="基本工具说明"><a href="#基本工具说明" class="headerlink" title="基本工具说明"></a>基本工具说明</h2><ol><li><p>主要工具介绍<br><img src="/2019/08/18/秀米使用学习教程/img1.webp" alt="编辑器页面"><br>在秀米中进行图文排版十分的简单，右侧菜单主要是撤销和重做功能；上侧菜单主要是预览、保存、复制到公众号等功能；左侧菜单栏为主要的排版工作栏，其中最常用的是图文模板。其中图文模板主要分为标题、卡片、图片、布局、引导、组件等几类模板。</p><ul><li><em>标题</em>主要是用于文章中的标题部分，单击选中的标题即可添加标题到文章中，单击标题即可对标题的内容及其格式进行编辑设置。<br><img src="/2019/08/18/秀米使用学习教程/img2.webp" alt="添加并设置标题"></li><li><em>卡片</em>为文章的矩形元素，可以将文章的内容进行划分，同时加强内部的联系，可以使得文章逻辑清晰、美观。同样可以单击卡片对象即可对卡片进行编辑。<br><img src="/2019/08/18/秀米使用学习教程/img3.webp" alt="添加并设置卡片对象"></li><li><em>图片</em>可以向文章中插入图片，丰富文章内容。操作与标题类似，单击添加元素，单击即可设置自己的图片(<em>Ps:添加的图片需导入才能使用</em>)。<br><img src="/2019/08/18/秀米使用学习教程/img4.webp" alt="添加图片"></li><li><em>布局</em>是将多个元素组合之后的模板 。使用方式与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img5.webp" alt="添加布局"></li><li><em>引导</em>在文章中主要作用是引导读者的注意力的转移和集中。使用方法与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img6.webp" alt="添加引导"></li><li><em>组件</em>主要是一些小的部件，包括序号以及装饰部件等。使用方式与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img7.webp" alt="添加组件"></li></ul></li><li><p>修改文章标题和摘要。<br><img src="/2019/08/18/秀米使用学习教程/img8.webp" alt="修改标题和摘要"></p></li><li><p>点击上侧菜单栏的<em>预览</em>，预览文章。<br><img src="/2019/08/18/秀米使用学习教程/img9.webp" alt="预览"></p></li><li><p>点击上侧菜单栏的<em>保存</em>，保存文章到网站。<br><img src="/2019/08/18/秀米使用学习教程/img10.webp" alt="保存"></p></li><li><p>点击上侧菜单栏的<em>复制到微信公众号</em>按钮，按下<em>Ctrl+C</em>复制全文，将内容粘贴到微信公众平台编辑器，填入标题和摘要即可发布文章（同时也可以将多次编辑的内容粘贴到同一篇微信公众号文章中）<br><img src="/2019/08/18/秀米使用学习教程/img11.webp" alt="&quot;复制到公众号&quot;按钮"><br><img src="/2019/08/18/秀米使用学习教程/img12.webp" alt="&quot;Ctrl+C&quot;复制文章内容"><br><img src="/2019/08/18/秀米使用学习教程/img13.webp" alt="发布文章到微信公众号_图片来源于&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MjM5NDE0MDA1Mw==&amp;mid=2650712096&amp;idx=1&amp;sn=7af2ea6e871f3e9679f2411fd5add5de&amp;chksm=be8652da89f1dbcc9fd1537311e5a23cb647c21a0ada716ba5ebb75e3c224f28cefec7fe6ba3#rd&quot;&gt;微信公众平台&lt;/a&gt;"></p></li></ol><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="/2019/08/18/秀米使用学习教程/img14.webp" alt="演示示例"></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>秀米官方帮助文档:<a href="https://r.xiumi.us/board/v5/2a5va/6103144" target="_blank" rel="noopener">https://r.xiumi.us/board/v5/2a5va/6103144</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在本篇博客文章中主要介绍图文排版工具&lt;strong&gt;秀米&lt;/strong&gt;&amp;trade;的使用，将分别从基本工具说明和示例两个部分进行叙述。
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="秀米" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/%E7%A7%80%E7%B1%B3/"/>
+    
+    
+      <category term="教程" scheme="http://qzt8315.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="H5" scheme="http://qzt8315.github.io/tags/H5/"/>
+    
+      <category term="秀米" scheme="http://qzt8315.github.io/tags/%E7%A7%80%E7%B1%B3/"/>
+    
+      <category term="图文排版" scheme="http://qzt8315.github.io/tags/%E5%9B%BE%E6%96%87%E6%8E%92%E7%89%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>易企秀使用学习教程</title>
     <link href="http://qzt8315.github.io/2019/08/17/%E6%98%93%E4%BC%81%E7%A7%80%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
     <id>http://qzt8315.github.io/2019/08/17/易企秀使用学习教程/</id>
     <published>2019-08-17T06:14:40.000Z</published>
-    <updated>2019-08-18T03:52:15.340Z</updated>
+    <updated>2019-08-18T03:52:48.406Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客文章中以易企秀&trade;H5应用作为示例，介绍H5应用使用的基本方法。主要分成两个部分进行学习：基本工具介绍和实际H5例子。</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol><li>在<a href="http://www.eqxiu.com" target="_blank" rel="noopener">易企秀官网</a>注册账号。在登录界面可使用已经注册好的账号密码直接登录。也可以选择第三方账号登陆（微信、QQ、微博、钉钉、企业微信），第一次登录时会验证手机号，通过手机号验证之后即可完成注册，第二次及以后可直接登录。也可以直接在注册账号界面注册，登录账号。<br><img src="/2019/08/17/易企秀使用学习教程/img1.webp" alt="易企秀登录界面"></li></ol><h2 id="基本工具介绍"><a href="#基本工具介绍" class="headerlink" title="基本工具介绍"></a>基本工具介绍</h2><ol><li><p>打开H5编辑界面：点击左侧菜单栏”创意模板”，选择空白模板即可进入H5编辑器。<br><img src="/2019/08/17/易企秀使用学习教程/img2.webp" alt="易企秀 创意模板"></p></li><li><p>右侧菜单栏为基本设置菜单栏，包括页面属性、图层管理和页面管理。</p><ul><li><em>页面属性</em>可以设置页面背景、页面音乐、页面滤镜以及翻页设置。<br><img src="/2019/08/17/易企秀使用学习教程/img3.webp" alt="页面属性"></li><li><em>图层管理</em>可以查看当前页面的元素以及可以对元素进行分组等操作。<br><img src="/2019/08/17/易企秀使用学习教程/img4.webp" alt="图层管理"></li><li><em>页面管理</em>可以调整页面顺序，可以删除和添加页面。<br><img src="/2019/08/17/易企秀使用学习教程/img5.webp" alt="页面管理"></li></ul></li><li><p>上侧菜单栏为组件菜单栏，包含文本、图片、背景、音乐、形状、组件、表单和特效。</p><ul><li><em>文本</em>主要是向页面中添加文本，可通过组件设置设置属性。</li><li><em>图片</em>向页面中添加一个图片并设置样式（功能设置、边框、阴影、尺寸和位置等等）、动画（给图片添加动画效果）和触发（设置触发功能）属性。</li><li><em>背景</em>可直接设置页面背景。</li><li><em>音乐</em>可直接设置页面背景音乐。</li><li><em>形状</em>可直接在页面中插入形状。</li><li><em>组件</em>在页面中插入如视频、外链视频等等。</li><li><em>表单</em>可向页面中插入表单。</li><li><em>特效</em>向页面中插入特效。<br><img src="/2019/08/17/易企秀使用学习教程/img6.webp" alt="组件菜单"></li></ul></li><li><p>左侧菜单栏为模板菜单，包含元素模板、功能模板和单页模板。</p><ul><li><em>元素模板</em>。编辑器中的元素模板主要包括了文本（标题以及正文部分文字）、艺术字、图片和图文4个部分。所有的元素模板都可以通过<strong>单击</strong>即可添加页面中，选中元素之后即可使用鼠标拖动调整到合适的位置。右边是模板设置，可以对选中的元素模板的属性进行设置，比如说设置文本内容、字体大小，颜色、图片、边框等等。<br><img src="/2019/08/17/易企秀使用学习教程/img7.webp" alt="元素模板 模板设置"></li><li><em>功能模板</em>。主要是使用整个页面完成一些如分享二维码，收集一些报名信息等功能。操作方法与元素模板类似，可以在模板设置中完成相应的设置。<br><img src="/2019/08/17/易企秀使用学习教程/img8.webp" alt="功能模板 模板设置"></li><li><em>单页模板</em>。主要是一些比较好的单页模板，如节日单页模板等等，选中模板中的元素可以对其进行修改。<br><img src="/2019/08/17/易企秀使用学习教程/img9.webp" alt="功能模板 模板设置"></li></ul></li><li><p>预览和设置<br>点击右上角的预览和设置，可以预览到实际效果。在该界面可以设置应用的标题、描述以及其他的设置。<br><img src="/2019/08/17/易企秀使用学习教程/img10.webp" alt="预览和设置"></p></li><li><p>保存和发布<br> 点击右上角的保存，再点击发布即可发布应用。可以通过二维码扫描、网页链接、也可以直接分享到微博、QQ和QQ空间。<br> <img src="/2019/08/17/易企秀使用学习教程/img11.webp" alt="发布"></p></li></ol><h2 id="实际应用例子"><a href="#实际应用例子" class="headerlink" title="实际应用例子"></a>实际应用例子</h2><p>链接地址:<a href="https://a.eqxiu.com/s/13ggMHc7" target="_blank" rel="noopener">https://a.eqxiu.com/s/13ggMHc7</a><br>链接二维码:<br><img src="/2019/08/17/易企秀使用学习教程/img12.webp" alt="易企秀示例应用"></p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><blockquote><p>易企秀官方帮助文档:<a href="http://www.eqxiu.com/c/help.html" target="_blank" rel="noopener">易企秀官方帮助文档</a></p></blockquote>]]></content>
     
@@ -239,9 +272,9 @@
     
       <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
     
-      <category term="符号表" scheme="http://qzt8315.github.io/tags/%E7%AC%A6%E5%8F%B7%E8%A1%A8/"/>
-    
       <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="符号表" scheme="http://qzt8315.github.io/tags/%E7%AC%A6%E5%8F%B7%E8%A1%A8/"/>
     
   </entry>
   
@@ -339,9 +372,9 @@
     
       <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
     
-      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="第一章" scheme="http://qzt8315.github.io/tags/%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
+    
+      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   

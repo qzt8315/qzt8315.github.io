@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>秀米使用学习教程</title>
+      <link href="/2019/08/18/%E7%A7%80%E7%B1%B3%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+      <url>/2019/08/18/%E7%A7%80%E7%B1%B3%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客文章中主要介绍图文排版工具<strong>秀米</strong>&trade;的使用，将分别从基本工具说明和示例两个部分进行叙述。</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>进入<a href="https://xiumi.us" target="_blank" rel="noopener">秀米官网</a>，登录账号(第一次使用需要注册)，选择<em>我的秀米</em>，单击<em>添加新的图文</em>进入图文排版编辑器。Ps：<em>以下的操作都是在编辑器下完成。</em></p><h2 id="基本工具说明"><a href="#基本工具说明" class="headerlink" title="基本工具说明"></a>基本工具说明</h2><ol><li><p>主要工具介绍<br><img src="/2019/08/18/秀米使用学习教程/img1.webp" alt="编辑器页面"><br>在秀米中进行图文排版十分的简单，右侧菜单主要是撤销和重做功能；上侧菜单主要是预览、保存、复制到公众号等功能；左侧菜单栏为主要的排版工作栏，其中最常用的是图文模板。其中图文模板主要分为标题、卡片、图片、布局、引导、组件等几类模板。</p><ul><li><em>标题</em>主要是用于文章中的标题部分，单击选中的标题即可添加标题到文章中，单击标题即可对标题的内容及其格式进行编辑设置。<br><img src="/2019/08/18/秀米使用学习教程/img2.webp" alt="添加并设置标题"></li><li><em>卡片</em>为文章的矩形元素，可以将文章的内容进行划分，同时加强内部的联系，可以使得文章逻辑清晰、美观。同样可以单击卡片对象即可对卡片进行编辑。<br><img src="/2019/08/18/秀米使用学习教程/img3.webp" alt="添加并设置卡片对象"></li><li><em>图片</em>可以向文章中插入图片，丰富文章内容。操作与标题类似，单击添加元素，单击即可设置自己的图片(<em>Ps:添加的图片需导入才能使用</em>)。<br><img src="/2019/08/18/秀米使用学习教程/img4.webp" alt="添加图片"></li><li><em>布局</em>是将多个元素组合之后的模板 。使用方式与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img5.webp" alt="添加布局"></li><li><em>引导</em>在文章中主要作用是引导读者的注意力的转移和集中。使用方法与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img6.webp" alt="添加引导"></li><li><em>组件</em>主要是一些小的部件，包括序号以及装饰部件等。使用方式与标题相同。<br><img src="/2019/08/18/秀米使用学习教程/img7.webp" alt="添加组件"></li></ul></li><li><p>修改文章标题和摘要。<br><img src="/2019/08/18/秀米使用学习教程/img8.webp" alt="修改标题和摘要"></p></li><li><p>点击上侧菜单栏的<em>预览</em>，预览文章。<br><img src="/2019/08/18/秀米使用学习教程/img9.webp" alt="预览"></p></li><li><p>点击上侧菜单栏的<em>保存</em>，保存文章到网站。<br><img src="/2019/08/18/秀米使用学习教程/img10.webp" alt="保存"></p></li><li><p>点击上侧菜单栏的<em>复制到微信公众号</em>按钮，按下<em>Ctrl+C</em>复制全文，将内容粘贴到微信公众平台编辑器，填入标题和摘要即可发布文章（同时也可以将多次编辑的内容粘贴到同一篇微信公众号文章中）<br><img src="/2019/08/18/秀米使用学习教程/img11.webp" alt="&quot;复制到公众号&quot;按钮"><br><img src="/2019/08/18/秀米使用学习教程/img12.webp" alt="&quot;Ctrl+C&quot;复制文章内容"><br><img src="/2019/08/18/秀米使用学习教程/img13.webp" alt="发布文章到微信公众号_图片来源于&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MjM5NDE0MDA1Mw==&amp;mid=2650712096&amp;idx=1&amp;sn=7af2ea6e871f3e9679f2411fd5add5de&amp;chksm=be8652da89f1dbcc9fd1537311e5a23cb647c21a0ada716ba5ebb75e3c224f28cefec7fe6ba3#rd&quot;&gt;微信公众平台&lt;/a&gt;"></p></li></ol><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><img src="/2019/08/18/秀米使用学习教程/img14.webp" alt="演示示例"></p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>秀米官方帮助文档:<a href="https://r.xiumi.us/board/v5/2a5va/6103144" target="_blank" rel="noopener">https://r.xiumi.us/board/v5/2a5va/6103144</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 秀米 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> H5 </tag>
+            
+            <tag> 秀米 </tag>
+            
+            <tag> 图文排版 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>易企秀使用学习教程</title>
       <link href="/2019/08/17/%E6%98%93%E4%BC%81%E7%A7%80%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
       <url>/2019/08/17/%E6%98%93%E4%BC%81%E7%A7%80%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/</url>
@@ -214,9 +247,9 @@
             
             <tag> 西瓜书 </tag>
             
-            <tag> 符号表 </tag>
-            
             <tag> 读书 </tag>
+            
+            <tag> 符号表 </tag>
             
         </tags>
       
@@ -311,9 +344,9 @@
             
             <tag> 西瓜书 </tag>
             
-            <tag> 读书 </tag>
-            
             <tag> 第一章 </tag>
+            
+            <tag> 读书 </tag>
             
         </tags>
       
