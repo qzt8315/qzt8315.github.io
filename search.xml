@@ -4,11 +4,42 @@
   
     
     <entry>
+      <title>易企秀使用学习教程</title>
+      <link href="/2019/08/17/%E6%98%93%E4%BC%81%E7%A7%80%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+      <url>/2019/08/17/%E6%98%93%E4%BC%81%E7%A7%80%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客文章中以易企秀&trade;H5应用作为示例，介绍H5应用使用的基本方法。主要分成两个部分进行学习：基本工具介绍和实际H5例子。</p><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol><li>在<a href="http://www.eqxiu.com" target="_blank" rel="noopener">易企秀官网</a>注册账号。在登录界面可使用已经注册好的账号密码直接登录。也可以选择第三方账号登陆（微信、QQ、微博、钉钉、企业微信），第一次登录时会验证手机号，通过手机号验证之后即可完成注册，第二次及以后可直接登录。也可以直接在注册账号界面注册，登录账号。<br><img src="/2019/08/17/易企秀使用学习教程/img1.webp" alt="易企秀登录界面"></li></ol><h2 id="基本工具介绍"><a href="#基本工具介绍" class="headerlink" title="基本工具介绍"></a>基本工具介绍</h2><ol><li><p>打开H5编辑界面：点击左侧菜单栏”创意模板”，选择空白模板即可进入H5编辑器。<br><img src="/2019/08/17/易企秀使用学习教程/img2.webp" alt="易企秀 创意模板"></p></li><li><p>右侧菜单栏为基本设置菜单栏，包括页面属性、图层管理和页面管理。</p><ul><li><em>页面属性</em>可以设置页面背景、页面音乐、页面滤镜以及翻页设置。<br><img src="/2019/08/17/易企秀使用学习教程/img3.webp" alt="页面属性"></li><li><em>图层管理</em>可以查看当前页面的元素以及可以对元素进行分组等操作。<br><img src="/2019/08/17/易企秀使用学习教程/img4.webp" alt="图层管理"></li><li><em>页面管理</em>可以调整页面顺序，可以删除和添加页面。<br><img src="/2019/08/17/易企秀使用学习教程/img5.webp" alt="页面管理"></li></ul></li><li><p>上侧菜单栏为组件菜单栏，包含文本、图片、背景、音乐、形状、组件、表单和特效。</p><ul><li><em>文本</em>主要是向页面中添加文本，可通过组件设置设置属性。</li><li><em>图片</em>向页面中添加一个图片并设置样式（功能设置、边框、阴影、尺寸和位置等等）、动画（给图片添加动画效果）和触发（设置触发功能）属性。</li><li><em>背景</em>可直接设置页面背景。</li><li><em>音乐</em>可直接设置页面背景音乐。</li><li><em>形状</em>可直接在页面中插入形状。</li><li><em>组件</em>在页面中插入如视频、外链视频等等。</li><li><em>表单</em>可向页面中插入表单。</li><li><em>特效</em>向页面中插入特效。<br><img src="/2019/08/17/易企秀使用学习教程/img6.webp" alt="组件菜单"></li></ul></li><li><p>左侧菜单栏为模板菜单，包含元素模板、功能模板和单页模板。</p><ul><li><em>元素模板</em>。编辑器中的元素模板主要包括了文本（标题以及正文部分文字）、艺术字、图片和图文4个部分。所有的元素模板都可以通过<strong>单击</strong>即可添加页面中，选中元素之后即可使用鼠标拖动调整到合适的位置。右边是模板设置，可以对选中的元素模板的属性进行设置，比如说设置文本内容、字体大小，颜色、图片、边框等等。<br><img src="/2019/08/17/易企秀使用学习教程/img7.webp" alt="元素模板 模板设置"></li><li><em>功能模板</em>。主要是使用整个页面完成一些如分享二维码，收集一些报名信息等功能。操作方法与元素模板类似，可以在模板设置中完成相应的设置。<br><img src="/2019/08/17/易企秀使用学习教程/img8.webp" alt="功能模板 模板设置"></li><li><em>单页模板</em>。主要是一些比较好的单页模板，如节日单页模板等等，选中模板中的元素可以对其进行修改。<br><img src="/2019/08/17/易企秀使用学习教程/img9.webp" alt="功能模板 模板设置"></li></ul></li><li><p>预览和设置<br>点击右上角的预览和设置，可以预览到实际效果。在该界面可以设置应用的标题、描述以及其他的设置。<br><img src="/2019/08/17/易企秀使用学习教程/img10.webp" alt="预览和设置"></p></li><li><p>保存和发布<br> 点击右上角的保存，再点击发布即可发布应用。可以通过二维码扫描、网页链接、也可以直接分享到微博、QQ和QQ空间。<br> <img src="/2019/08/17/易企秀使用学习教程/img11.webp" alt="发布"></p></li></ol><h2 id="实际应用例子"><a href="#实际应用例子" class="headerlink" title="实际应用例子"></a>实际应用例子</h2><p>链接地址:<a href="https://a.eqxiu.com/s/13ggMHc7" target="_blank" rel="noopener">https://a.eqxiu.com/s/13ggMHc7</a><br>链接二维码:<br><img src="/2019/08/17/易企秀使用学习教程/img12.webp" alt="易企秀示例应用"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 易企秀(H5) </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> H5 </tag>
+            
+            <tag> 易企秀 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>西瓜书_第三章</title>
       <link href="/2019/07/29/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%89%E7%AB%A0/"/>
       <url>/2019/07/29/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%89%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本章中详细讲解了线性模型，包括线性回归、对数几率回归等等。线性模型形式简单、易于建模，但是蕴含着机器学习中的一些重要的基本思想，并且许多重要的非线性模型也可以在线性模型的基础上引入层级结构或者高维映射得到。此外，线性模型还具有可解释性(comprehensibility,也称为可理解性understandability)。</p><p>基本形式：给定示例x=(x<sub>1</sub>;x<sub>2</sub>;…;x<sub>d</sub>)，x<sub>i</sub>表示x的第i个属性，线性模型即通过各个属性的线性组合进行预测函数：<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_dx_d+b<br>$$</p><p>向量形式：<br>$$<br>f(x)=\boldsymbol{w}^T\boldsymbol{x}+b\\<br>\boldsymbol{w}=(w_1;w_2;..;w_d)<br>$$</p><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集$D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$，其中$x_i=(x_{i1};x_{i2};….;x_{id}),y_i\in{\mathbb{R}}$，线性代数试图学得:<br>$$<br>f(x_i)=wx_i+b\quad 使得f(x_i)\simeq y_i<br>$$</p><p>求解该模型需要解得$w$和$b$，需要衡量$y_i$和$f(x_i)$之间的差距，一般采用均方误差（又称为平方损失(square loss)）：<br>$$<br>(w^*,b^*)=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(f(x_i)-y_i)^2\\<br>=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(y_i-wx_i-b)^2<br>$$</p><p>均方误差具有较好的几何意义，对应常用的欧几里得距离（欧氏距离）。基于均方误差最小化进行模型求解的方法称为最小二乘法（least square method）。求解$w$和$b$使得$E_{(w,b)}=\sum_{i=1}^{m}(y_i-wx_i+b)^2$最小化的过程称为线性回归模型的最小二乘“参数估计”。线性回归模型求解过程如下：</p><ol><li>对$E_{(w,b)}$分别对$w$和$b$求偏导<br>$$<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2-\sum_{i=1}^m(y_i-b)x_i),\\<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(mb-\sum_{i=1}^m(y_i-wx_i)),<br>$$</li><li>令偏导值为零可求解出$w$和$b$最优解的闭式解:<br>$$<br>w = \frac{\sum\limits_{i=1}^my_i(x_i-\overline{x})}{\sum\limits_{i=1}^mx_i^2-\frac{1}{m}(\sum\limits_{i=1}^mx_i)^2}\\<br>b = \frac{1}{m}\sum\limits_{i=1}^m(y_i-wx_i),\\<br>其中\overline x=\frac{1}{m}\sum\limits_{i=1}^mx_i$$</li></ol><p>针对更一般的数据集情况，每个样本由$d$个属性组成，则为多元线性回归（又称为多变量线性回归）：<br>$$<br>f(\boldsymbol{x}_i)=\boldsymbol{w}^T\boldsymbol{x}_i+b\quad使得f(\boldsymbol{x}_i)\simeq{y}_i$$<br>便于表达，将$w$和$b$吸收进向量形式$\hat{w}=(w;b)$，相应的需要将数据集表示为m×(d+1)大小的矩阵$\boldsymbol{X}$</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本章中详细讲解了线性模型，包括线性回归、对数几率回归等等。线性模型形式简单、易于建模，但是蕴含着机器学习中的一些重要的基本思想，并且许多重要的非线性模型也可以在线性模型的基础上引入层级结构或者高维映射得到。此外，线性模型还具有可解释性(comprehensibility,也称为可理解性understandability)。</p><p>基本形式：给定示例x=(x<sub>1</sub>;x<sub>2</sub>;…;x<sub>d</sub>)，x<sub>i</sub>表示x的第i个属性，线性模型即通过各个属性的线性组合进行预测函数：<br>$$<br>f(x)=w_1x_1+w_2x_2+…+w_dx_d+b<br>$$</p><p>向量形式：<br>$$<br>f(x)=\boldsymbol{w}^T\boldsymbol{x}+b\\<br>\boldsymbol{w}=(w_1;w_2;..;w_d)<br>$$</p><h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p>给定数据集$D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)}$，其中$x_i=(x_{i1};x_{i2};….;x_{id}),y_i\in{\mathbb{R}}$，线性代数试图学得:<br>$$<br>f(x_i)=wx_i+b\quad 使得f(x_i)\simeq y_i<br>$$</p><p>求解该模型需要解得$w$和$b$，需要衡量$y_i$和$f(x_i)$之间的差距，一般采用均方误差（又称为平方损失(square loss)）：<br>$$<br>(w^*,b^*)=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(f(x_i)-y_i)^2\\<br>=\mathop{\arg\min}\limits_{(w,b)}\sum_{i=1}^{m}(y_i-wx_i-b)^2<br>$$</p><p>均方误差具有较好的几何意义，对应常用的欧几里得距离（欧氏距离）。基于均方误差最小化进行模型求解的方法称为最小二乘法（least square method）。求解$w$和$b$使得$E_{(w,b)}=\sum_{i=1}^{m}(y_i-wx_i+b)^2$最小化的过程称为线性回归模型的最小二乘“参数估计”。线性回归模型求解过程如下：</p><ol><li>对$E_{(w,b)}$分别对$w$和$b$求偏导<br>$$<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(w\sum_{i=1}^mx_i^2-\sum_{i=1}^m(y_i-b)x_i),\\<br>\frac{\partial E_{(w,b)}}{\partial w} = 2(mb-\sum_{i=1}^m(y_i-wx_i)),<br>$$</li><li>令偏导值为零可求解出$w$和$b$最优解的闭式解:<br>$$<br>w = \frac{\sum\limits_{i=1}^my_i(x_i-\overline{x})}{\sum\limits_{i=1}^mx_i^2-\frac{1}{m}(\sum\limits_{i=1}^mx_i)^2}\\<br>b = \frac{1}{m}\sum\limits_{i=1}^m(y_i-wx_i),\\<br>其中\overline x=\frac{1}{m}\sum\limits_{i=1}^mx_i$$</li></ol><p>针对更一般的数据集情况，每个样本由$d$个属性组成，则为多元线性回归（又称为多变量线性回归）：<br>$$<br>f(\boldsymbol{x}_i)=\boldsymbol{w}^T\boldsymbol{x}_i+b\quad使得f(\boldsymbol{x}_i)\simeq{y}_i$$<br>便于表达，将$w$和$b$吸收进向量形式$\hat{w}=(w;b)$，相应的需要将数据集表示为m×(d+1)大小的矩阵$\boldsymbol{X}$<br>$$<br>\boldsymbol{X}=\begin{pmatrix}<br>x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1d} &amp; 1 \<br>x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2d} &amp; 1 \<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \<br>x_{m1} &amp; x_{m2} &amp; \ldots &amp; x_{md} &amp; 1 \<br>\end{pmatrix}<br>$$</p><p>同时将标记写为向量形式$\boldsymbol{y}=(y_1;y_2;\ldots;y_m)$则最佳的$w$为：<br>$$<br>\hat{w}^*=\arg\min\limits_{\hat w}(\boldsymbol{y}-\boldsymbol{X}\hat{w})^T(\boldsymbol{y}-\boldsymbol{X}\hat{wz})<br>$$</p><p>令$E_{\hat{w}}=(\boldsymbol{y}-\boldsymbol{X}\hat{w})^T(\boldsymbol{y}-\boldsymbol{X}\hat{w})$，对$\hat{w}$求导得:<br>$$<br>\frac{\partial E_{\hat{w}}}{\partial\hat{w}}=2\boldsymbol{X}^T{\boldsymbol{X}\hat{w}-y}<br>$$<br>当$\boldsymbol{X}^T\boldsymbol{X}$为满秩矩阵或者正定矩阵，令$\hat{w}$偏导值为零可得：<br>$$<br>\hat{w}^*=(\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T\boldsymbol{y}<br>$$</p><p>其中$(\boldsymbol{X}^T\boldsymbol{X})^{-1}$为$(\boldsymbol{X}^T\boldsymbol{X})$的逆矩阵。令$\hat{x_i}=(x_i;1)$最终学得多元线性回归模型：<br>$$<br>f(\hat{\boldsymbol{x}}_i)=(\boldsymbol X^T\boldsymbol X)^{-1}\boldsymbol X^T\boldsymbol y<br>$$</p><p>然而，$\boldsymbol {X}^T\boldsymbol{X}$往往不是满秩矩阵，例如在许多任务中，样本的变量数目大于样本数，会导致$\boldsymbol{X}$的列数大于行数，$\boldsymbol{X}^T\boldsymbol{X}$显然不是满秩矩阵可以解出多个$\hat{\boldsymbol{w}}$，这时需要对解有所偏好决定，常见的解决方法是引入正则化方法。</p>]]></content>
       
       
       <categories>
