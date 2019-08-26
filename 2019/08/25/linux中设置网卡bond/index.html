@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  <title>Hexo结合MathJax编辑公式 | 8315的博客</title>
-  <meta name="keywords" content=" 教程 , 博客 , hexo , 新手 , 公式编辑 ">
-  <meta name="description" content="Hexo结合MathJax编辑公式 | 8315的博客">
+  <title>linux中设置网卡bond | 8315的博客</title>
+  <meta name="keywords" content=" linux , 设置 , 网卡 , bond ">
+  <meta name="description" content="linux中设置网卡bond | 8315的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="抱歉。。。您访问的网页找不到了。">
 <meta name="keywords" content="学习|技术|快乐|每一天">
@@ -481,9 +481,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Hexo结合MathJax编辑公式" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-linux中设置网卡bond" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hexo结合MathJax编辑公式</h1>
+        <h1 class="article-title">linux中设置网卡bond</h1>
     
     <div class="article-meta">
         
@@ -493,34 +493,34 @@
             
                 <a href="javascript:" data-rel="学习">学习</a>/
             
-                <a href="javascript:" data-rel="hexo">hexo</a>
+                <a href="javascript:" data-rel="linux">linux</a>/
+            
+                <a href="javascript:" data-rel="设置">设置</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">教程</a>
+            <a href="javascript:" class="color1">linux</a>
             
-            <a href="javascript:" class="color3">博客</a>
+            <a href="javascript:" class="color3">设置</a>
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color3">网卡</a>
             
-            <a href="javascript:" class="color3">新手</a>
-            
-            <a href="javascript:" class="color5">公式编辑</a>
+            <a href="javascript:" class="color5">bond</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-07-25 16:45:29">2019-07-22 17:28</time>
+        创建时间:<time class="date" title="更新时间: 2019-08-26 11:38:41">2019-08-25 01:37</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:143</span>
+        <span>字数:293</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -550,7 +550,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取网卡设备名称"><span class="toc-text">获取网卡设备名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取网络网关"><span class="toc-text">获取网络网关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置1模式的bond备份"><span class="toc-text">设置1模式的bond备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置生效"><span class="toc-text">配置生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -565,32 +565,35 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexo默认使用marked渲染引擎(hexo-renderer-marked)，该引擎因为会将<code>_内容_</code>首先转化为Html的em标签，导致MathJax公式显示错误。因此，在写MathJax公式时，需要对符号进行转义。以下为需要转义的符号</p>
-<table>
-<thead>
-<tr>
-<th align="center">MathJax</th>
-<th align="center">Markdown</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>_</code></td>
-<td align="center"><code>\_</code></td>
-</tr>
-<tr>
-<td align="center"><code>\\</code></td>
-<td align="center"><code>\\\\</code></td>
-</tr>
-</tbody></table>
-<p>示例代码：</p>
-<pre><code>$$
-f(n) = 
-\\begin{cases}
-n\_2,  &amp; \text{if $n$ is even} \\\\
-n\_1, &amp; \text{if $n$ is odd}
-\\end{cases}
-$$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is even} \\<br>n_1, &amp; \text{if $n$ is odd}<br>\end{cases}<br>$$</p>
-<p>如果以后有更好的解决方式，则将Markdown文件代码进行替换就可以了。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇博客文章主要介绍linux系统中的网卡bond设置。</p>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><p>本篇文章中使用ubuntu作为实现平台，在虚拟机下安装ubuntu 16.04版本，并添加了两张网卡设备。</p>
+<h2 id="获取网卡设备名称"><a href="#获取网卡设备名称" class="headerlink" title="获取网卡设备名称"></a>获取网卡设备名称</h2><p>打开系统终端，运行指令<code>ifconfig -a</code><br><img src="/2019/08/25/linux中设置网卡bond/img1.webp" alt="获取网卡名称"><br>在本系统中网卡的名称为<strong>ens33</strong> 和<strong>ens38</strong> 。另外的lo为虚拟的网络接口，用于网络回环。</p>
+<h2 id="获取网络网关"><a href="#获取网络网关" class="headerlink" title="获取网络网关"></a>获取网络网关</h2><p>在终端中运行指令<code>netstat -r</code><br><img src="/2019/08/25/linux中设置网卡bond/img2.webp" alt="从路由表中获取网关信息"><br>系统的网关地址为：192.168.59.2</p>
+<h2 id="设置1模式的bond备份"><a href="#设置1模式的bond备份" class="headerlink" title="设置1模式的bond备份"></a>设置1模式的bond备份</h2><p>编辑/etc/network/interfaces文件，设置网卡配置如下：</p>
+<pre><code>auto lo
+iface lo inet loopback
+
+auto ens33
+iface ens33 inet manual
+bond-master bond0
+
+auto ens38
+iface ens38 inet manual
+bond-master bond0
+
+auto bond0
+iface bond0 inet static
+address 192.168.59.133
+netmask 255.255.255.0
+gateway 192.168.59.2
+dns-nameservers: 114.114.114.114
+bond-slaves ens33 ens38
+bond-lacp-rate 1
+bond-mode 1
+bond-miimon 100</code></pre><h2 id="配置生效"><a href="#配置生效" class="headerlink" title="配置生效"></a>配置生效</h2><p>重启系统，在终端中运行<code>ifconfig</code>查看设置是否生效：<br><img src="/2019/08/25/linux中设置网卡bond/img3.webp" alt="查看bond是否成功"><br>执行命令之后，看到出现了新的虚拟网络设备bond0，设置已经生效。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p>linux公社:<a href="https://www.linuxidc.com/Linux/2017-09/147164.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2017-09/147164.htm</a></p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 qinzhtao@163.com </span>
@@ -604,12 +607,12 @@ $$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is e
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hexo结合MathJax编辑公式</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">143</span></p>
+    <p><span class="copy-title">文章标题:</span>linux中设置网卡bond</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">293</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="捌叁壹伍">捌叁壹伍</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-22, 17:28:42</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-25, 16:45:29</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/22/Hexo结合MathJax编辑公式/" title="Hexo结合MathJax编辑公式">http://qzt8315.github.io/2019/07/22/Hexo结合MathJax编辑公式/</a>
+    <p><span class="copy-title">发布时间:</span>2019-08-25, 01:37:32</p>
+    <p><span class="copy-title">最后更新:</span>2019-08-26, 11:38:41</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/08/25/linux中设置网卡bond/" title="linux中设置网卡bond">http://qzt8315.github.io/2019/08/25/linux中设置网卡bond/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -641,44 +644,6 @@ $$</code></pre><p>$$<br>f(n) =<br>\begin{cases}<br>n_2,  &amp; \text{if $n$ is e
 
 
 
-
-    
-        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<input type="hidden" id="MathJax-js" value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 
     
 
