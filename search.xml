@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>深度学习中一些概念的东西</title>
+      <link href="/2019/09/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
+      <url>/2019/09/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%9C%E8%A5%BF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在本篇博客中主要是用于记录深度学习中一些概念性的词语。</p><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><table><thead><tr><th align="center">专业术语</th><th align="center">解释</th></tr></thead><tbody><tr><td align="center">超平面</td><td align="center">n维欧式空间中余维度等于1的子空间。即n维空间中的超平面是n-1维的子空间。</td></tr></tbody></table><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><blockquote><p><a href="https://zh.wikipedia.org/wiki/超平面" target="_blank" rel="noopener">超平面-来源:维基百科</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 概念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>作息时间安排</title>
       <link href="/2019/09/02/%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92/"/>
       <url>/2019/09/02/%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92/</url>
@@ -367,9 +394,9 @@
             
             <tag> 西瓜书 </tag>
             
-            <tag> 读书 </tag>
-            
             <tag> 符号表 </tag>
+            
+            <tag> 读书 </tag>
             
         </tags>
       
@@ -464,9 +491,9 @@
             
             <tag> 西瓜书 </tag>
             
-            <tag> 第一章 </tag>
-            
             <tag> 读书 </tag>
+            
+            <tag> 第一章 </tag>
             
         </tags>
       
