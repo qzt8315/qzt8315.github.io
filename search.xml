@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>sed工具</title>
+      <link href="/2019/10/08/sed%E5%B7%A5%E5%85%B7/"/>
+      <url>/2019/10/08/sed%E5%B7%A5%E5%85%B7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客中，主要是讲linux系统常用的工具sed。sed是一个管线命令可以对输入进行替换、删除、增加和检索特定行。</p><h2 id="常用的参数"><a href="#常用的参数" class="headerlink" title="常用的参数"></a>常用的参数</h2><pre><code class="bash">sed [-nefr] [动作]选项:-n: 使用静默模式，默认情况下，sed会将所有的stdin都输出到屏幕上，使用-n参数之后仅仅显示处理那一行；-e: 使用指令列模式进行sed动作编辑；-f: sed的动作来源于一个文档，一般为`-f filename`，则执行filename文件内的sed动作；-r: 表示sed支持拓展正则表达式语法；-i: 直接修改文档，不输出到屏幕。动作说明: [n1[,n2]]functionn1,n2 不一定会存在，一般表示进行动作的行数，处理10行到20行一般表示为`10,20`function一般是以下选项：a: 新增 `a 字符串`表示在当前行后面添一行，内容为字符串内容；c: 取代 `c 字符串`，表示字符串取代n1,n2表示行的内容；d: 删除 后不接内容；i: 插入 `i 字符串`,在目前行的前面新加一行，内容为字符串；p: 列印 将选择的内容打印出来，一般配合`sed -n`使用；s: 取代，直接进行取代工作，一般s配合正则表达式使用。注意，在命令后边下达的指令要用两个单引号括起来，例如操作，sed &#39;2,5d&#39;。</code></pre><p>其他更加详细的使用方法通过<code>man sed</code>指令查询。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol><li><p>将/etc/passwd中的的3到5行删除。命令<code>cat -n /etc/passwd | sed &#39;3,5d&#39;</code><br><img src="/2019/10/08/sed工具/img1.webp" alt="删除/etc/passwd的3到5行输出"><br>当需要删除第二行时，使用命令<code>sed &#39;2d&#39;</code>;当要删除第二行到最后一行时，使用命令<code>sed &#39;2,$d&#39;</code></p></li><li><p>在/etc/passwd中的第3行前添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3iadd by sed&#39;</code></p></li></ol><p><img src="/2019/10/08/sed工具/img2.webp" alt="在/etc/passwd的第三行前面添加特定内容"></p><ol start="3"><li><p>在/etc/passwd中的第3行后添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3aadd by sed&#39;</code><br><img src="/2019/10/08/sed工具/img3.webp" alt="在/etc/passwd的第三行后面添加特定内容"></p></li><li><p>将/etc/passwd的第二行取代为’this line is replaced by sed’，命令<code>cat -n /etc/passwd | sed &#39;2cthis line is replaced by sed&#39;</code><br><img src="/2019/10/08/sed工具/img4.webp" alt="将/etc/passwd的第二行替换"></p></li><li><p>替换行的部分数据，命令格式<code>sed &#39;s/被替换的字符串/新的字符串/g&#39;</code>，将/etc/passwd中的test替换为tt，执行命令<code>cat -n /etc/passwd | sed &#39;s/test/tt/g&#39;</code><br><img src="/2019/10/08/sed工具/img5.webp" alt="使用sed工具检索并替换"></p></li><li><p>sed可以直接修改文档内容，可以直接在命令后面接文档名称就可以直接修改文档名称，例如我们将文件中的所有’,’修改为’.’，那么命令为<code>sed &#39;s/,/\./g&#39; filename</code>。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> linux </category>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> 入门 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>正则表达式</title>
+      <link href="/2019/10/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <url>/2019/10/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正则表达式是一个优秀的文字处理方式，可以通过简单的匹配实现字符串的检索、替换或者删除处理，在信息提取、运营维护方面有重要的应用。</p><h2 id="具有特殊含义的符号"><a href="#具有特殊含义的符号" class="headerlink" title="具有特殊含义的符号"></a>具有特殊含义的符号</h2><table><thead><tr><th align="center">符号</th><th align="center">作用</th><th align="center">示例</th><th align="center">示例解释</th></tr></thead><tbody><tr><td align="center">[:alnum:]</td><td align="center">表示数字和大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:alpha:]</td><td align="center">表示大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:blank:]</td><td align="center">表示空格和制表符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:cntrl:]</td><td align="center">表示键盘的控制按键，包括CR、LF、Tab，Del等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:digit:]</td><td align="center">表示数字</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:graph:]</td><td align="center">除空格和制表符之外的其他按键，不包括控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:lower:]</td><td align="center">表示小写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:upper:]</td><td align="center">表示大写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:print:]</td><td align="center">表示可以打印的符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:punct:]</td><td align="center">表示标点符号，如,.’”等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:space:]</td><td align="center">表示任何的空白字符，包括空格，制表符和控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:xdigit:]</td><td align="center">表示16进制数，匹配0-9,AF和af</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[]</td><td align="center">表示中括号中任何一个字符匹配，可以使用范围表示字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[^]</td><td align="center">而中括号中加上’^’符号，表示不包含这个括号中的任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">^$</td><td align="center">当’^’和’$’分开出现的时候，分表表示起始和结束</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\</td><td align="center">后接特殊字符表示本来的字符，无特殊意义</td><td align="center">\.\+</td><td align="center"></td></tr><tr><td align="center">.</td><td align="center">表示任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">*</td><td align="center">表示重复匹配前面的字符0次或多次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n,m\}</td><td align="center">括号中填写数字n,m表示匹配前一字符n到m次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n\}</td><td align="center">括号中填写数字n表示匹配前一字符n次</td><td align="center"></td><td align="center"></td></tr></tbody></table><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟哥的linux私房菜第十一章:&lt; <a href="http://linux.vbird.org/linux_basic/0330regularex.php" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0330regularex.php</a> &gt;</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 正则表达式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深度学习中一些概念的东西</title>
       <link href="/2019/09/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
       <url>/2019/09/03/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%9A%84%E4%B8%9C%E8%A5%BF/</url>
