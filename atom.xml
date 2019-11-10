@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qzt8315.github.io/"/>
-  <updated>2019-10-17T07:24:22.009Z</updated>
+  <updated>2019-11-10T13:04:51.976Z</updated>
   <id>http://qzt8315.github.io/</id>
   
   <author>
@@ -17,13 +17,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程</title>
+    <link href="http://qzt8315.github.io/2019/10/31/%E5%8D%8E%E7%A1%95%E9%A3%9E%E8%A1%8C%E5%A0%A1%E5%9E%92fx50j%E5%8A%A0%E5%9B%BA%E6%80%81%E3%80%81%E6%B8%85%E7%81%B0%E5%8F%8A%E6%9B%B4%E6%8D%A2%E7%A1%85%E8%84%82%E8%BF%87%E7%A8%8B/"/>
+    <id>http://qzt8315.github.io/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/</id>
+    <published>2019-10-31T12:27:17.000Z</published>
+    <updated>2019-11-10T13:04:51.976Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看着我2015年购入的笔记本电脑，使用差不多4年的时间了，至今没有进行过清灰和更换硅脂。最近电脑的温度偏高，估计是内部灰尘积累和硅脂已经完全干了的原因，更加坚定要拆机维护的想法。再加上最近”双十一“临近，正好看重的硬盘有优惠，萌生了给电脑进行加固态、清灰和换硅脂的想法。</p><h2 id="硬件选择"><a href="#硬件选择" class="headerlink" title="硬件选择"></a>硬件选择</h2><ul><li>由于这台电脑只有一个硬盘位，因此要加装固态硬盘要么使用的单个大容量固态硬盘，要么使用光驱位硬盘托架将原有的机械硬盘放到光驱位。考虑到预算，选择<strong>机械硬盘+固态硬盘</strong>的方案。原光驱接口采用的是SATA2的接口，固态硬盘在该接口下无法充分发挥性能，因此选择将机械硬盘放置到光驱位，用于电脑中存储文件等用处。</li><li>固态硬盘通过网络的多方了解，考虑到稳定第一的需求，选择了<strong>samsung 250G 860 evo</strong>。（下面会仔细分析为啥选择这款固态。）</li><li>通过度娘，了解到普通光驱位硬盘托架可能在电脑重启的时候会导致硬盘的c0值增加。c0值表示硬盘不安全掉电次数，不安全掉电可能会导致机械硬盘产生坏道，固态硬盘丢失数据甚至会损坏硬盘。考虑到机械硬盘的数据安全，选择了一款有掉电保护的硬盘托架——<strong>佳翼H95</strong>。</li><li>在选择硅脂时，在网络上了解了硅脂的选择，考虑到笔记本散热的局限性，选择了质量较好的老牌发烧友常用的<strong>猫头鹰NT-H1</strong></li><li>而拆机工具使用了目前手边有的工具以及购买时赠送的工具。</li></ul><p><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img1.webp" alt="大合照"></p><p><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img2.webp" alt="samsung 250G 860 evo"></p><p><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img3.webp" alt="佳翼H95光驱位硬盘托架"></p><p><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img4.webp" alt="猫头鹰NT-H1散热硅脂"></p><p><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img5.webp" alt="清灰使用的毛刷"></p><h2 id="关于固态硬盘"><a href="#关于固态硬盘" class="headerlink" title="关于固态硬盘"></a>关于固态硬盘</h2><p>在民用级固态硬盘中三星是最好用了（当然还有英特尔的固态硬盘，但是目前英特尔基本上都是企业级的固态硬盘，目前还暂时不考虑），无论是从稳定性方面以及性能方面来说都是做得比较好的。通过<a href="http://tieba.baidu.com/f?kw=固态硬盘" target="_blank" rel="noopener">固态硬盘吧</a>了解到目前比较推荐的SATA固态硬盘有三星的860evo、闪迪的utral 3d、西数的blue 3d NAND、英睿达的MX500和东芝的tr200。三星的质量和性能是最好的；闪迪的性能比较好，寿命相对要低一点；西数的蓝盘固态性能较好，寿命相对三星要差一点；英睿达的MX500相对要便宜很多，网上也有很多说这款固态掉盘的问题，吧友们比较建议京东入手较稳；东芝的tr200相对来说是最最便宜的固态，寿命和质量都相较三星有很大的差别，不适合作为系统盘。综合自己的需求，准备再使用这台电脑好几年，所以选择了三星，三星本身自带5年/150TBW官方保修，只要购买的是全新正品，不用担心售后问题。</p><h3 id="关于三星硬盘开箱应该做的事"><a href="#关于三星硬盘开箱应该做的事" class="headerlink" title="关于三星硬盘开箱应该做的事"></a>关于三星硬盘开箱应该做的事</h3><ul><li>首先查看包装，封口是否完整。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img6.webp" alt="查看硬盘包装，封口是否完整"></li><li>查看侧面的SN码<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img7.webp" alt="查看硬盘的SN码"></li><li>通过SN码查询硬盘的真伪，常用的查询方法有两种<ol><li>官网查询。访问<a href="https://www.samsung.com/cn/" target="_blank" rel="noopener">三星中国官网</a>，在通过<strong>售后服务</strong>-<strong>自助服务</strong>-<strong>产品验证服务</strong>，在验证界面输入SN信息即可验证（PS：我使用的谷歌浏览器访问该网页显示不正常，使用手机访问可以正常的显示）。在官网上可能会出现查不到SN码的情况，这时候需要通过电话进行查询。</li><li>电话查询。通过服务电话400-810-5858，转固态硬盘类客服，报SN码即可查询到该固态的信息，核对固态的信息可知是否是正品。</li></ol></li></ul><h3 id="固态硬盘开箱"><a href="#固态硬盘开箱" class="headerlink" title="固态硬盘开箱"></a>固态硬盘开箱</h3><ul><li>首先打开包装封口，打开包装。，首先看到的是固态硬盘的说明书，里面是对硬盘的使用的基本介绍和保修说明。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img8.webp" alt="硬盘说明书"></li><li>说明书下面就是固态硬盘<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img9.webp" alt="固态硬盘"></li><li>拿起固态硬盘，是手感非常好的磨砂材质，感觉非常轻，在背面也贴有固态硬盘的SN码等基本信息。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img10.webp" alt="固态硬盘背面"></li></ul><h2 id="清灰、换硅脂和加装固态全过程"><a href="#清灰、换硅脂和加装固态全过程" class="headerlink" title="清灰、换硅脂和加装固态全过程"></a>清灰、换硅脂和加装固态全过程</h2><p>拆机之前一定注意的是：<strong>找个地方分开放每个步骤拆下的螺丝，避免弄丢螺丝或者找不到螺丝</strong>。</p><ol><li>首先将笔记本翻过来，向两边推打开电池的锁，取下电池。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img11.webp" alt="拆下笔记本电池"></li><li>拧开图示两颗螺丝，往下推D壳盖板即可拆下。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img12.webp" alt="拆下D壳盖板"></li><li>将内存槽两边的铁片往两边向外掰即可弹出内存条。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img13.webp" alt="拆下内存条"><br> 这个内存条是我之前在某东上入手的金士顿骇客神条(4G ddr3l 1600)。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img14.webp" alt="金士顿骇客神条"></li><li>拧下硬盘位周围的三颗螺丝，往外推即可拆下机械硬盘。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img15.webp" alt="拆下机械硬盘"><br> 原装使用的是日立7200转的500G机械硬盘。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img16.webp" alt="原装日立机械硬盘"></li><li>拧开D壳面的螺丝，需要注意电池两边的螺丝要比其它的长一些，装机的时候要注意，不要拧错了。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img17.webp" alt="拧开D壳面螺丝"></li><li>拆开C壳卡扣。将电脑翻过来，打开笔记本盖，用指甲插入C壳和D壳的缝隙中，然后从指甲打开的缝隙中插入一张卡片，用这张卡片将C壳的三面的卡扣都打开，拆。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img18.webp" alt="用一张卡片打开C壳卡扣"></li><li>打开C壳的三面的卡扣之后可以很轻易的将C壳从正面打开，但是要注意打开的幅度不能太大，因为C壳上有排线连接到主板上，如果打开的幅度很大，有可能损坏排线。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img19.webp" alt="小心翼翼打开C壳，看到C壳下的排线"></li><li>断开C壳排线。排线接口有一个类似锁扣的结构防止排线从接口中脱落，因此要断开排线需要把排线接口上的锁扣往上掰，打开后就可以断开排线了。（在网上查了资料，这种应该叫做锁扣排线。几种排线接口的资料<a href="https://www.jb51.net/softjc/453914.html" target="_blank" rel="noopener">https://www.jb51.net/softjc/453914.html</a>） <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img20.webp" alt="断开三条锁扣排线"></li><li>小心移除C壳，可以看到整个电脑的内部结构。我们可以看到4年没拆过的电脑中有非常多的灰，两个扬声器上面掉满了灰尘。拧开图示的螺丝，准备拆下光驱。<br> <img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img21.webp" alt="fx50j内部结构"></li><li>往外推即可拆下光驱。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img22.webp" alt="外推拆下光驱"></li><li>拆下光驱的固定铁片，拧下上面的两颗螺丝。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img23.webp" alt="拆下固定挡片"></li><li>将拆下的贴片固定到光驱位硬盘托架上，使用之前固定的螺丝固定即可。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img24.webp" alt="贴片固定的位置"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img25.webp" alt="固定好的样子"></li><li>为了测试光驱位硬盘支架，准备先将机械硬盘装到光驱位测试开机。首先找到固定机械硬盘的4螺丝（圈起来的螺丝一边两颗），拧掉即可将机械硬盘从硬盘支架上拆下。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img26.webp" alt="拆下机械硬盘"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img27.webp" alt="硬盘位托架，之后用于固定固态硬盘"></li><li>使用硬盘托架赠送的软胶塞塞入四个固定孔位，防止在装入硬盘后硬盘在托盘内晃动。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img28.webp" alt="在螺丝孔内塞入固定胶塞"></li><li>将硬盘装入光驱硬盘托架。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img29.webp" alt="硬盘装入托架，并且使用后固定胶塞将硬盘固定在托架内"></li><li>将光驱硬盘托架装入光驱位，拧上固定螺丝。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img30.webp" alt="将托架推入光驱位，使用螺丝固定"></li><li>接上开机排线，连接外接电源，尝试开机。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img31.webp" alt="测试光驱托架正常开机"></li><li>能正常开机后，把原光驱的挡板拆下，装到光驱托架上。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img32.webp" alt="拆下光驱挡板"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img33.webp" alt="挡板装到托架的侧面"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img34.webp" alt="给光驱硬盘托架装上挡板"></li><li>将固态硬盘装到硬盘支架上，拧上固定螺丝。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img35.webp" alt="将固态硬盘放入硬盘位"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img36.webp" alt="将两侧的固定螺丝拧上"></li><li>弄完硬盘之后，进行清灰和更换硅脂。首先拆下无线网卡的天线，这里的话是一黑一白两根天线，接着拧下无线网卡的固定螺丝，即可取下无线网卡。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img37.webp" alt="拆下天线和网卡固定螺丝"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img38.webp" alt="取下无线网卡"></li><li>拧下固定主板的螺丝，注意散热器和主板是固定在一起的，所以要把固定散热器的两个螺丝也拧掉，同时取掉usb小板的排线。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img39.webp" alt="拧下主板和散热风扇的固定螺丝，取下usb小板的排线"></li><li>拆下主板可以看到在D壳里面已经积累的很多的灰尘。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img40.webp" alt="D壳"></li><li>使用软毛刷去除D壳内的灰尘。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img41.webp" alt="毛刷清除D壳的灰尘"></li><li>在处理主板之前，应该取下主板背面的电池。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img42.webp" alt="取下主板电池"></li><li>拆掉散热器的固定螺丝。取下散热器。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img43.webp" alt="拆下散热器固定螺丝"><br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img44.webp" alt="拆下散热器"></li><li>使用软毛刷去除主板两面上积累的灰尘。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img45.webp" alt="刷去主板上的灰尘"></li><li>使用软毛刷清理风扇里的灰尘。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img46.webp" alt="刷去风扇上的灰尘"></li><li>使用吹风机吹掉残余的灰尘。</li><li>去掉散热器上残留的硅脂。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img47.webp" alt="去掉散热器上的硅脂"></li><li>去掉CPU和GPU核心上残留的硅脂，如果硅脂完全硬化了，不建议强行清除，强行清除可能会损坏核心，可以使用沾有无水酒精的棉球进行擦除。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img48.webp" alt="去除CPU和GPU核心的硅脂"></li><li>给CPU和GPU核心涂上硅脂。在核心上挤上一小点硅脂，能够在核心上薄薄覆盖上一层硅脂即可（尽可能薄）。<em>忘记拍照了，网上有涂硅脂的教程</em></li><li>按照拆机的步骤将散热器装回，注意，散热器要尽量对准孔位再装上去，避免散热器移动导致硅脂不均匀。</li><li>装上主板电池之后，接上电源接口、屏线和光驱硬盘托架测试是否能正常开机。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img49.webp" alt="装上主板电池"></li><li>测试正常开机之后，按照之前的拆机步骤装好主板，连接好电源接口、扬声器接口、屏线、无线网卡和usb小板排线，注意安装usb小板的排线不要被主板压住了。</li><li>按照拆机步骤装好光驱，连接好C壳排线，扣上C壳卡扣。</li><li>拧上D壳上螺丝，装好固态硬盘和内存条。</li><li>安装好电池和D壳盖板。</li><li>测试开机是否正常。<br><img src="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/img50.webp" alt="开机成功"></li></ol><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>虽然中间拆了好几次电脑，但是最后电脑维护完美结束。维护过程中最重要的是要细心一些，拆不下来不要使用暴力拆解。一定要注意在接触主板电路之前，释放一下人体的静电（通过接触接地的金属物品释放），避免静电击穿电路。</p><p>装机的时候一定要仔细一点，不要遗忘了安装某些东西。我最后忘记接上usb小板的排线导致又拆了一次电脑的教训。</p><p>最重要最重要的是把拆机的螺丝分步骤分开放，不然装机的时候将是噩梦。会发现找不到合适的螺丝或者装完机后还剩余螺丝。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>拆机参考资料:&lt; <a href="https://post.smzdm.com/p/395720/" target="_blank" rel="noopener">https://post.smzdm.com/p/395720/</a> &gt;<br>拆机参考资料:&lt; <a href="http://tieba.baidu.com/p/5717515872" target="_blank" rel="noopener">http://tieba.baidu.com/p/5717515872</a> &gt;<br>固态部分参考资料:&lt; <a href="http://tieba.baidu.com/p/6169820508" target="_blank" rel="noopener">http://tieba.baidu.com/p/6169820508</a> &gt;</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;看着我2015年购入的笔记本电脑，使用差不多4年的时间了，至今没有进行过清灰和更换硅脂。最近电脑的温度偏高，估计是内部灰尘积累和硅脂已经完全
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="http://qzt8315.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="计算机" scheme="http://qzt8315.github.io/categories/%E7%94%9F%E6%B4%BB/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+      <category term="PC" scheme="http://qzt8315.github.io/tags/PC/"/>
+    
+      <category term="维护" scheme="http://qzt8315.github.io/tags/%E7%BB%B4%E6%8A%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>档案对比工具</title>
+    <link href="http://qzt8315.github.io/2019/10/30/%E6%A1%A3%E6%A1%88%E5%AF%B9%E6%AF%94%E5%B7%A5%E5%85%B7/"/>
+    <id>http://qzt8315.github.io/2019/10/30/档案对比工具/</id>
+    <published>2019-10-30T09:48:26.000Z</published>
+    <updated>2019-11-08T17:15:12.281Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>档案对比工具一般是对ASCII纯文字文档进行对比，也可以对非纯文字文档进行对比。linux中常用的档案对比工具有diff、cmp和patch等。diff是对比ASCII纯文字文档，cmp可以对比非纯文字文档，</p><h2 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h2><p>diff工具一般用在纯文本文档中，以行为单位。</p><p>diff的基本语法如下：</p><pre><code class="bash">diff [-bBi] from-file to-file选项与参数:-b:忽略一行中多个空格的差异，例如&#39;about me&#39;和&#39;about  me&#39;，有一个空格和两个空格，但是&#39;b&#39;选项将两个字符串判定为相同的字符串;-B:忽略空白行的差别;-i:忽略大小写的差别。from-file:文档名，对比的参考文件;to-file:文档名，目标对比文件;</code></pre><p>这里，我们使用一个例子来进行diff的演示。</p><ol><li>使用<code>mkdir /tmp/passwdt &amp;&amp; cd /tmp/passwdt &amp;&amp; cat /etc/passwd | tee passwd.old | sed -e &#39;4d&#39; &gt; passwd.new</code>创建路径/tmp/passwdt并设置当前路径为/tmp/passwdt并将原本的passwd内容制作两份文档。<br><img src="/2019/10/30/档案对比工具/img1.webp" alt="passwd.old文档内容"><br><img src="/2019/10/30/档案对比工具/img2.webp" alt="passwd.new文档内容"></li><li>比较两份文档的区别，<code>diff /tmp/passwdt/passwd.old /tmp/passwdt/passwd.new</code>结果如下图:<br><img src="/2019/10/30/档案对比工具/img3.webp" alt="用diff比较passwd.old和passwd.new的区别"><br>其中<strong>4d3</strong>表示参考文档的第四行被删除，对比的是目标对比文件的第三行。后面紧跟着的一行是被删除的内容。</li></ol><p>diff工具除了能比较纯文本文件以外还能对目录等进行比较。</p><h2 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h2><p>cmp用于比较两个文档字节的差别，与diff的行比较不同，cmp是以字节为单位进行比较，也可以比较二进制文档。下面以对比passwd.new和passwd.old两个文档，执行结果如下:</p><p><img src="/2019/10/30/档案对比工具/img4.webp" alt="cmp对比结果"></p><h2 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h2><p>patch和diff有一定的联系，在diff中得到两个文件的差异，而在patch中则是构建前后两个文档通过差异建立联系，也就是补丁档，可以一个文件通过补丁档得到另外一个文件。示例如下：</p><ol><li><p>创建补丁档<br>命令<code>diff -Naur passwd.old passwd.new &gt; passwd.patch</code><br><img src="/2019/10/30/档案对比工具/img5.webp" alt="diff创建补丁"></p></li><li><p>使用patch打补丁</p><pre><code class="bash"># patch用法讲解patch -pN &lt; patch_file #更新文件，将旧文件更新为新文件# -p 后面的数字表示取消几层目录patch -R &lt; patch_file #还原文件，将新文件还原为之前的文件# -R 表示将新档案还原成就档案</code></pre><p>命令<code>patch -p0 &lt; passwd.patch</code>即可将旧文件更新为新文件内容;<br>命令<code>patch -R &lt; passwd.patch</code>即可将新文件还原为旧文件内容;</p></li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟叔的linux私房菜-第十一章:&lt;  <a href="http://linux.vbird.org/linux_basic/0330regularex.php" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0330regularex.php</a> &gt;</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;档案对比工具一般是对ASCII纯文字文档进行对比，也可以对非纯文字文档进行对比。linux中常用的档案对比工具有diff、cmp和patch
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="linux" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/linux/"/>
+    
+      <category term="工具" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/linux/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="linux" scheme="http://qzt8315.github.io/tags/linux/"/>
+    
+      <category term="diff" scheme="http://qzt8315.github.io/tags/diff/"/>
+    
+      <category term="cmp" scheme="http://qzt8315.github.io/tags/cmp/"/>
+    
+      <category term="patch" scheme="http://qzt8315.github.io/tags/patch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>awk工具</title>
+    <link href="http://qzt8315.github.io/2019/10/18/awk%E5%B7%A5%E5%85%B7/"/>
+    <id>http://qzt8315.github.io/2019/10/18/awk工具/</id>
+    <published>2019-10-17T16:47:46.000Z</published>
+    <updated>2019-11-08T17:09:39.105Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="命令形式"><a href="#命令形式" class="headerlink" title="命令形式"></a>命令形式</h2><pre><code>awk &#39;条件类型1{动作1}条件类型2{动作2}...&#39; filename</code></pre><p>awk主要是处理每一行的栏位内的资料，预设的分隔符号为空格或者制表符。</p><p><strong>例子</strong>:列出ssh最后五条登陆记录，并用awk只显示登陆用户名、登陆时间和登陆ip。命令<code>last -n 5 | egrep -v &quot;reboot|^$|wtmp&quot; | awk &#39;{print $1 &quot;\t&quot; $5&quot; &quot;$6&quot; &quot;$7 &quot;\t&quot; $3}&#39;</code><br><img src="/2019/10/18/awk工具/img1.webp" alt="提取最后5条登陆信息中的登陆用户名、登陆时间和登陆ip"></p><h2 id="awk一般处理流程"><a href="#awk一般处理流程" class="headerlink" title="awk一般处理流程"></a>awk一般处理流程</h2><p>一般awk的处理流程如下：</p><ol><li>读入一行，并根据分隔符进行分割，一次用$1、$2……表示（<em>注意</em>:$0表示的该行完整内容）；</li><li>根据条件类型，决定后面紧跟的动作是否进行；</li><li>完成所用的条件判断及符合条件的动作执行；</li><li>如果后续还有内容则选择下一行继续进行1处理</li></ol><h2 id="awk内建变量"><a href="#awk内建变量" class="headerlink" title="awk内建变量"></a>awk内建变量</h2><p>以下为常用的内建变量名称，详细的内建变量名称可以通过<code>man awk</code>查询。</p><table><thead><tr><th align="center">内建变量名称</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">NF</td><td align="center">每一行分割之后的栏位个数</td></tr><tr><td align="center">NR</td><td align="center">目前处理字符串的行数</td></tr><tr><td align="center">FS</td><td align="center">目前的分隔字符</td></tr></tbody></table><h2 id="awk逻辑运算符"><a href="#awk逻辑运算符" class="headerlink" title="awk逻辑运算符"></a>awk逻辑运算符</h2><p>逻辑运算符使用在条件类型中，用于判断条件，是否执行后边的动作命令。</p><table><thead><tr><th align="center">运算符</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">&gt;</td><td align="center">大于</td></tr><tr><td align="center">&lt;</td><td align="center">小于</td></tr><tr><td align="center">&gt;=</td><td align="center">大于等于</td></tr><tr><td align="center">&lt;=</td><td align="center">小于等于</td></tr><tr><td align="center">==</td><td align="center">等于</td></tr><tr><td align="center">!=</td><td align="center">不等于</td></tr></tbody></table><h2 id="使用的注意事项"><a href="#使用的注意事项" class="headerlink" title="使用的注意事项"></a>使用的注意事项</h2><p>awk指令的间隔：所用的awk命令都用’{}’括起来，如果在一个动作中使用多个命令，则使用’;’间隔，或者使用回车换行间隔。</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟叔的linux私房菜:&lt; <a href="http://linux.vbird.org/" target="_blank" rel="noopener">http://linux.vbird.org/</a> &gt;</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;h2 id=&quot;命令形式&quot;&gt;&lt;a href=&quot;#命令形式&quot; class=&quot;headerlink&quot; title=&quot;命令形式&quot;&gt;&lt;/a&gt;命令形式&lt;/h
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="linux" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/linux/"/>
+    
+      <category term="工具" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/linux/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="linux" scheme="http://qzt8315.github.io/tags/linux/"/>
+    
+      <category term="awk" scheme="http://qzt8315.github.io/tags/awk/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sed工具</title>
     <link href="http://qzt8315.github.io/2019/10/08/sed%E5%B7%A5%E5%85%B7/"/>
     <id>http://qzt8315.github.io/2019/10/08/sed工具/</id>
     <published>2019-10-08T08:35:40.000Z</published>
-    <updated>2019-10-17T07:24:22.009Z</updated>
+    <updated>2019-11-08T17:09:29.420Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客中，主要是讲linux系统常用的工具sed。sed是一个管线命令可以对输入进行替换、删除、增加和检索特定行。</p><h2 id="常用的参数"><a href="#常用的参数" class="headerlink" title="常用的参数"></a>常用的参数</h2><pre><code class="bash">sed [-nefr] [动作]选项:-n: 使用静默模式，默认情况下，sed会将所有的stdin都输出到屏幕上，使用-n参数之后仅仅显示处理那一行；-e: 使用指令列模式进行sed动作编辑；-f: sed的动作来源于一个文档，一般为`-f filename`，则执行filename文件内的sed动作；-r: 表示sed支持拓展正则表达式语法；-i: 直接修改文档，不输出到屏幕。动作说明: [n1[,n2]]functionn1,n2 不一定会存在，一般表示进行动作的行数，处理10行到20行一般表示为`10,20`function一般是以下选项：a: 新增 `a 字符串`表示在当前行后面添一行，内容为字符串内容；c: 取代 `c 字符串`，表示字符串取代n1,n2表示行的内容；d: 删除 后不接内容；i: 插入 `i 字符串`,在目前行的前面新加一行，内容为字符串；p: 列印 将选择的内容打印出来，一般配合`sed -n`使用；s: 取代，直接进行取代工作，一般s配合正则表达式使用。注意，在命令后边下达的指令要用两个单引号括起来，例如操作，sed &#39;2,5d&#39;。</code></pre><p>其他更加详细的使用方法通过<code>man sed</code>指令查询。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol><li><p>将/etc/passwd中的的3到5行删除。命令<code>cat -n /etc/passwd | sed &#39;3,5d&#39;</code><br><img src="/2019/10/08/sed工具/img1.webp" alt="删除/etc/passwd的3到5行输出"><br>当需要删除第二行时，使用命令<code>sed &#39;2d&#39;</code>;当要删除第二行到最后一行时，使用命令<code>sed &#39;2,$d&#39;</code></p></li><li><p>在/etc/passwd中的第3行前添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3iadd by sed&#39;</code></p></li></ol><p><img src="/2019/10/08/sed工具/img2.webp" alt="在/etc/passwd的第三行前面添加特定内容"></p><ol start="3"><li><p>在/etc/passwd中的第3行后添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3aadd by sed&#39;</code><br><img src="/2019/10/08/sed工具/img3.webp" alt="在/etc/passwd的第三行后面添加特定内容"></p></li><li><p>将/etc/passwd的第二行取代为’this line is replaced by sed’，命令<code>cat -n /etc/passwd | sed &#39;2cthis line is replaced by sed&#39;</code><br><img src="/2019/10/08/sed工具/img4.webp" alt="将/etc/passwd的第二行替换"></p></li><li><p>替换行的部分数据，命令格式<code>sed &#39;s/被替换的字符串/新的字符串/g&#39;</code>，将/etc/passwd中的test替换为tt，执行命令<code>cat -n /etc/passwd | sed &#39;s/test/tt/g&#39;</code><br><img src="/2019/10/08/sed工具/img5.webp" alt="使用sed工具检索并替换"></p></li><li><p>sed可以直接修改文档内容，可以直接在命令后面接文档名称就可以直接修改文档名称，例如我们将文件中的所有’,’修改为’.’，那么命令为<code>sed &#39;s/,/\./g&#39; filename</code>。</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客中，主要是讲linux系统常用的工具sed。sed是一个管线命令可以对输入进行替换、删除、增加和检索特定行。</p><h2 id="常用的参数"><a href="#常用的参数" class="headerlink" title="常用的参数"></a>常用的参数</h2><pre><code class="bash">sed [-nefr] [动作]选项:-n: 使用静默模式，默认情况下，sed会将所有的stdin都输出到屏幕上，使用-n参数之后仅仅显示处理那一行；-e: 使用指令列模式进行sed动作编辑；-f: sed的动作来源于一个文档，一般为`-f filename`，则执行filename文件内的sed动作；-r: 表示sed支持拓展正则表达式语法；-i: 直接修改文档，不输出到屏幕。动作说明: [n1[,n2]]functionn1,n2 不一定会存在，一般表示进行动作的行数，处理10行到20行一般表示为`10,20`function一般是以下选项：a: 新增 `a 字符串`表示在当前行后面添一行，内容为字符串内容；c: 取代 `c 字符串`，表示字符串取代n1,n2表示行的内容；d: 删除 后不接内容；i: 插入 `i 字符串`,在目前行的前面新加一行，内容为字符串；p: 列印 将选择的内容打印出来，一般配合`sed -n`使用；s: 取代，直接进行取代工作，一般s配合正则表达式使用。注意，在命令后边下达的指令要用两个单引号括起来，例如操作，sed &#39;2,5d&#39;。</code></pre><p>其他更加详细的使用方法通过<code>man sed</code>指令查询。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol><li><p>将/etc/passwd中的的3到5行删除。命令<code>cat -n /etc/passwd | sed &#39;3,5d&#39;</code><br><img src="/2019/10/08/sed工具/img1.webp" alt="删除/etc/passwd的3到5行输出"><br>当需要删除第二行时，使用命令<code>sed &#39;2d&#39;</code>;当要删除第二行到最后一行时，使用命令<code>sed &#39;2,$d&#39;</code></p></li><li><p>在/etc/passwd中的第3行前添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3iadd by sed&#39;</code></p></li></ol><p><img src="/2019/10/08/sed工具/img2.webp" alt="在/etc/passwd的第三行前面添加特定内容"></p><ol start="3"><li><p>在/etc/passwd中的第3行后添加’add by sed’。命令<code>cat -n /etc/passwd | sed &#39;3aadd by sed&#39;</code><br><img src="/2019/10/08/sed工具/img3.webp" alt="在/etc/passwd的第三行后面添加特定内容"></p></li><li><p>将/etc/passwd的第二行取代为’this line is replaced by sed’，命令<code>cat -n /etc/passwd | sed &#39;2cthis line is replaced by sed&#39;</code><br><img src="/2019/10/08/sed工具/img4.webp" alt="将/etc/passwd的第二行替换"></p></li><li><p>替换行的部分数据，命令格式<code>sed &#39;s/被替换的字符串/新的字符串/g&#39;</code>，将/etc/passwd中的test替换为tt，执行命令<code>cat -n /etc/passwd | sed &#39;s/test/tt/g&#39;</code><br><img src="/2019/10/08/sed工具/img5.webp" alt="使用sed工具检索并替换"></p></li><li><p>sed可以直接修改文档内容，可以直接在命令后面接文档名称就可以直接修改文档名称，例如我们将文件中的所有’,’修改为’.’，那么命令为<code>sed &#39;s/,/\./g&#39; filename</code>。</p></li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟叔的linux私房菜:&lt; <a href="http://linux.vbird.org/" target="_blank" rel="noopener">http://linux.vbird.org/</a> &gt;</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -53,9 +148,9 @@
     <link href="http://qzt8315.github.io/2019/10/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://qzt8315.github.io/2019/10/05/正则表达式/</id>
     <published>2019-10-05T15:53:31.000Z</published>
-    <updated>2019-10-15T08:19:24.065Z</updated>
+    <updated>2019-10-17T16:48:05.176Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正则表达式是一个优秀的文字处理方式，可以通过简单的匹配实现字符串的检索、替换或者删除处理，在信息提取、运营维护方面有重要的应用。</p><h2 id="具有特殊含义的符号"><a href="#具有特殊含义的符号" class="headerlink" title="具有特殊含义的符号"></a>具有特殊含义的符号</h2><table><thead><tr><th align="center">符号</th><th align="center">作用</th><th align="center">示例</th><th align="center">示例解释</th></tr></thead><tbody><tr><td align="center">[:alnum:]</td><td align="center">表示数字和大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:alpha:]</td><td align="center">表示大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:blank:]</td><td align="center">表示空格和制表符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:cntrl:]</td><td align="center">表示键盘的控制按键，包括CR、LF、Tab，Del等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:digit:]</td><td align="center">表示数字</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:graph:]</td><td align="center">除空格和制表符之外的其他按键，不包括控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:lower:]</td><td align="center">表示小写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:upper:]</td><td align="center">表示大写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:print:]</td><td align="center">表示可以打印的符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:punct:]</td><td align="center">表示标点符号，如,.’”等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:space:]</td><td align="center">表示任何的空白字符，包括空格，制表符和控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:xdigit:]</td><td align="center">表示16进制数，匹配0-9,AF和af</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[]</td><td align="center">表示中括号中任何一个字符匹配，可以使用范围表示字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[^]</td><td align="center">而中括号中加上’^’符号，表示不包含这个括号中的任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">^$</td><td align="center">当’^’和’$’分开出现的时候，分表表示起始和结束</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\</td><td align="center">后接特殊字符表示本来的字符，无特殊意义</td><td align="center">\.\+</td><td align="center"></td></tr><tr><td align="center">.</td><td align="center">表示任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">*</td><td align="center">表示重复匹配前面的字符0次或多次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n,m\}</td><td align="center">括号中填写数字n,m表示匹配前一字符n到m次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n\}</td><td align="center">括号中填写数字n表示匹配前一字符n次</td><td align="center"></td><td align="center"></td></tr></tbody></table><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟哥的linux私房菜第十一章:&lt; <a href="http://linux.vbird.org/linux_basic/0330regularex.php" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0330regularex.php</a> &gt;</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正则表达式是一个优秀的文字处理方式，可以通过简单的匹配实现字符串的检索、替换或者删除处理，在信息提取、运营维护方面有重要的应用。</p><h2 id="具有特殊含义的符号"><a href="#具有特殊含义的符号" class="headerlink" title="具有特殊含义的符号"></a>具有特殊含义的符号</h2><table><thead><tr><th align="center">符号</th><th align="center">作用</th><th align="center">示例</th><th align="center">示例解释</th></tr></thead><tbody><tr><td align="center">[:alnum:]</td><td align="center">表示数字和大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:alpha:]</td><td align="center">表示大小写英文字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:blank:]</td><td align="center">表示空格和制表符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:cntrl:]</td><td align="center">表示键盘的控制按键，包括CR、LF、Tab，Del等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:digit:]</td><td align="center">表示数字</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:graph:]</td><td align="center">除空格和制表符之外的其他按键，不包括控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:lower:]</td><td align="center">表示小写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:upper:]</td><td align="center">表示大写字母</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:print:]</td><td align="center">表示可以打印的符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:punct:]</td><td align="center">表示标点符号，如,.’”等等</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:space:]</td><td align="center">表示任何的空白字符，包括空格，制表符和控制符号</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[:xdigit:]</td><td align="center">表示16进制数，匹配0-9,AF和af</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[]</td><td align="center">表示中括号中任何一个字符匹配，可以使用范围表示字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">[^]</td><td align="center">而中括号中加上’^’符号，表示不包含这个括号中的任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">^$</td><td align="center">当’^’和’$’分开出现的时候，分表表示起始和结束</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\</td><td align="center">后接特殊字符表示本来的字符，无特殊意义</td><td align="center">\.\+</td><td align="center"></td></tr><tr><td align="center">.</td><td align="center">表示任何一个字符</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">*</td><td align="center">表示重复匹配前面的字符0次或多次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n,m\}</td><td align="center">括号中填写数字n,m表示匹配前一字符n到m次</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">\{n\}</td><td align="center">括号中填写数字n表示匹配前一字符n次</td><td align="center"></td><td align="center"></td></tr></tbody></table><h2 id="拓展正则表达式"><a href="#拓展正则表达式" class="headerlink" title="拓展正则表达式"></a>拓展正则表达式</h2><p>grep默认参数仅支持基础正则表达式，可以使用<code>grep -E</code>或者<code>egrep</code>开启使用扩展正则表达式。拓展正则表达式如下表所示:</p><table><thead><tr><th align="left">RE符号</th><th align="center">意义</th><th align="center">示例</th><th align="center">示例解释</th></tr></thead><tbody><tr><td align="left">+</td><td align="center">重复一个或者以上</td><td align="center">go+d</td><td align="center">匹配god、good、goood等等</td></tr><tr><td align="left">?</td><td align="center">匹配0个或者1个</td><td align="center">go?d</td><td align="center">匹配gd和god</td></tr><tr><td align="left">|</td><td align="center">或</td><td align="center">good|glad</td><td align="center">匹配good或者glad</td></tr><tr><td align="left">()</td><td align="center">表示多个字符的字串</td><td align="center">g(oo|la)d</td><td align="center">匹配good或者glad</td></tr><tr><td align="left">()+</td><td align="center">将()内匹配的字符串匹配1次及更多</td><td align="center">a(bc)+d</td><td align="center">匹配abc…d字符串</td></tr></tbody></table><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><p>鸟哥的linux私房菜第十一章:&lt; <a href="http://linux.vbird.org/linux_basic/0330regularex.php" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0330regularex.php</a> &gt;</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -555,79 +650,6 @@
       <category term="hexo" scheme="http://qzt8315.github.io/tags/hexo/"/>
     
       <category term="备份" scheme="http://qzt8315.github.io/tags/%E5%A4%87%E4%BB%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>西瓜书_第一章</title>
-    <link href="http://qzt8315.github.io/2019/07/19/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
-    <id>http://qzt8315.github.io/2019/07/19/西瓜书-第一章/</id>
-    <published>2019-07-19T13:19:43.000Z</published>
-    <updated>2019-07-23T05:45:10.340Z</updated>
-    
-    <content type="html"><![CDATA[<p>西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。</p><p>第一章 绪论主要讲解一些基础的概念性的东西。</p><h5 id="机器学习的分类"><a href="#机器学习的分类" class="headerlink" title="机器学习的分类"></a>机器学习的分类</h5><ol><li><p>按照学习任务划分：</p><ul><li>分类<ul><li>多分类<ul><li>二分类<ul><li>正类</li><li>反类</li></ul></li><li>多分类</li></ul></li></ul></li><li>回归</li></ul></li><li><p>按照训练数据是否有标记信息划分：</p><ul><li>监督学习（有导师学习）</li><li>无监督学习（无导师学习）</li></ul></li></ol><h5 id="归纳与演绎"><a href="#归纳与演绎" class="headerlink" title="归纳与演绎"></a>归纳与演绎</h5><p>科学推理的两大基本手段：归纳、演绎</p><p><em>归纳</em>:从具体事实归结出一般性规律。</p><p><em>演绎</em>:从基础原理推演出具体状况。</p><h5 id="奥卡姆剃刀"><a href="#奥卡姆剃刀" class="headerlink" title="奥卡姆剃刀"></a>奥卡姆剃刀</h5><p>奥卡姆剃刀:若有多个假设与观察的一致，则选用最简单的那个。</p><h5 id="NFL定理"><a href="#NFL定理" class="headerlink" title="NFL定理"></a>NFL定理</h5><p>”没有免费的午餐“定理：（<em>No Free Lunch Theorem, 简称NFL定理</em>）:无论学习算法ξ<sub>α</sub>聪明或者笨拙，他们的期望性都是相同的。</p><p>因此NFL定理说明，脱离具体问题，空泛的谈论哪种学习算法更好是没有意义的。</p><h5 id="流动推销员问题"><a href="#流动推销员问题" class="headerlink" title="流动推销员问题"></a>流动推销员问题</h5><p>已知一个由n个城市(节点)组成的网络，任意两个城市V<sub>i</sub>到V<sub>j</sub>的距离为D<sub>ij</sub>(<em>一般D<sub>ij</sub>≠D<sub>ji</sub></em>)，一个推销员从V<sub>1</sub>开始访问每一个城市一次且仅一次，最后返回V<sub>1</sub>。这个推销员应该如何选择线路使得行程最短？<em>(Ps:该问题中涉及到NP问题)</em></p><h5 id="NP问题"><a href="#NP问题" class="headerlink" title="NP问题"></a>NP问题</h5><p>NP问题：指存在多项式算法能够验证的非决定性问题。</p><h5 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h5><p>数据挖掘就是从海量的数据中发掘知识。数据库领域的研究为数据挖掘提供数据管理技术。而机器学习和统计学的研究为数据挖掘提供数据分析技术。</p><p>数据挖掘使得搜索引擎成为人们心有灵犀的工具，美国《新闻周刊》曾对谷歌有一句话的评论：”它使任何人离任何问题的答案间的就变得只有点击以下鼠标这么远“。</p><h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h5><blockquote><p><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">《机器学习》作者：周志华</a>；</p><p>参考部分网络文献资料。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;西瓜书是人工智能的入门书籍。在书中讲解了机器学习的常用方法及其解释。&lt;/p&gt;
-&lt;p&gt;第一章 绪论主要讲解一些基础的概念性的东西。&lt;/p&gt;
-&lt;h5 id=&quot;机器学习的分类&quot;&gt;&lt;a href=&quot;#机器学习的分类&quot; class=&quot;headerlink&quot; title=&quot;机器学习的分
-      
-    
-    </summary>
-    
-      <category term="读书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="西瓜书" scheme="http://qzt8315.github.io/categories/%E8%AF%BB%E4%B9%A6/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
-    
-    
-      <category term="西瓜书" scheme="http://qzt8315.github.io/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
-    
-      <category term="读书" scheme="http://qzt8315.github.io/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-      <category term="第一章" scheme="http://qzt8315.github.io/tags/%E7%AC%AC%E4%B8%80%E7%AB%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown入门</title>
-    <link href="http://qzt8315.github.io/2019/07/18/markdown%E5%85%A5%E9%97%A8/"/>
-    <id>http://qzt8315.github.io/2019/07/18/markdown入门/</id>
-    <published>2019-07-18T08:45:51.000Z</published>
-    <updated>2019-07-25T08:45:45.702Z</updated>
-    
-    <content type="html"><![CDATA[<hr><p><strong>Markdown源码如下:</strong></p><pre><code class="markdown">展示的是一级标题==============展示的是二级标题-------------------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题七级标题是不可能七级的展示的是一级标题==============展示的是二级标题------------# 这也是一级标题## 这是二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题RUN flow me  *斜体文本*_斜体文本_**粗体文本*****斜粗体文本***___斜粗体文本___分割线---***___- - -* * *_ _ _~~这个是删除线~~&lt;u&gt;这个是下划线&lt;/u&gt;菜鸟教程[^RUNOOB]真的好用* 第一项  + 第二项- 第三项1. 第一项2. 第二项3. 第三项###### 以下是列表嵌套1. 第一项    - 第一小点    - 第二小点2. 第二项    - 第一小点区块&gt; 区块引用&gt; 菜鸟教程&gt; 学的不仅是技术更是梦想&gt; 最外层&gt; &gt; 第一层&gt; &gt;&gt; &gt; &gt; 第二层区块中使用列表&gt; 1. 1&gt; 2. 2&gt; * 第一&gt; * 第二* 列表中使用区块    &gt; 菜鸟教程    &gt; 学的不仅是技术更是梦想`print()`函数```php    &lt;?php    echo &#39;RUNOOB&#39;;    function test() {        echo &#39;test&#39;;    }``````python​import numpy as np​from keras.models import load_model​​if __name__ == &quot;__main__&quot;:​print(123)```这是一个链接[百度一下，你就知道](https://www.baidu.com)&lt;https://www.baidu.com&gt;高级链接**链接可以用变量代替，文档末附带变量地址**这个链接使用1作为网址变量 [Baidu][1]使用百度代替网址变量[百度][百度]__图片语法__![百度][2]![图片 百度](https://www.baidu.com/favicon.ico&quot;百度logo&quot;)**可使用img标签指定图片宽度**&lt;img src=&quot;https://www.baidu.com/favicon.ico&quot; width=&quot;50%&quot;&gt;| 表头 | 表头|| :---: | :---:|| 单元格 | 单元格 || 单元格 | 单元格 |[^RUNOOB]: 菜鸟教程 -- 学的不仅是技术，更是梦想！！！[1]: https://www.baidu.com[百度]: https://www.baidu.com[2]: https://www.baidu.com/favicon.ico</code></pre><p><strong>Markdown展现效果如下:</strong></p><h1 id="展示的是一级标题"><a href="#展示的是一级标题" class="headerlink" title="展示的是一级标题"></a>展示的是一级标题</h1><h2 id="展示的是二级标题"><a href="#展示的是二级标题" class="headerlink" title="展示的是二级标题"></a>展示的是二级标题</h2><h1 id="这也是一级标题"><a href="#这也是一级标题" class="headerlink" title="这也是一级标题"></a>这也是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>七级标题是不可能七级的</p><p>RUN flow me  </p><p><em>斜体文本</em></p><p><em>斜体文本</em></p><p><strong>粗体文本</strong></p><p><strong><em>斜粗体文本</em></strong></p><p><strong><em>斜粗体文本</em></strong></p><p>分割线</p><hr><hr><hr><hr><hr><hr><p><del>这个是删除线</del></p><p><u>这个是下划线</u></p><p>菜鸟教程[^RUNOOB]真的好用</p><ul><li>第一项  </li></ul><ul><li>第二项</li></ul><ul><li>第三项</li></ul><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h6 id="以下是列表嵌套"><a href="#以下是列表嵌套" class="headerlink" title="以下是列表嵌套"></a>以下是列表嵌套</h6><ol><li>第一项<ul><li>第一小点</li><li>第二小点</li></ul></li><li>第二项<ul><li>第一小点</li></ul></li></ol><p>区块</p><blockquote><p>区块引用<br>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote><blockquote><p>最外层</p><blockquote><p>第一层</p><blockquote><p>第二层</p></blockquote></blockquote></blockquote><p>区块中使用列表</p><blockquote><ol><li>1</li><li>2</li></ol><ul><li>第一</li><li>第二</li></ul></blockquote><ul><li>列表中使用区块<blockquote><p>菜鸟教程<br>学的不仅是技术更是梦想</p></blockquote></li></ul><p><code>print()</code>函数</p><pre><code class="php+HTML">&lt;?phpecho &#39;RUNOOB&#39;;function test() {    echo &#39;test&#39;;}</code></pre><pre><code class="python">import numpy as npfrom keras.models import load_modelif __name__ == &quot;__main__&quot;:    print(123)print(&#39;this is python language.&#39;)</code></pre><p>这是一个链接<a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下，你就知道</a></p><p><a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a></p><p>高级链接<br><strong>链接可以用变量代替，文档末附带变量地址</strong><br>这个链接使用1作为网址变量 [Baidu][1]<br>使用百度代替网址变量[百度][百度]</p><p><strong>图片语法</strong><br>![百度][2]<br><img src="https://www.baidu.com/favicon.ico" alt="图片 百度" title="log"></p><p><strong>可使用img标签指定图片宽度</strong><br><img src="https://www.baidu.com/favicon.ico" width="50%"></p><table><thead><tr><th align="center">表头</th><th align="center">表头</th></tr></thead><tbody><tr><td align="center">单元格</td><td align="center">单元格</td></tr><tr><td align="center">单元格</td><td align="center">单元格</td></tr></tbody></table><p>[^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！<br>[1]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[百度]: <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br>[2]: <a href="https://www.baidu.com/favicon.ico" target="_blank" rel="noopener">https://www.baidu.com/favicon.ico</a></p><p><em>Ps:本文参考<a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></em></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Markdown源码如下:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;markdown&quot;&gt;展示的是一级标题
-==============
-展示的是二级标题
--------------------------
-# 这也是一级标题
-
-      
-    
-    </summary>
-    
-      <category term="学习" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="markdown" scheme="http://qzt8315.github.io/categories/%E5%AD%A6%E4%B9%A0/markdown/"/>
-    
-    
-      <category term="markdown" scheme="http://qzt8315.github.io/tags/markdown/"/>
-    
-      <category term="标签" scheme="http://qzt8315.github.io/tags/%E6%A0%87%E7%AD%BE/"/>
-    
-      <category term="语法" scheme="http://qzt8315.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-      <category term="入门" scheme="http://qzt8315.github.io/tags/%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
