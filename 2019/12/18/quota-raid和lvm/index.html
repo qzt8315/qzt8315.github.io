@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <title>quota,raid和lvm | 8315的博客</title>
+  <meta name="keywords" content=" quota , raid , lvm ">
+  <meta name="description" content="quota,raid和lvm | 8315的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="抱歉。。。您访问的网页找不到了。">
+<meta name="keywords" content="学习|技术|快乐|每一天">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 网页未找到!">
+<meta property="og:url" content="http://qzt8315.github.io/404.html">
+<meta property="og:site_name" content="8315的博客">
+<meta property="og:description" content="抱歉。。。您访问的网页找不到了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-20T04:22:58.188Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="404 网页未找到!">
+<meta name="twitter:description" content="抱歉。。。您访问的网页找不到了。">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>捌叁壹伍</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/qzt8315" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(29)</small></div></li>
+    
+        
+            
+            <li><div data-rel="学习"><i class="fold iconfont icon-right"></i>学习<small>(21)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hexo">hexo<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="linux">linux<small>(10)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="markdown">markdown<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="易企秀">易企秀<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="编程">编程<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="理论">理论<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="秀米">秀米<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络">网络<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="生活"><i class="fold iconfont icon-right"></i>生活<small>(3)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="计算机">计算机<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="观影">观影<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="读书"><i class="fold iconfont icon-right"></i>读书<small>(5)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="西瓜书">西瓜书<small>(5)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="29">
+<input type="hidden" id="yelog_site_word_count" value="38.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://www.77ee.top/">个人网站</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">教程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">博客</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">新手</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">公式编辑</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">备份</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">awk</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">markdown</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">标签</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">语法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">入门</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">quota</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">raid</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">lvm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">设置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网卡</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">bond</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">判断式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">作息时间</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">shell-script</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">用户</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">PC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">维护</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">观影</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">动漫</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">diff</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">cmp</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">patch</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">H5</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">易企秀</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">正则表达式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数学公式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">秀米</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">图文排版</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">深度学习</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">概念</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">shell_script</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">基础概念</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">西瓜书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">符号表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">读书</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">第一章</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">第三章</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">第二章</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">第四章</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a class="学习 hexo " href="/2019/07/22/Hexo结合MathJax编辑公式/" data-tag="教程,博客,hexo,新手,公式编辑" data-author>
+            <span class="post-title" title="Hexo结合MathJax编辑公式">Hexo结合MathJax编辑公式</span>
+            <span class="post-date" title="2019-07-22 17:28:42">2019/07/22</span>
+        </a>
+        
+        <a class="学习 hexo " href="/2019/07/25/Hexo的一些插件/" data-tag="教程,博客,hexo,新手" data-author>
+            <span class="post-title" title="Hexo的一些插件">Hexo的一些插件</span>
+            <span class="post-date" title="2019-07-25 19:46:36">2019/07/25</span>
+        </a>
+        
+        <a class="学习 hexo " href="/2019/07/21/git实现博客和主题的备份和同步/" data-tag="教程,博客,hexo,备份" data-author>
+            <span class="post-title" title="Git实现博客和主题的备份和同步">Git实现博客和主题的备份和同步</span>
+            <span class="post-date" title="2019-07-21 12:32:49">2019/07/21</span>
+        </a>
+        
+        <a class="学习 hexo " href="/2019/07/21/hexo-github-pages开启你的个人博客/" data-tag="教程,博客,hexo,新手" data-author>
+            <span class="post-title" title="Hexo+Github Pages开启你的个人博客">Hexo+Github Pages开启你的个人博客</span>
+            <span class="post-date" title="2019-07-21 21:53:03">2019/07/21</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/10/18/awk工具/" data-tag="linux,awk" data-author>
+            <span class="post-title" title="awk工具">awk工具</span>
+            <span class="post-date" title="2019-10-18 00:47:46">2019/10/18</span>
+        </a>
+        
+        <a class="学习 markdown " href="/2019/07/18/markdown入门/" data-tag="markdown,标签,语法,入门" data-author>
+            <span class="post-title" title="Markdown入门">Markdown入门</span>
+            <span class="post-date" title="2019-07-18 16:45:51">2019/07/18</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/12/18/quota-raid和lvm/" data-tag="quota,raid,lvm" data-author>
+            <span class="post-title" title="quota,raid和lvm">quota,raid和lvm</span>
+            <span class="post-date" title="2019-12-18 16:39:25">2019/12/18</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/10/08/sed工具/" data-tag="linux,入门" data-author>
+            <span class="post-title" title="sed工具">sed工具</span>
+            <span class="post-date" title="2019-10-08 16:35:40">2019/10/08</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/08/25/linux中设置网卡bond/" data-tag="linux,设置,网卡,bond" data-author>
+            <span class="post-title" title="linux中设置网卡bond">linux中设置网卡bond</span>
+            <span class="post-date" title="2019-08-25 01:37:32">2019/08/25</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/11/14/shell中的判断式/" data-tag="linux,判断式" data-author>
+            <span class="post-title" title="shell中的判断式">shell中的判断式</span>
+            <span class="post-date" title="2019-11-14 20:21:57">2019/11/14</span>
+        </a>
+        
+        <a class="生活 " href="/2019/09/02/作息时间安排/" data-tag="作息时间" data-author>
+            <span class="post-title" title="作息时间安排">作息时间安排</span>
+            <span class="post-date" title="2019-09-02 15:07:41">2019/09/02</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/11/12/常用linux命令列表/" data-tag="linux,命令" data-author>
+            <span class="post-title" title="常用linux命令列表">常用linux命令列表</span>
+            <span class="post-date" title="2019-11-12 16:36:02">2019/11/12</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/11/11/shell-script/" data-tag="linux,shell-script" data-author>
+            <span class="post-title" title="shell script">shell script</span>
+            <span class="post-date" title="2019-11-11 16:11:51">2019/11/11</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/11/17/linux用户及权限管理/" data-tag="linux,用户" data-author>
+            <span class="post-title" title="linux用户及权限管理">linux用户及权限管理</span>
+            <span class="post-date" title="2019-11-17 11:58:41">2019/11/17</span>
+        </a>
+        
+        <a class="生活 计算机 " href="/2019/10/31/华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程/" data-tag="PC,维护" data-author>
+            <span class="post-title" title="华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程">华硕飞行堡垒fx50j加固态、清灰及更换硅脂过程</span>
+            <span class="post-date" title="2019-10-31 20:27:17">2019/10/31</span>
+        </a>
+        
+        <a class="生活 观影 " href="/2019/07/29/成年人看的动漫-《哪吒之魔童降世》/" data-tag="观影,动漫" data-author>
+            <span class="post-title" title="成年人看的动漫-《哪吒之魔童降世》">成年人看的动漫-《哪吒之魔童降世》</span>
+            <span class="post-date" title="2019-07-29 11:27:23">2019/07/29</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/10/30/档案对比工具/" data-tag="linux,diff,cmp,patch" data-author>
+            <span class="post-title" title="档案对比工具">档案对比工具</span>
+            <span class="post-date" title="2019-10-30 17:48:26">2019/10/30</span>
+        </a>
+        
+        <a class="学习 易企秀 " href="/2019/08/17/易企秀使用学习教程/" data-tag="教程,H5,易企秀" data-author>
+            <span class="post-title" title="易企秀使用学习教程">易企秀使用学习教程</span>
+            <span class="post-date" title="2019-08-17 14:14:40">2019/08/17</span>
+        </a>
+        
+        <a class="学习 编程 " href="/2019/10/05/正则表达式/" data-tag="正则表达式" data-author>
+            <span class="post-title" title="正则表达式">正则表达式</span>
+            <span class="post-date" title="2019-10-05 23:53:31">2019/10/05</span>
+        </a>
+        
+        <a class="学习 理论 " href="/2020/02/04/常用的数学公式/" data-tag="数学公式" data-author>
+            <span class="post-title" title="常用的数学公式">常用的数学公式</span>
+            <span class="post-date" title="2020-02-04 18:13:14">2020/02/04</span>
+        </a>
+        
+        <a class="学习 秀米 " href="/2019/08/18/秀米使用学习教程/" data-tag="教程,H5,秀米,图文排版" data-author>
+            <span class="post-title" title="秀米使用学习教程">秀米使用学习教程</span>
+            <span class="post-date" title="2019-08-18 13:36:50">2019/08/18</span>
+        </a>
+        
+        <a class="学习 " href="/2019/09/03/深度学习中一些概念的东西/" data-tag="深度学习,概念" data-author>
+            <span class="post-title" title="深度学习中一些概念的东西">深度学习中一些概念的东西</span>
+            <span class="post-date" title="2019-09-03 14:25:02">2019/09/03</span>
+        </a>
+        
+        <a class="学习 linux " href="/2019/11/15/自编shell命令/" data-tag="shell_script" data-author>
+            <span class="post-title" title="自编shell命令">自编shell命令</span>
+            <span class="post-date" title="2019-11-15 00:30:03">2019/11/15</span>
+        </a>
+        
+        <a class="学习 网络 " href="/2019/08/21/网络基本概念/" data-tag="网络,基础概念" data-author>
+            <span class="post-title" title="网络基本概念">网络基本概念</span>
+            <span class="post-date" title="2019-08-21 19:04:18">2019/08/21</span>
+        </a>
+        
+        <a class="读书 西瓜书 " href="/2019/07/22/西瓜书-符号表/" data-tag="西瓜书,符号表,读书" data-author>
+            <span class="post-title" title="西瓜书_符号表">西瓜书_符号表</span>
+            <span class="post-date" title="2019-07-22 16:10:25">2019/07/22</span>
+        </a>
+        
+        <a class="读书 西瓜书 " href="/2019/07/19/西瓜书-第一章/" data-tag="西瓜书,读书,第一章" data-author>
+            <span class="post-title" title="西瓜书_第一章">西瓜书_第一章</span>
+            <span class="post-date" title="2019-07-19 21:19:43">2019/07/19</span>
+        </a>
+        
+        <a class="读书 西瓜书 " href="/2019/07/29/西瓜书-第三章/" data-tag="西瓜书,读书,第三章" data-author>
+            <span class="post-title" title="西瓜书_第三章">西瓜书_第三章</span>
+            <span class="post-date" title="2019-07-29 14:43:42">2019/07/29</span>
+        </a>
+        
+        <a class="读书 西瓜书 " href="/2019/07/23/西瓜书-第二章/" data-tag="西瓜书,读书,第二章" data-author>
+            <span class="post-title" title="西瓜书_第二章">西瓜书_第二章</span>
+            <span class="post-date" title="2019-07-23 16:26:23">2019/07/23</span>
+        </a>
+        
+        <a class="读书 西瓜书 " href="/2019/08/30/西瓜书-第四章/" data-tag="西瓜书,读书,第四章" data-author>
+            <span class="post-title" title="西瓜书_第四章">西瓜书_第四章</span>
+            <span class="post-date" title="2019-08-30 14:54:48">2019/08/30</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-quota-raid和lvm" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">quota,raid和lvm</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="学习">学习</a>/
+            
+                <a href="javascript:" data-rel="linux">linux</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">quota</a>
+            
+            <a href="javascript:" class="color5">raid</a>
+            
+            <a href="javascript:" class="color4">lvm</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2020-02-08 23:56:06">2019-12-18 16:39</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:7.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quota"><span class="toc-text">quota</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#quota一般用途"><span class="toc-text">quota一般用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quota使用存在的限制"><span class="toc-text">quota使用存在的限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quota限制设定项目"><span class="toc-text">quota限制设定项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quota的使用示例"><span class="toc-text">quota的使用示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建用户及共享文件夹"><span class="toc-text">创建用户及共享文件夹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开启分区quota功能-user和group的quota"><span class="toc-text">开启分区quota功能(user和group的quota)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#quota的基本使用"><span class="toc-text">quota的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#quota基本查询"><span class="toc-text">quota基本查询</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#设置限定值"><span class="toc-text">设置限定值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#测试设置值"><span class="toc-text">测试设置值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#开启分区project-quota功能"><span class="toc-text">开启分区project quota功能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设置project-quota限制值"><span class="toc-text">设置project quota限制值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试project-quota"><span class="toc-text">测试project quota</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quota的其他一些设置参数"><span class="toc-text">quota的其他一些设置参数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#disable"><span class="toc-text">disable</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#enable"><span class="toc-text">enable</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#off"><span class="toc-text">off</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#remove"><span class="toc-text">remove</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#raid"><span class="toc-text">raid</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#raid-0"><span class="toc-text">raid-0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#raid-1"><span class="toc-text">raid-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#raid-10和raid-01"><span class="toc-text">raid-10和raid-01</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#raid5"><span class="toc-text">raid5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#spare-disk（热备份盘）"><span class="toc-text">spare disk（热备份盘）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件和硬件raid"><span class="toc-text">软件和硬件raid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件raid"><span class="toc-text">软件raid</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mdadm"><span class="toc-text">mdadm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#软件组建raid示例"><span class="toc-text">软件组建raid示例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建组建raid所需的分区"><span class="toc-text">创建组建raid所需的分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用mdadm创建raid"><span class="toc-text">使用mdadm创建raid</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#格式化与挂载raid磁盘"><span class="toc-text">格式化与挂载raid磁盘</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置自动挂载磁盘"><span class="toc-text">设置自动挂载磁盘</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试自动挂载"><span class="toc-text">测试自动挂载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试磁盘出错"><span class="toc-text">测试磁盘出错</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关闭raid"><span class="toc-text">关闭raid</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LVM"><span class="toc-text">LVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PV、PE、VG、LV"><span class="toc-text">PV、PE、VG、LV</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PV"><span class="toc-text">PV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VG"><span class="toc-text">VG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PE"><span class="toc-text">PE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LV"><span class="toc-text">LV</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LVM一般操作流程"><span class="toc-text">LVM一般操作流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建PV"><span class="toc-text">创建PV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建VG"><span class="toc-text">创建VG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建LV"><span class="toc-text">创建LV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#挂载"><span class="toc-text">挂载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LV大小调整步骤"><span class="toc-text">LV大小调整步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#扩容"><span class="toc-text">扩容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建PV-1"><span class="toc-text">创建PV</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扩容VG"><span class="toc-text">扩容VG</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#扩容LV"><span class="toc-text">扩容LV</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#调整文件系统"><span class="toc-text">调整文件系统</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缩容"><span class="toc-text">缩容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LVM-thin-Volume"><span class="toc-text">LVM thin Volume</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#thin-volume创建步骤"><span class="toc-text">thin volume创建步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建thin-pool"><span class="toc-text">创建thin pool</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建thin-volume"><span class="toc-text">创建thin volume</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试thin-volume"><span class="toc-text">测试thin volume</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LVM快照"><span class="toc-text">LVM快照</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建快照"><span class="toc-text">创建快照</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#恢复"><span class="toc-text">恢复</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移除LVM"><span class="toc-text">移除LVM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本篇博客主要讲解一些磁盘管理的知识。包括硬盘配额、软磁盘阵列和逻辑卷管理。</p>
+<h2 id="quota"><a href="#quota" class="headerlink" title="quota"></a>quota</h2><p>linux系统是一个多人多任务操作系统，会出现多人使用一个磁盘的情况，如果少数几个用户将大部分的硬盘空间使用掉，那么其他用户的使用空间就会大大减小，因此就需要限制用户对磁盘的使用，妥善的分配系统资源。例如/home下有10个用户，总空间大小为10G，那么每个人用户平均使用的最大容量为1G，但是有的用户在home目录下放置了许许多多的大文件，导致占用了大部分空间，影响了其他用户的磁盘使用空间，那么想要磁盘空间能公平使用，就可以使用quota限制用户的磁盘使用。</p>
+<h3 id="quota一般用途"><a href="#quota一般用途" class="headerlink" title="quota一般用途"></a>quota一般用途</h3><ol>
+<li>针对www服务器，限制每个人网页空间的容量限制；</li>
+<li>针对mail服务器，限制每个人的邮件空间限制；</li>
+<li>针对file服务器，限制每人最大的网络硬盘空间。</li>
+</ol>
+<p>在linux系统上一般会有的设置为：</p>
+<ol>
+<li>限制某一群组能使用的最大磁盘配额；</li>
+<li>限制某一用户的最大磁盘配额；</li>
+<li>限制某一目录的最大磁盘配额；</li>
+</ol>
+<p>在xfs文件系统中quota是整合到文件系统中的，因此需要在fstab进行设置开启quota。而其他的文件系统（例如ext系列文件系统）的quota是通过外挂程序实现的，因此quota查询磁盘使用相较du等命令快速，du需要重新计算目录下磁盘使用情况，而xfs直接通过xfs_quota就能查询到相关信息。通过quota，系统管理员可以直接管理磁盘的使用情况。</p>
+<h3 id="quota使用存在的限制"><a href="#quota使用存在的限制" class="headerlink" title="quota使用存在的限制"></a>quota使用存在的限制</h3><p>quota虽然管理磁盘空间方便，但是还是存在一定的局限性：</p>
+<ol>
+<li><p><strong>EXT家族文件系统只能支持整个文件系统的quota。</strong>在设计quota的使用只能针对整个文件系统进行设计，无法对单个目录进行设计。但是xfs已经支持使用project模式对目录的磁盘配额进行设计。</p>
+</li>
+<li><p><strong>核心必须支持quota。</strong>要使用quota还需要linux系统核心支持quota，查询核心是否支持可以通过命令<code>dmesg | grep quota</code>查询。</p>
+</li>
+<li><p><strong>只对一般用户有效。</strong>不能对root用户设置quota。</p>
+</li>
+<li><p><strong>若启用了SELinux，并非对所有的目录都能设置quota。</strong>目前的CentOS系统内核一般预设启动SELinux，在预设情况下只能对/home设置quota。</p>
+<p>PS：设置quota需要注意使用的文件系统。</p>
+</li>
+</ol>
+<h3 id="quota限制设定项目"><a href="#quota限制设定项目" class="headerlink" title="quota限制设定项目"></a>quota限制设定项目</h3><p>quota对于XFS文件系统所能做的限制分为以下几种：</p>
+<ol>
+<li>分别针对使用者、群组和个别目录进行限制，一般是针对磁盘使用率进行限制。</li>
+<li>容量限制或者档案数量限制，也就是限制node的数量和限制inode的数量。</li>
+<li>警告值（soft）和使用阈值（hard）限制。当使用量低于警告值时正常使用，当高于正常值时，每次登录系统都会收到系统警告，但使用量到达阈值则不能再使用磁盘。</li>
+<li>倒数宽限日期（grace time）：当到达警告之后，且磁盘使用量小于阈值时，则开始警告，并且开始倒计时，如果减小磁盘使用量到警告值以下时，则取消倒计时，如果倒计时结束，则<strong>将警告值设置为使用阈值</strong>。</li>
+</ol>
+<h3 id="quota的使用示例"><a href="#quota的使用示例" class="headerlink" title="quota的使用示例"></a>quota的使用示例</h3><p>在这个实例中新建5个用户，分别名为quota1、quota2、quota3、quota4和quota5，密码为password，同时都属于quotagroup，每个用户可以最多可以使用300MB，警告值为200MB，同时，由于/home为单独分区，最大为2GB，同时也有其他用户，为了确保其使用空间则限制群组所使用的空间最大为1GB。最后设置警告倒计时为两周，超时则将警告值设置为阈值。</p>
+<p>为了使之间共享文件，创建一个共享文件夹，最大为500MB。</p>
+<h4 id="创建用户及共享文件夹"><a href="#创建用户及共享文件夹" class="headerlink" title="创建用户及共享文件夹"></a>创建用户及共享文件夹</h4><pre><code class="bash">#!/bin/bash
+# name: create5users.sh
+# create 5 users for testing.
+# author:
+# qzt
+# create testing env
+# bash create5users.sh
+# clear testing env
+# bash create5users.sh clear
+# history:
+# 2019/12/23 qzt create the script.
+
+# clear
+if [[ -n $1 ]];then
+        for username in quota1 quota2 quota3 quota4 quota5
+        do
+                userdel -r $username
+                echo $username&#39; delete&#39;
+        done
+        rm -rf /home/quota
+        echo &#39;clear share dir.&#39;
+        groupdel quotagroup
+        echo &#39;clear work group&#39;
+        exit 0
+fi
+
+# add
+groupadd quotagroup
+for username in quota1 quota2 quota3 quota4 quota5
+do
+        useradd -g quotagroup $username
+        echo &quot;password&quot; | passwd --stdin $username
+done
+mkdir /home/quota
+chgrp quotagroup /home/quota
+chmod 2770 /home/quota</code></pre>
+<p>运行<code>bash create5users.sh</code>脚本执行结果如下图:</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img1.webp" alt="create5users.sh脚本运行结果"></p>
+<h4 id="开启分区quota功能-user和group的quota"><a href="#开启分区quota功能-user和group的quota" class="headerlink" title="开启分区quota功能(user和group的quota)"></a>开启分区quota功能(user和group的quota)</h4><p>首先查看/home目录是不是属于单独的分区，运行指令<code>df -hT /home</code>，运行的结果如下:</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img2.webp" alt="查询/home是否为单独的分区"></p>
+<p>确认是单独的分区之后，就可以开启quota功能，就xfs文件系统来说，在系统运行挂载磁盘时已经宣告quota功能，不能通过remount来重启quota功能，所以通过修改/etc/fstab配置文件，使得xfs文件系统在挂载时就已经开启了quota功能(PS:修改/etc/fstab配置文件需要使用)。在挂载/home目录的选项中添加<code>usrquota,grpquota</code>选项。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img3.webp" alt="挂载/home时添加usrquota和grpquota选项"></p>
+<p>重启系统或者卸载/home分区之后重新挂载分区。通过mount命令查看是否生效。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img4.webp" alt="查看quota是否开启成功"></p>
+<p>进一步验证quota是否正确开启，使用指令<code>xfs_quota -x -c &#39;print&#39;</code>显示quota挂载功能开启情况。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img5.webp" alt="进一步验证quota开启情况"></p>
+<h5 id="quota的基本使用"><a href="#quota的基本使用" class="headerlink" title="quota的基本使用"></a>quota的基本使用</h5><h6 id="quota基本查询"><a href="#quota基本查询" class="headerlink" title="quota基本查询"></a>quota基本查询</h6><pre><code class="bash">xfs_quota -x -c &#39;指令&#39; [挂载点]
+参数讲解
+-x:专家模式，后续才能接-c并输入指令；
+-c:后面添加指令；
+指令：
+    print：简单列出本系统种文件系统的参数信息，一般可用于检测quota是否正确开启；
+    df：与系统中的df一样的功能，可以加-b(block),-i(inode),-h(单位)等；
+    report：列出目前的quota项目，有-ugr(usr,group,project)以及-bi等资料；
+    state：说明目前支援quota的档案系统的咨讯，有没有相关启动项目等。</code></pre>
+<p>查看/home挂载点档案使用情况，命令:<code>xfs_quota -x -c &quot;df -h&quot; /home</code>:</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img6.webp" alt="查看/home挂载点情况"></p>
+<p>查看/home目录的所有用户的quota限制值,<code>xfs_quota -x -c &quot;report -ubih&quot; /home</code>：</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img7.webp" alt="查看/home目录下所有用户的quota限制值"></p>
+<p>列出目前支持quota的文件系统是否开启了quota功能,<code>xfs_quota -x -c &quot;state&quot;</code>：</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img8.webp" alt="查看档案系统支持情况:开启了user和group quota,未开启project quota"></p>
+<h6 id="设置限定值"><a href="#设置限定值" class="headerlink" title="设置限定值"></a>设置限定值</h6><pre><code class="bash">xfs_quota -x -c &quot;limit [-ug] b[soft|hard]=N i[soft|hard]=N name&quot; [挂载点]
+xfs_quota -x -c &quot;timer [-ug] [-bir] Ndays&quot; [挂载点]
+## 参数解释
+limit: 设置限定值命令，可以对user或者group进行设置，设置的内容有:
+    bsoft/bhard:block数量的soft/hard限制，可以使用单位;
+    isoft/ihard:inode数量的soft/hard限制;
+    name:就是user或者group的名称。
+timer: 用于设置grace time的命令，也是可以针对user/group以及block/inode进行限制。</code></pre>
+<p>根据之前的需求，需要设置每个测试用户(quota1,quota2,quota3,quota4,quota5)限制值,soft值300MBhard值500MB,命令<code>xfs_quota -x -c &quot;limit -u bsoft=200M bhard=300M quota1&quot; /home &amp;&amp; xfs_quota -x -c &quot;limit -u bsoft=200M bhard=300M quota2&quot; /home &amp;&amp; xfs_quota -x -c &quot;limit -u bsoft=200M bhard=300M quota3&quot; /home &amp;&amp; xfs_quota -x -c &quot;limit -u bsoft=200M bhard=300M quota4&quot; /home &amp;&amp; xfs_quota -x -c &quot;limit -u bsoft=200M bhard=300M quota5&quot; /home</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img9.webp" alt="设置5个用户的quota限制"></p>
+<p>设置用户组的quota限制，<code>xfs_quota -x -c &quot;limit -g bsoft=950M bhard=1G quotagroup&quot; /home</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img10.webp" alt="设置quotagroup的quota限制"></p>
+<p>设置grace time,命令<code>xfs_quota -x -c &quot;timer -ug -b 14days&quot; /home</code>:</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img11.webp" alt="设置grace time"></p>
+<h6 id="测试设置值"><a href="#测试设置值" class="headerlink" title="测试设置值"></a>测试设置值</h6><p>切换到quota1用户，在/home/quota1目录下写入310M的文件，测试写入,命令<code>dd if=/dev/zero of=test.img bs=1M count=310</code>:</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img12.webp" alt="单个用户quota设置成功"></p>
+<p>分别用quota1、quota2、quota3、quota4、用户往/home目录下写入310M内容，前三个用户写入299M的内容，若quota4写入126M左右的内容，则说明群组quota设置成功。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img13.webp" alt="群组quota设置成功"></p>
+<p>通过以上的两张图片也说明grace time设置成功。</p>
+<h4 id="开启分区project-quota功能"><a href="#开启分区project-quota功能" class="headerlink" title="开启分区project quota功能"></a>开启分区project quota功能</h4><p>由于project quota功能与之前的user和group quota功能冲突（比如说放在quota用户的家目录下和/home/quota下都属于在/home目录下，都会受到user quota和group quota的限制，达不到共享目录限制的效果），所以使用另外一个支持quota的空闲分区下的目录作为共享目录较好。</p>
+<p>新建分区，格式化分区(建议为xfs分区)，挂载为project quota(参数为prjquota)分区。</p>
+<p>与设置user和group quota功能不同，project quota还需要设置专案名称和专案id，命令<code>echo &quot;8315:/media/m/share&quot; &gt;&gt; /etc/projects &amp;&amp; echo &quot;quotaproject:8315&quot; &gt;&gt; /etc/projid</code></p>
+<p>设置好专案名称和专案id后，还要初始化专案名称,命令<code>xfs_quota -x -c &quot;project -s quotaproject&quot;</code>，执行结果中有-1不用管。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img14.webp" alt="初始化专案名称"></p>
+<p>查看project quota设置是否成功，命令<code>xfs_quota -x -c &quot;print&quot; /media/m</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img15.webp" alt="设置project quota成功"></p>
+<h5 id="设置project-quota限制值"><a href="#设置project-quota限制值" class="headerlink" title="设置project quota限制值"></a>设置project quota限制值</h5><p>命令<code>xfs_quota -x -c &quot;limit -p bsoft=450M bhard=500M quotaproject&quot; /media/m</code>设置限制值。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img16.webp" alt="开启project quota"></p>
+<h5 id="测试project-quota"><a href="#测试project-quota" class="headerlink" title="测试project quota"></a>测试project quota</h5><p>使用quota1用户向/media/m目录中写入550M的内容，命令<code>dd if=/dev/zero of=test.img bs=1M count=550</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img17.webp" alt="测试project quota"></p>
+<h4 id="quota的其他一些设置参数"><a href="#quota的其他一些设置参数" class="headerlink" title="quota的其他一些设置参数"></a>quota的其他一些设置参数</h4><h5 id="disable"><a href="#disable" class="headerlink" title="disable"></a>disable</h5><p>disable命令可以暂时取消quota的限制，但是还是在计算quota。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img18.webp" alt="暂停/media/m的quota功能"></p>
+<p>命令值得u和p参数分别表示对user和project quota进行限制，group使用g表示。</p>
+<h5 id="enable"><a href="#enable" class="headerlink" title="enable"></a>enable</h5><p>enable是与disable相反的命令，恢复quota限制功能。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img19.webp" alt="恢复quota功能"></p>
+<h5 id="off"><a href="#off" class="headerlink" title="off"></a>off</h5><p>off命令用于停用quota功能，无法使用enable开启，只有卸载之后重新加载分区之后才能启用quota。一般该命令用于需要移除(remove)quota才会使用到。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img20.webp" alt="off执行之后需要重新挂载分区才能启用quota"></p>
+<h5 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h5><p>remove命令用于永久移除quota功能，即无法再恢复quota数据。注意，remove之前用off停止quota。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img21.webp" alt="移除/media/m的user quota功能"></p>
+<h2 id="raid"><a href="#raid" class="headerlink" title="raid"></a>raid</h2><p>目前磁盘的单盘容量大多限制在4T，对于大容量存储，尤其是需要PB级存储时，就需要多个磁盘同时存储。raid叫做磁盘阵列，通过软件或者硬件将多个较小的磁盘合并为较大的磁盘，除了提供较大的存储容量以外，还可以提供数据保护方面的功能。raid的等级不同可以提供不同的功能。</p>
+<h3 id="raid-0"><a href="#raid-0" class="headerlink" title="raid-0"></a>raid-0</h3><p>raid-0在所有raid中具有最佳的效能，具备磁盘空间叠加，同时磁盘的速度叠加。但是该raid等级不提供任何的数据保护功能，但磁盘出现问题时，数据无法恢复。在raid0中，首先将所有的磁盘划分成等量的区块（chunk，一般设定为4K~1M之间），当有数据需要写入时，将数据按照chunk大小切割，并将数据分散写入不同的磁盘，当有两个磁盘时，则每个磁盘上存储一半的数据内容。同时，由于是多块磁盘同时读写，则可以叠加多块磁盘的读写速度，提高IO性能。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img22.svg" alt="raid0实现原理"></p>
+<p>DiskA和DiskB两个磁盘首先以chunk大小划分为一个个小空间。数据在写入磁盘之前也划分为chunk大小的区块，写入数据时将一个个区块写入到不同的磁盘上。因为数据是切分之后放置到磁盘上的，因此单个磁盘的写入量减少。同样的，当磁盘的数量越多，则同样的数据写于到单个磁盘的数据越少，写入的时间花费越少。<strong>多张磁盘组合，存储的容量等于各个磁盘容量相加，速度等于各个磁盘速度叠加。</strong>raid0的缺点同样很明显，当其中一块磁盘损坏时，整个数据就就损坏了。组建raid0一定需要注意使用同样容量大小的磁盘，因为raid0写入数据是磁盘交替写入，当小容量磁盘写满数据后，速度就会下降。</p>
+<h3 id="raid-1"><a href="#raid-1" class="headerlink" title="raid-1"></a>raid-1</h3><p>raid1也称为镜像模式，该模式需要相同容量的磁盘。如果是不同容量的磁盘组raid1则以较小容量的磁盘为主。raid1模式是将同一份资料同时存储到两个磁盘上，即为镜像。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img23.svg" alt="raid1实现原理"></p>
+<p>当有数据需要写入时，同样的数据会被分别写入两个硬盘，相同的数据通过io写到硬盘之后，写入的数据量变多了，如果是通过软件实现的raid1，通过南桥的数据量会是正常数据量的两倍，可能会使写入效率降低，而读数据由于有两份数据在不同的磁盘上，在两个软件同时读取数据时效率可能会有所提升。如果是使用硬件(磁盘阵列卡)实现raid1则南桥的数据量没有改变，不会降低磁盘的io性能。raid1带来的最大的好处便是任何一个磁盘损坏都不会导致数据丢失。</p>
+<h3 id="raid-10和raid-01"><a href="#raid-10和raid-01" class="headerlink" title="raid-10和raid-01"></a>raid-10和raid-01</h3><p>raid-10和raid-01都是将raid0和raid1组合起来实现的，但是他们又存在一定的差别。raid10是将多个磁盘(4块以上且为偶数块磁盘)，先两两组合成raid1，然后再将多个raid1按照raid0的方式组合。而raid01则是向组合成raid0再组合成raid1。在实际的应用中，raid10在数据恢复难度和数据恢复成本上较raid01更有优势，一般使用raid10。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img25.svg" alt="raid10和raid01原理图(这里以六块磁盘作为示范)"></p>
+<h3 id="raid5"><a href="#raid5" class="headerlink" title="raid5"></a>raid5</h3><p>raid5至少需要三块硬盘才能组成。raid5与raid0类似，将数据依次写入多个硬盘中，在循环写入数据时，也写入奇偶校验位(parity P)。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img26.svg" alt="raid5原理图"></p>
+<p>在同一个循环内总有一块磁盘用于存储奇偶校验位，因此组raid5之后会少一块盘的容量，并且可以在有一块硬盘坏掉之时通过冗余方法恢复出该块硬盘的内容(多于一块盘损坏则无法恢复)，同时由于写入方法类似于raid0，也具有raid0速度叠加的好处。由于存在奇偶校验位的原因，如果使用软件组建raid5，则在计算奇偶校验位时会使用到cpu运算，限制了raid5的效率；如果使用硬件组件raid5，则不会计算奇偶校验位只会产生在磁盘阵列卡上，不会影响到整个系统的性能。而raid6则是在raid5的基础上多了一个磁盘的parity，这样即使存在两个磁盘损坏时也可以恢复数据。</p>
+<h3 id="spare-disk（热备份盘）"><a href="#spare-disk（热备份盘）" class="headerlink" title="spare disk（热备份盘）"></a>spare disk（热备份盘）</h3><p>在raid5等raid模式下，出现磁盘损坏需要移除损坏的磁盘并使用完好的磁盘重建raid，但是即使是支持热插拔的磁盘阵列卡，也是需要手动更换损坏的硬盘，但是如果磁盘阵列卡支持热备份盘，并且你也设置了热备份盘的话，出现磁盘损坏时既可以立刻使用设置好的热备份盘重建raid。</p>
+<table>
+<thead>
+<tr>
+<th align="center">项目</th>
+<th align="center">raid0</th>
+<th align="center">raid1</th>
+<th align="center">raid10</th>
+<th align="center">raid5</th>
+<th align="center">raid6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">最少磁盘数</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">4</td>
+<td align="center">3</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">最大容错磁盘数</td>
+<td align="center">0</td>
+<td align="center">n-1</td>
+<td align="center">n/2</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">数据安全性</td>
+<td align="center">无</td>
+<td align="center">最好</td>
+<td align="center">较好</td>
+<td align="center">有</td>
+<td align="center">比raid5好</td>
+</tr>
+<tr>
+<td align="center">理论写入效率</td>
+<td align="center">n</td>
+<td align="center">1</td>
+<td align="center">n/2</td>
+<td align="center">n-1</td>
+<td align="center">n-2</td>
+</tr>
+<tr>
+<td align="center">理论读取效率</td>
+<td align="center">n</td>
+<td align="center">n</td>
+<td align="center">n/2</td>
+<td align="center">&lt;n-1</td>
+<td align="center">&lt;n-2</td>
+</tr>
+<tr>
+<td align="center">可用容量</td>
+<td align="center">n</td>
+<td align="center">1</td>
+<td align="center">n/2</td>
+<td align="center">n-1</td>
+<td align="center">n-2</td>
+</tr>
+<tr>
+<td align="center">应用</td>
+<td align="center">个人（提升硬盘性能）</td>
+<td align="center">保存数据与备份</td>
+<td align="center">服务器或云系统</td>
+<td align="center">保存数据与备份</td>
+<td align="center">保存数据与备份</td>
+</tr>
+</tbody></table>
+<h3 id="软件和硬件raid"><a href="#软件和硬件raid" class="headerlink" title="软件和硬件raid"></a>软件和硬件raid</h3><p>软件raid具有成本低的优点，存在占用系统资源，影响系统性能或是影响raid性能等缺点；</p>
+<p>硬件raid具有更高的raid效率且可支持热插拔等特点，但是好的磁盘阵列卡成本都较高。</p>
+<h3 id="软件raid"><a href="#软件raid" class="headerlink" title="软件raid"></a>软件raid</h3><p>在linux下可以使用mdadm指令实现软件raid，除了在磁盘上构建raid外，也可以使用多个分区构建raid。</p>
+<h4 id="mdadm"><a href="#mdadm" class="headerlink" title="mdadm"></a>mdadm</h4><pre><code class="bash">mdadm --detail /dev/md0
+mdadm --create /dev/md[0-9] --auto=yes --level=[015] --chunk=NK --raid-devices=N --spare-devices=N /dev/sdx /dev/hdx ...
+# 参数讲解
+--create 建立raid选项
+--auto=yes 决定建立后面的软件磁盘阵列设备，即/dev/md0,/dev/md1...
+--chunk=NK 决定这个装置的chunk大小，一般为64K或者512K;
+--raid-devices=N 使用几个磁盘组建raid;
+--spare-devices=N 使用几个磁盘作为备用磁盘;
+--level=[015] 组建磁盘阵列的等级;
+--detail 显示指定磁盘阵列的详细信息。</code></pre>
+<h4 id="软件组建raid示例"><a href="#软件组建raid示例" class="headerlink" title="软件组建raid示例"></a>软件组建raid示例</h4><h5 id="创建组建raid所需的分区"><a href="#创建组建raid所需的分区" class="headerlink" title="创建组建raid所需的分区"></a>创建组建raid所需的分区</h5><p>这里我们使用5个1G的分区用于组建raid，首先使用gdisk工具将磁盘划分为5个分区。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img27.webp" alt="创建5个分区"></p>
+<h5 id="使用mdadm创建raid"><a href="#使用mdadm创建raid" class="headerlink" title="使用mdadm创建raid"></a>使用mdadm创建raid</h5><p>在这个示例中使用4个分区组成raid5，1个分区作为备用，命令<code>mdadm --create /dev/md0 --auto=yes --level=5 --chunk=512K --raid-devices=4 --spare-devices=1 /dev/sdb{1,2,3,4,5}</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img28.webp" alt="mdadm组建raid"></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img29.webp" alt="查看raid信息"></p>
+<h5 id="格式化与挂载raid磁盘"><a href="#格式化与挂载raid磁盘" class="headerlink" title="格式化与挂载raid磁盘"></a>格式化与挂载raid磁盘</h5><p>这里格式化为xfs文件系统，但是需要注意的是，因为涉及到的是raid磁盘的xfs文件系统需要注意设置参数以优化xfs文件系统的性能:</p>
+<pre><code>stripe(chunk):在这里问我们设置为chunk大小，su=512K;
+sw的设置为实际存储的磁盘数量，这里使用4块硬盘作为raid，但是实际上要除去一个硬盘的空间用于存储校验信息，因此sw=3;
+资料的宽度为512K*3=1536K</code></pre><p>经过以上的分析，格式化命令为:<code>mkfs.xfs -f -d su=512k,sw=3 -r extsize=1536k /dev/md0</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img30.webp" alt="格式化raid磁盘"></p>
+<p>挂载raid磁盘<code>mount -rw /dev/md0 /media/md0</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img31.webp" alt="挂载磁盘"></p>
+<h5 id="设置自动挂载磁盘"><a href="#设置自动挂载磁盘" class="headerlink" title="设置自动挂载磁盘"></a>设置自动挂载磁盘</h5><p>在开机时较新的linux系统会自动加载raid磁盘。但是为了确保在较旧系统上依旧可以运行则可以配置mdadm的配置文档/etc/mdadm.conf。首先通过命令<code>mdadm --detail /dev/md0 | grep UUID</code>获得UUID，并修改/etc/mdadm.coonf文件。</p>
+<pre><code class="bash"># mdadm.conf
+ARRAY /dev/md0 UUID=98d12859:872fd4cd:e71e89d7:c006b989</code></pre>
+<p>设定开机自动挂载磁盘。首先通过命令<code>blkid /dev/md0</code>查询磁盘UUID，其次修改/etc/fstab配置文件。</p>
+<pre><code># /etc/fstab
+# 最后一行添加
+UUID=23b36776-09d1-4c0e-95d2-50759cda2aff    /media/md0    xfs    defaults    0    0</code></pre><h5 id="测试自动挂载"><a href="#测试自动挂载" class="headerlink" title="测试自动挂载"></a>测试自动挂载</h5><p><code>umount /dev/md0</code>卸载raid磁盘md0，<code>mount -a</code>挂载所有未挂载磁盘。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img32.webp" alt="测试自动挂载磁盘"></p>
+<h5 id="测试磁盘出错"><a href="#测试磁盘出错" class="headerlink" title="测试磁盘出错"></a>测试磁盘出错</h5><p>首先在raid磁盘下写入512M的数据<code>dd if=/dev/random of=test.img bs=1M count=512</code>，模拟在使用中的磁盘。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img33.webp" alt="写入随机数据，模拟使用的raid磁盘"></p>
+<p>使用mdadm命令设置sdb2硬盘工作不正常，查看raid的工作状态。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img34.webp" alt="模拟硬盘工作不正常"></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img35.webp" alt="重建raid并能访问文件"></p>
+<p>sdb2磁盘并没有损坏，我们可以使用命令直接将磁盘加入，<code>mdadm --manage /dev/md0 --remove /dev/sdb2 &amp;&amp; mdadm --manage /dev/md0 --add /dev/sdb2</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img36.webp" alt="重新加入sdb2磁盘"></p>
+<h5 id="关闭raid"><a href="#关闭raid" class="headerlink" title="关闭raid"></a>关闭raid</h5><p>首先卸载raid磁盘，命令<code>umount /dev/md0</code>，然后去掉/etc/fstab中自动挂载raid磁盘的部分【删掉(如果不确定可以只是注释掉，后边确认无问题之后再删除)添加的UUID内容】，接着用dd命令向md0中写入50M数据，命令<code>dd if=/dev/zero of=/dev/md0 bs=1M count=50</code>，清除raid的metadata和XFS的superblock，之后再mdadm中关闭raid，命令<code>mdadm --stop /dev/md0</code>，然后分别向5个分区写入10M内容，命令<code>dd if=/dev/zero of=/dev/sdb1 bs=1M count=10 &amp;&amp; dd if=/dev/zero of=/dev/sdb2 bs=1M count=10 &amp;&amp; dd if=/dev/zero of=/dev/sdb3 bs=1M count=10 &amp;&amp; dd if=/dev/zero of=/dev/sdb4 bs=1M count=10 &amp;&amp; dd if=/dev/zero of=/dev/sdb5 bs=1M count=10</code>，避免重新开机后raid重组或是以后划分分区出现问题。接着使用命令<code>cat /proc/mdstat</code>查看是否成功停掉raid，最后将/etc/mdadm.conf中添加的信息删除或注释。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img37.webp" alt="关闭raid"></p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p>按照我们的预期，4磁盘组建raid5后，速度也应该接近单个磁盘的3倍，但是我们实际测试的速度还不及单个硬盘的速度，这是什么原因呢？</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img38.webp" alt="普通磁盘测速"></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img39.webp" alt="raid磁盘测速"></p>
+<p>究其原因与实现raid的方式有关，例子组建raid系统所使用的是同一个硬盘上的5个分区，那么所有读写都是发生在同一个”硬件设备”上，组建raid的多个磁盘实际上是共用一个”硬件设备”的IO性能，无法达到速度叠加的效果，相反，写入的实际数据量较写入数据量少的，由于需要写入的信息中包含校验信息。更何况这里的”硬件设备”也只是一个虚拟硬盘。</p>
+<h2 id="LVM"><a href="#LVM" class="headerlink" title="LVM"></a>LVM</h2><p>LVM即逻辑卷管理，存在的最大意义便是可以不停机弹性调整各个分区大小,也可以加入新分区或者移除分区。LVM通过软件将多个实体分区整合成一个看起来独立的大的磁盘(VG)，之后再将大的磁盘分割成可使用的分区(LV)，最后就可以挂载使用了。</p>
+<h3 id="PV、PE、VG、LV"><a href="#PV、PE、VG、LV" class="headerlink" title="PV、PE、VG、LV"></a>PV、PE、VG、LV</h3><h4 id="PV"><a href="#PV" class="headerlink" title="PV"></a>PV</h4><p>PV(Physical Volume,物理卷)，实体的分区都需要调整系统识别码为8e后经过pvcreate指令转化为LVM的<strong>最</strong>底层的物理卷(PV)。</p>
+<h4 id="VG"><a href="#VG" class="headerlink" title="VG"></a>VG</h4><p>VG(Volume Group,卷组)，将多个物理卷整合为一个卷组，VG就是LVM组合起来的大磁盘。LVM预设使用的是4M大小的PE块，在32位系统中只能使用65534个PE块，也就是256G，但是目前大多数都是使用LVM2+64位系统，不存在容量的限制。</p>
+<h4 id="PE"><a href="#PE" class="headerlink" title="PE"></a>PE</h4><p>PE(Physical Extent,物理区域)，PE则是将卷组(VG)划分为一个个的PE，类似于档案系统的的block。</p>
+<h4 id="LV"><a href="#LV" class="headerlink" title="LV"></a>LV</h4><p>LV(Logical Volume,逻辑卷)，就是将VG分为一个个可用的逻辑卷，类似于磁盘分区，大小需要按照PE为单位大小进行划分。通过LV操作之后就可以在LV上创建文件系统用于存储。</p>
+<p>LVM的弹性分区时通过调整PE实现的，即将需要缩小的LV的未使用的PE划分为需要增大的LV的PE。</p>
+<h3 id="LVM一般操作流程"><a href="#LVM一般操作流程" class="headerlink" title="LVM一般操作流程"></a><div name="LVM一般操作流程">LVM一般操作流程</div></h3><p><img src="/2019/12/18/quota-raid和lvm/img40.svg" alt="LVM的操作流程"></p>
+<h4 id="创建PV"><a href="#创建PV" class="headerlink" title="创建PV"></a><div name="创建PV">创建PV</div></h4><p>首先使用<code>pvcreate</code>命令将实体分区转化为PV(物理卷)。</p>
+<pre><code class="bash"># 与PV有关的命令
+
+# 将实体分区转化为PV
+pvcreate 所有分区
+# 例如 pvcreate /dev/sdb{1,2,3,4,5}
+
+# 显示所有的PV
+pvscan
+
+# 显示PV的状态
+pvdisplay [分区]
+# 例如 pvdisplay /dev/sdb1
+
+# 将PV分区转化为普通实体分区
+pvremove 分区</code></pre>
+<p>在开始示例之前，我们使用的是上次组建raid的5个分区，因此转换为PV的命令为<code>pvcreate /dev/sdb{1,2,3,4,5}</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img41.webp" alt="创建PV"></p>
+<h4 id="创建VG"><a href="#创建VG" class="headerlink" title="创建VG"></a>创建VG</h4><p>然后创建LVM大磁盘–VG。相关操作如下:</p>
+<pre><code># 与VG有关命令
+
+# 将PV整合为一个VG
+vgcretae [-s N[mgt]] VG名称 PV名称
+# 例如:vgcreate -s 16M lvmvg /dev/sdb{1,2,3}
+
+# 查看系统上是否有VG存在
+vgscan
+
+# 显示VG的状态信息
+vgdisplay VG名称
+
+# 在VG内增加额外的PV
+vgextend VG名称 PV名称
+
+# 在VG内减少PV
+vgreduce VG名称 PV名称
+
+# 设定VG是否启动
+vgchange -a[y|n] VG名称
+
+# 移除一个VG
+vgremove [-f] VG名称</code></pre><p>示例中使用3个PV组建VG，命令为:<code>vgcreate -s 16M lvmvg /dev/sdb{1,2,3}</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img42.webp" alt="创建vg"></p>
+<h4 id="创建LV"><a href="#创建LV" class="headerlink" title="创建LV"></a>创建LV</h4><p>最后创建LV，相关操作如下:</p>
+<pre><code class="bash"># 与LV有关的命令如下：
+
+# 创建LV命令
+lvcreate [-L N[mgt]|-l N] [-n LV名称] VG名称
+# 参数讲解:
+# L 后接容量，单位可以为m、g、t，最小单位为PE大小；
+# l 后接PE的个数，不是PE的数量，需要自行PE的数量
+# n 后接LV名称
+
+# 浏览整个卷组的逻辑卷
+lvscan
+
+# 显示LV详细情况
+lvdisplay LV名称
+
+# 增加LV容量
+lvextend -L [+]N[mgt] LV名称
+# 注意，有+表示增加的容量，没有+表示调整容量为指定的容量
+
+# 减少LV容量
+lvreduce -L N[mgt] LV名称
+
+# 移除LV
+lvremove [-f] LV名称
+
+# 调整LV大小
+lvresize [-L [+|-]N[mgt]] LV名称
+# 注意：+后接增加多少空间，-表示减少多少空间，无符号表示调整到多少，
+# 千万注意缩减空间时一定要注意检查文件系统，避免缩减空间导致文件丢失。</code></pre>
+<p>在示例中创建一个大小为500G的LV，命名为firstlv，命令为：<code>lvcreate -L 500M -n firstlv lvmvg</code>。<br><img src="/2019/12/18/quota-raid和lvm/img43.webp" alt="创建LV"></p>
+<h4 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h4><p>LV相当于实体分区，需要格式化之后挂载使用。</p>
+<p>首先格式化LV，LV的位置在/dev/VG名称/LV名称，命令<code>mkfs.xfs /dev/lvmvg/firstlv</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img44.webp" alt="格式化LV"></p>
+<p>挂载LV，将格式化的LV挂载在/media/lvm,命令<code>mkdir /media/lvm &amp;&amp; mount /dev/lvmvg/firstlv /media/lvm</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img45.webp" alt="挂载LV"></p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>往里写入50M文件测试工作是否正常，命令<code>dd if=/dev/zero of=test.img bs=1M count=50</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img46.webp" alt="测试lvm工作是否正常"></p>
+<h3 id="LV大小调整步骤"><a href="#LV大小调整步骤" class="headerlink" title="LV大小调整步骤"></a>LV大小调整步骤</h3><p>调整LV的大小实际上是想调整文件系统的大小，那么一般分为两种，扩容和缩容。</p>
+<h4 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h4><p>扩容的完整步骤类似于<a href="#LVM一般操作流程">LVM的使用步骤</a>。</p>
+<h5 id="创建PV-1"><a href="#创建PV-1" class="headerlink" title="创建PV"></a>创建PV</h5><p>可以通过<code>vgdisplay</code>命令用于查询VG的使用情况，命令<code>vgdisplay lvmvg</code>或者<code>vgdisplay /dev/lvmvg</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img47.webp" alt="查看vg状态"></p>
+<p>如果VG有充足的剩余空间，则不需要创建新的PV用于扩容VG，可以跳过创建PV，直接进行<a href="#扩容LV">扩容LV</a>。</p>
+<p>如果VG空间不足，则需要使用新的分区用于<a href="#创建PV">创建PV</a>。</p>
+<h5 id="扩容VG"><a href="#扩容VG" class="headerlink" title="扩容VG"></a>扩容VG</h5><p>通过<code>vgextend</code>命令就可以完成VG扩容，命令为<code>vgextend lvmvg /dev/sdb4</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img48.webp" alt="扩容VG"></p>
+<h5 id="扩容LV"><a href="#扩容LV" class="headerlink" title="扩容LV"></a><div name="扩容LV">扩容LV</div></h5><p>扩容LV使用<code>lvextend</code>命令即可。在本次示例中给firstlv扩容500M空间，命令为<code>lvextend -L +500M /dev/lvmvg/firstlv</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img49.webp" alt="扩容LV"></p>
+<h5 id="调整文件系统"><a href="#调整文件系统" class="headerlink" title="调整文件系统"></a>调整文件系统</h5><p>最终的目的就是使文件系统的容量增大，目前支持LVM较好的是<strong>EXT4和XFS</strong>文件系统，更近一步说，完全支持缩放文件系统大小的是EXT4文件系统，XFS则只支持扩容操作。</p>
+<p>XFS使用<code>xfs_growfs</code>，命令为<code>xfs_growfs /media/lvm</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img50.webp" alt="扩容xfs文件系统"></p>
+<p>EXT4使用<code>resize2fs</code>扩容文件系统。用法如下:</p>
+<pre><code class="bash">resize2fs [-f] device [size]
+# 参数讲解
+# f 强制执行
+# device 指定执行命令的文件系统所在的磁盘
+# size 指定调整之后的文件系统容量大小</code></pre>
+<p>EXT4扩容命令为<code>lvresize -L +500M /dev/lvmvg/ext4lv &amp;&amp; e2fsck -f /dev/lvmvg/ext4lv &amp;&amp; resize2fs /dev/lvmvg/ext4lv</code>，注意e2fsck为检查文件系统命令，且不能挂载。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img51.webp" alt="扩容EXT4文件系统"></p>
+<h4 id="缩容"><a href="#缩容" class="headerlink" title="缩容"></a>缩容</h4><p>由于缩容使用较少且xfs文件系统不支持缩小文件系统容量，所以这里使用EXT4文件系统简要演示缩容的操作。</p>
+<p>将上面扩容为1.5G的EXT4文件系统修改为1G，命令为<code>e2fsck -f /dev/lvmvg/ext4lv &amp;&amp; resize2fs -f /dev/lvmvg/ext4lv 1G &amp;&amp; lvresize -L 1G  /dev/lvmvg/ext4lv</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img52.webp" alt="LV缩容"></p>
+<h3 id="LVM-thin-Volume"><a href="#LVM-thin-Volume" class="headerlink" title="LVM thin Volume"></a>LVM thin Volume</h3><p>之所以会有这个技术的原因在于LVM的动态可调整，且在短时间内使用的磁盘空间只是总量的一部分，相当于通过LVM技术许诺一个磁盘大小，就像是一张支票一样，上边的数字可以随便填写，但是能不能取出这么多钱是不一定的。</p>
+<p>具体的操作是，首先在VG的未分配空间内创建一个thin pool(LV)，又叫磁盘容量存储池，thin pool的大小是真实占用物理磁盘的空间，而thin volume则是创建在thin pool之上，其大小是许诺的。</p>
+<h4 id="thin-volume创建步骤"><a href="#thin-volume创建步骤" class="headerlink" title="thin volume创建步骤"></a>thin volume创建步骤</h4><p>在创建thin volume的实例中，之前我们创建的lvmvg(VG)还剩余1.4G未使用，因此我们创建1G的thin pool，并许诺一个10G的thin volume。</p>
+<h5 id="创建thin-pool"><a href="#创建thin-pool" class="headerlink" title="创建thin pool"></a>创建thin pool</h5><p>thin volume依托在thin pool之上，所以我们需要首先创建thin pool。创建thin pool与创建普通的LV类似，但是在命令中多一个<code>T</code>参数。示例中使用命令<code>lvcreate -L 1G -T -n thinpool1 lvmvg</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img53.webp" alt="创建thin pool"></p>
+<h5 id="创建thin-volume"><a href="#创建thin-volume" class="headerlink" title="创建thin volume"></a>创建thin volume</h5><p>在thin pool之上创建LV，与创建LV使用的是相同的命令，但是有较大的差别。使用<code>V</code>参数指定虚拟的容量大小，使用<code>T</code>参数指定thin pool，<code>n</code>参数指定thin volume的名称。示例中使用的命令为<code>lvcreate -V 10G -T /dev/lvmvg/thinpool1 -n thinvolume1</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img54.webp" alt="创建thin volume"></p>
+<h4 id="测试thin-volume"><a href="#测试thin-volume" class="headerlink" title="测试thin volume"></a>测试thin volume</h4><p>由于thin volume实际分配的空间只有1G，所以测试数据不能超过1G，这里我们选择写入100M内容。将/dev/lvmvg/thinvolume1格式化并挂载，使用命令<code>dd if=/dev/urandom of=test.img bs=1M count=100</code>写入数据。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img55.webp" alt="测试thin volume是否可用"></p>
+<h3 id="LVM快照"><a href="#LVM快照" class="headerlink" title="LVM快照"></a>LVM快照</h3><p>LVM除了能动态调整LV的大小以外还能提供快照的功能。LVM实现快照的功能是通过快照区实现的，当有文件被改动时，就将改动前的文件移到快照区，然后再把新内容保存下来，并将这个内容排除在快照区外。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img56.svg" alt="LVM快照原理"></p>
+<h4 id="创建快照"><a href="#创建快照" class="headerlink" title="创建快照"></a>创建快照</h4><p>在创建快照之前注意查询VG是否还有空闲的空间(lvmvg还剩余26个PE未使用)，若没有空闲的空间的话，则需要扩容VG以创建快照。</p>
+<p>使用命令<code>lvcreate -s -l 26 -n firstlvsnap /dev/lvmvg/firstlv</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img57.webp" alt="创建firstlv的LV快照"></p>
+<h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>首先我们将快照和firstlv同时分别挂载(注意快照区和LV有同样的uuid，因此挂载时需添加<code>-o nouuid</code>)，这时如果我们删除firstlv中的文件，并写入新文件，然后再查看快照区的文件内容。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img58.webp" alt="利用快照区可以找回删除掉的文件"></p>
+<p>但是快照区的空间一般不大，当有大量数据改动时，快照区空间消耗完之后就会使快照区失效。</p>
+<h3 id="移除LVM"><a href="#移除LVM" class="headerlink" title="移除LVM"></a>移除LVM</h3><p>即将所有创建的LV、VG、PV都移除掉，并且将分区的系统标识号改回以前的号码。</p>
+<p>首先将所有挂载的分区移除，命令<code>umount /dev/lvmvg/firstlv &amp;&amp; umount /dev/lvmvg/firstlvsnap &amp;&amp; umount /dev/lvmvg/thinvolume1</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img59.webp" alt="移除所有挂载的LVM"></p>
+<p>其次移除所有的LV，注意thin pool移除前需将thin volume移除，移除LV之前应确保快照已经移除，命令<code>lvremove -f /dev/lvmvg/firstlvsnap &amp;&amp; lvremove -f /dev/lvmvg/firstlv &amp;&amp; lvremove -f /dev/lvmvg/thinvolume1 &amp;&amp; lvremove -f /dev/lvmvg/thinpool1 &amp;&amp; lvremove -f /dev/lvmvg/ext4lv</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img60.webp" alt="移除所有的LV"></p>
+<p>接着移除VG，命令<code>vgremove -f lvmvg</code>。</p>
+<p><img src="/2019/12/18/quota-raid和lvm/img61.webp" alt="移除VG"></p>
+<p>然后移除所有与VG相关的PV，命令<code>pvremove -f /dev/sdb1 &amp;&amp; pvremove -f /dev/sdb2 &amp;&amp; pvremove -f /dev/sdb3 &amp;&amp; pvremove -f /dev/sdb4 &amp;&amp; pvremove -f /dev/sdb5</code></p>
+<p><img src="/2019/12/18/quota-raid和lvm/img62.webp" alt="移除所有相关PV"></p>
+<p>最后修改实体分区的系统标识号(gdisk)。</p>
+<p>添加的LVM完全移除。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p>鸟叔的linux私房菜第十四章:&lt; <a href="http://linux.vbird.org/linux_basic/0420quota.php&gt;" target="_blank" rel="noopener">http://linux.vbird.org/linux_basic/0420quota.php&gt;</a></p>
+<p>以及部分网络搜索的资料</p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 qinzhtao@163.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>quota,raid和lvm</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">7.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="捌叁壹伍">捌叁壹伍</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-18, 16:39:25</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-08, 23:56:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/18/quota-raid和lvm/" title="quota,raid和lvm">http://qzt8315.github.io/2019/12/18/quota-raid和lvm/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="/js/md5.js"></script>
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '150300db6044cbdbef06',
+            clientSecret: '3a9c198e82036ef02678373645b09c0910f42846',
+            repo: 'qzt8315.github.io',
+            owner: 'qzt8315',
+            admin: ['qzt8315'],
+            // id: location.pathname,
+            id: hex_md5(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 qzt</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#教程','#博客','#hexo','#新手','#公式编辑','#备份','#linux','#awk','#markdown','#标签','#语法','#入门','#quota','#raid','#lvm','#设置','#网卡','#bond','#判断式','#作息时间','#命令','#shell-script','#用户','#PC','#维护','#观影','#动漫','#diff','#cmp','#patch','#H5','#易企秀','#正则表达式','#数学公式','#秀米','#图文排版','#深度学习','#概念','#shell_script','#网络','#基础概念','#西瓜书','#符号表','#读书','#第一章','#第三章','#第二章','#第四章',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
