@@ -4,6 +4,95 @@
   
     
     <entry>
+      <title>anaconda</title>
+      <link href="/2020/06/04/anaconda/"/>
+      <url>/2020/06/04/anaconda/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>好久没有更新博客，上一篇博客还是数个月前写的，那么这么长的时间都在做什么呢？2020年受到新冠的影响，许许多多的工作都被延迟了，整天只能呆在家里，尽量不给大家添麻烦。虽然身体被拘束在家中但是头脑里总是想做点什么，想起了大学期间上操作系统这门课时，我们做实验使用的是老师自制的类Linux操作系统（源码地址：<a href="https://github.com/hongmingjian/epos" target="_blank" rel="noopener">https://github.com/hongmingjian/epos</a>），心血来潮想要自己写一个操作系统，一方面是为了打发时间，另一方面则是为了熟悉操作系统的运行原理。截至目前为止，操作系统完成了一部分，源码地址:<a href="https://github.com/qzt8315/QXOS" target="_blank" rel="noopener">https://github.com/qzt8315/QXOS</a>。好了，我们回到正题上，六月份开始到支教结束这段时间，准备暂时缓一缓自制操作系统的工作，准备好好学习一下tensorflow，为之后入学研究生，开始学习深度学习准备。电脑上使用的最好方式就是使用python中的tensorflow库。之前一直都在使用anaconda，因为可以使用conda（包管理器）安装新库，并且集成了常用的科学计算的库，但是很少去学习anaconda对python环境(和virtualenv类似的功能)和包的管理。那么这篇博客中便介绍anaconda的一些使用技巧。</p><h2 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h2><p>这次使用window10操作系统，安装的版本是:<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2019.10-Linux-x86_64.sh" target="_blank" rel="noopener">Anaconda3-2019.10-Windows-x86_64</a>，这里由于国内网络的环境，使用的是清华镜像网站链接下载。</p><p>安装过程比较简单，除了安装路径和勾选将anaconda添加加到PATH环境变量(PS:强烈建议添加，避免后面手动添加)需要根据自己的需求选择外，其他默认安装即可。</p><h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><h3 id="更改镜像地址"><a href="#更改镜像地址" class="headerlink" title="更改镜像地址"></a>更改镜像地址</h3><p>一般安装的Anaconda默认的源地址在国外，安装时会比较慢，可以修改为国内镜像源地址加快下载安装速度。一般国内源使用清华大学的镜像。在Windows上修改C:\Users\当前用户名\.condarc（Linux或者Mac修改~/.condarc）：</p><pre><code>ssl_verify: truechannels:  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  - defaultsshow_channel_urls: true</code></pre><p>也可以使用conda配置源</p><pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/conda config --set show_channel_urls yes</code></pre><p>如果修改源之后conda下载速度还是比较慢，则可以修改pip源，使用pip安装包，Windows下修改C:\Users\当前用户名\pip\pip.ini（MaxOS或者Linux修改~/.pip.conf）:</p><pre><code>[global]trust-host = pypi.douban.comindex-url  = http://pypi.douban.com/simple</code></pre><h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><p>使用conda安装库与pip类似，使用命令：</p><pre><code># 搜索包conda search 包名# 安装包conda install 包名# 安装指定包conda install 包名=1.2(版本)# 安装多个包conda install 包名1 包名2 ...</code></pre><h3 id="查看包"><a href="#查看包" class="headerlink" title="查看包"></a>查看包</h3><p>conda查看包列表:</p><pre><code>conda list# 查看特定环境的所有的包conda list -n 环境名</code></pre><h3 id="更新包"><a href="#更新包" class="headerlink" title="更新包"></a>更新包</h3><p>anaconda包管理中，本身可以看作是一个包，python环境可以看作一个包，anaconda也可以看作一个包，因此在conda中除了支持普通的更新第三方包以外，还支持conda、python环境和anaconda更新。</p><pre><code># 更新包conda update 包名# 更新pythonconda update python# 更新anacondaconda update anaconda# 更新condaconda update conda# 防止包更新conda update 包名 --no-pin</code></pre><h3 id="卸载包"><a href="#卸载包" class="headerlink" title="卸载包"></a>卸载包</h3><p>使用conda卸载包和使用pip卸载包（uninstall）有区别：</p><pre><code># 卸载当前环境中的包conda remove 包名# 卸载特定环境中的包conda remove -n 环境名 包名# 删除多个包conda remove 包名1 包名2 ...</code></pre><h2 id="python环境管理"><a href="#python环境管理" class="headerlink" title="python环境管理"></a>python环境管理</h2><p>之所以有环境管理是因为，可能会使用不同版本的python、不同版本的库等等的需求，那么相对独立的python运行环境就比较重要。</p><h3 id="控制环境"><a href="#控制环境" class="headerlink" title="控制环境"></a>控制环境</h3><h4 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h4><p>使用conda创建环境，类似于virtualenv的功能:</p><pre><code># 创建特定名字的环境conda create -n 环境名# 使用特定版本的python创建环境conda create -n 环境名 python=版本(1.2)# 使用特定包创建环境conda create -n 环境名 包名# 使用环境配置文件(.yaml)创建环境conda env create -f 环境配置文件.yaml</code></pre><p>环境配置文件可以通过导出生成</p><pre><code># 激活环境conda activate 需要导出的环境名# 导出conda env export &gt; 环境配置文件.yaml</code></pre><h4 id="激活环境"><a href="#激活环境" class="headerlink" title="激活环境"></a>激活环境</h4><pre><code>conda activate 环境名</code></pre><h4 id="停用环境"><a href="#停用环境" class="headerlink" title="停用环境"></a>停用环境</h4><pre><code>conda deactivate 环境名</code></pre><h4 id="查看当前环境"><a href="#查看当前环境" class="headerlink" title="查看当前环境"></a>查看当前环境</h4><pre><code>conda info -envs</code></pre><h4 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h4><pre><code>conda remove --n 环境名 --all</code></pre><h4 id="构建相同的环境"><a href="#构建相同的环境" class="headerlink" title="构建相同的环境"></a>构建相同的环境</h4><h5 id="激活需要导出配置文件的环境"><a href="#激活需要导出配置文件的环境" class="headerlink" title="激活需要导出配置文件的环境"></a>激活需要导出配置文件的环境</h5><pre><code>conda list --explicit &gt; 文件.txt</code></pre><h5 id="在同系统的不同机器执行"><a href="#在同系统的不同机器执行" class="headerlink" title="在同系统的不同机器执行"></a>在同系统的不同机器执行</h5><pre><code>conda create --name 环境名 -f 文件.txt</code></pre><h4 id="克隆环境-同一机器"><a href="#克隆环境-同一机器" class="headerlink" title="克隆环境(同一机器)"></a>克隆环境(同一机器)</h4><pre><code>conda create --name 环境名 --clone 被克隆环境名</code></pre><h4 id="渠道管理"><a href="#渠道管理" class="headerlink" title="渠道管理"></a>渠道管理</h4><h5 id="添加到顶部最高优先级"><a href="#添加到顶部最高优先级" class="headerlink" title="添加到顶部最高优先级"></a>添加到顶部最高优先级</h5><pre><code>conda config --add channels 新渠道# 或者conda config --prepend 新渠道</code></pre><h5 id="添加到底部最低优先级"><a href="#添加到底部最低优先级" class="headerlink" title="添加到底部最低优先级"></a>添加到底部最低优先级</h5><pre><code>conda config --append channels 新渠道</code></pre><h5 id="开启搜索时显示通道地址"><a href="#开启搜索时显示通道地址" class="headerlink" title="开启搜索时显示通道地址"></a>开启搜索时显示通道地址</h5><pre><code>conda config --set show_channel_urls yes</code></pre><h5 id="删除源"><a href="#删除源" class="headerlink" title="删除源"></a>删除源</h5><pre><code># 删除所有新添加源恢复默认源conda config --remove-key channels</code></pre><h5 id="常见的国内源"><a href="#常见的国内源" class="headerlink" title="常见的国内源"></a>常见的国内源</h5><pre><code># 清华源https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forgehttps://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/# 中科大源https://mirrors.ustc.edu.cn/anaconda/pkgs/main/https://mirrors.ustc.edu.cn/anaconda/pkgs/free/https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/# 上交源https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/main/https://mirrors.sjtug.sjtu.edu.cn/anaconda/pkgs/free/https://mirrors.sjtug.sjtu.edu.cn/anaconda/cloud/conda-forge/</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> anaconda </tag>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ld链接脚本</title>
+      <link href="/2020/05/01/ld%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%AC/"/>
+      <url>/2020/05/01/ld%E9%93%BE%E6%8E%A5%E8%84%9A%E6%9C%AC/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ld </tag>
+            
+            <tag> GNU </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>程序管理和SELinux</title>
+      <link href="/2020/02/25/%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86%E5%92%8CSELinux/"/>
+      <url>/2020/02/25/%E7%A8%8B%E5%BA%8F%E7%AE%A1%E7%90%86%E5%92%8CSELinux/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux属于多人多工系统，在其上运行许多程序，虽说有操作系统进行调度，但是有时也需要人工去管理。系统管理员此外也会对系统的的权限进行管理，但是由于系统管理员的管理方式不同，有的会直接给予所有权限，导致系统具有严重的安全隐患，这是也需要SELinux帮助保护系统的安全。</p><h2 id="程序管理"><a href="#程序管理" class="headerlink" title="程序管理"></a>程序管理</h2><h3 id="工作管理"><a href="#工作管理" class="headerlink" title="工作管理"></a>工作管理</h3><p>在命令行下通过在命令最后添加”&amp;”，可以将任务放置在后台管理，后台的所有输出都</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SELinux </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计划任务</title>
       <link href="/2020/02/18/%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/"/>
       <url>/2020/02/18/%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/</url>
@@ -870,13 +959,13 @@
       
         <tags>
             
+            <tag> 入门 </tag>
+            
             <tag> markdown </tag>
             
             <tag> 标签 </tag>
             
             <tag> 语法 </tag>
-            
-            <tag> 入门 </tag>
             
         </tags>
       
